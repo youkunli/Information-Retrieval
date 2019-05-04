@@ -1,6 +1,7 @@
 CC = g++
 
 all: buildIndex searchQuery
+
 buildIndex: source/buildIndex.cpp InvertedIndex.o CBtreeFunc.o Btree.o KVstore.o stopwords.o
 	$(CC) -o buildIndex source/buildIndex.cpp InvertedIndex.o CBtreeFunc.o Btree.o KVstore.o stopwords.o
 searchQuery: source/searchQuery.cpp InvertedIndex.o CBtreeFunc.o Btree.o KVstore.o stopwords.o
