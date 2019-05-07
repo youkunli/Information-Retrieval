@@ -14,10 +14,10 @@
 #include<set>
 
 #define BLOCKSIZE		(1 << 12)
-#define ORDER_V 		128
-#define MAXNUM_KEY 		(ORDER_V * 2)
-#define MAXNUM_POINTER 	(ORDER_V * 2 + 1)
-#define MAXNUM_DATA 	(ORDER_V * 2 + 1)
+#define ORDER_V 		128    					/* ä¸ºç®€å•èµ·è§ï¼ŒæŠŠvå›ºå®šä¸º2ï¼Œå®é™…çš„B+æ ‘vå€¼åº”è¯¥æ˜¯å¯é…çš„ */
+#define MAXNUM_KEY 		(ORDER_V * 2)    	/* å†…éƒ¨ç»“ç‚¹ä¸­æœ€å¤šé”®ä¸ªæ•°ï¼Œä¸º2v ( 1~2v )*/
+#define MAXNUM_POINTER 	(ORDER_V * 2 + 1)    	/* å†…éƒ¨ç»“ç‚¹ä¸­æœ€å¤šæŒ‡å‘å­æ ‘çš„æŒ‡é’ˆä¸ªæ•°ï¼Œä¸º2v ( 1~2v )*/
+#define MAXNUM_DATA 	(ORDER_V * 2 + 1)    	/* ç»“ç‚¹ä¸­ç”¨ä½œå®šä¹‰ï¼Œä¸º2v ( 1~2v )*/
 #define TERM_NUMBER		1
 
 #define FLAG_LEFT		5
@@ -36,16 +36,16 @@
 
 using namespace std;
 
-enum NODE_TYPE
-{
-	NODE_TYPE_INTERNAL = 2,    // ÄÚ²¿½áµã
-	NODE_TYPE_LEAF     = 3,    // Ò¶×Ó½áµã
+enum NODE_TYPE {
+	NODE_TYPE_INTERNAL = 2,    // å†…éƒ¨ç»“ç‚¹
+	NODE_TYPE_LEAF     = 3,    // å¶å­ç»“ç‚¹
 };
-enum eletype
-{
+
+enum eletype {
 	CHARARRAY = 1,
 	INTEGER   = 4,
 };
+
 extern eletype _eletype;
 extern int _ii;
 extern string filePath_o2sID;
@@ -55,20 +55,17 @@ extern string filePath_sID2s;
 extern int myStrcmp(char _str1[], int len1, char _str2[], int len2);
 extern FILE * _log_btree;
 
-class KeyType
-{
+class KeyType {
 public:
 	int _num_insert;
 	bool 	is_AtMem;
 	char*	sKey;
 	int 	iKey;
-	int		mLenKey;    //¹ØÓÚÊÇ·ñ¶ÁÈë\nµÄÊÔÑé
-	KeyType()
-	{
+	int		mLenKey;    //å…³äºæ˜¯å¦è¯»å…¥\nçš„è¯•éªŒ
+	KeyType() {
 		KeyType_Initial();
 	}
-	KeyType(KeyType & a)
-	{
+	KeyType(KeyType & a) {
 		_num_insert = a._num_insert;
 		iKey = a.iKey;
 		mLenKey = a.mLenKey;
@@ -200,7 +197,7 @@ public:
 		}
 	}
 	/*
-	 * ºÏÊÊµÄ¹¦ÄÜº¯Êı
+	 * åˆé€‚çš„åŠŸèƒ½å‡½æ•°
 	 */
 	int WriteSize()
 	{
@@ -547,7 +544,7 @@ public:
 		{
 			Term[0][_tag] = '\0';
 			lenTerm[0] -= sizeof(int) + sizeof(char);
-			//Ö»ÓĞÒ»¸öÔªËØÊ±ºÜÌØÊâ£¬ ³¤¶ÈÊÇ¼õÉÙ4£¬ ÆäÓà¼õÉÙ5
+			//åªæœ‰ä¸€ä¸ªå…ƒç´ æ—¶å¾ˆç‰¹æ®Šï¼Œ é•¿åº¦æ˜¯å‡å°‘4ï¼Œ å…¶ä½™å‡å°‘5
 			if(lenTerm[0] <= 0) flag = FLAG_ZERO;
 			else				flag = FLAG_NO_ZERO;
 			return true;
@@ -839,7 +836,7 @@ public:
 		mNode * _pBrother = NULL;
 		for(int i = 1; i <= _pFather ->getCount(); i ++)
 		{
-			//Ö¸ÕëÆ¥Åä
+			//æŒ‡é’ˆåŒ¹é…
 			if(_pFather ->getPointer(i) == this)
 			{
 				if(i == (_pFather ->getCount()) + 1)
@@ -927,7 +924,7 @@ public:
 	bool Write_mitnldata( FILE * fp, int & _size_left )
 	{
 		/*
-		 * KeyType ĞèÒªÓÉº¯Êı·µ»ØĞ´ÈëµÄ¿Õ¼ä´óĞ¡
+		 * KeyType éœ€è¦ç”±å‡½æ•°è¿”å›å†™å…¥çš„ç©ºé—´å¤§å°
 		 */
 		int size_lli = sizeof(long long int);
 		int size_mKey = mKey.WriteSize();
@@ -1044,7 +1041,7 @@ public:
 		}
 	}
 
-	//´Ëº¯ÊıĞè×ĞÏ¸¿¼ÂÇ~~£¡£¡
+	//æ­¤å‡½æ•°éœ€ä»”ç»†è€ƒè™‘~~ï¼ï¼
 	int iExist(const KeyType &_keytype)
 	{
 		int _ibegin = 1, _iend = getCount();
@@ -1062,7 +1059,7 @@ public:
 			}
 
 			if(_ibegin == _iend - 1) return -1;
-			// ºó¼Ó¿ÉÄÜÓĞ·çÏÕ
+			// ååŠ å¯èƒ½æœ‰é£é™©
 
 			if(ItnlData[_imiddle].mKey > _keytype)
 			{
@@ -1200,16 +1197,16 @@ public:
 		printf("  ==  ");
 	}
 
-	// ²åÈë¼ü
-//	×î×ó¶Ëµİ¹éÏòÉÏ
+	// æ’å…¥é”®
+//	æœ€å·¦ç«¯é€’å½’å‘ä¸Š
 	bool Insert(mNode* _pmnode);
-	// É¾³ı¼ü
+	// åˆ é™¤é”®
 	int Delete(const KeyType & _keytype);
-	// ·ÖÁÑ½áµã
+	// åˆ†è£‚ç»“ç‚¹
 	KeyType & Split(mItnlNode* _mitnlnode);
-	// ½áºÏ½áµã
+	// ç»“åˆç»“ç‚¹
 	bool Combine(mItnlNode * _pmnode);
-	// ´ÓÁíÒ»½áµãÒÆÒ»¸öÔªËØµ½±¾½áµã
+	// ä»å¦ä¸€ç»“ç‚¹ç§»ä¸€ä¸ªå…ƒç´ åˆ°æœ¬ç»“ç‚¹
 	bool MoveOneElement(mNode * _pmnode);
 
 };
@@ -1541,7 +1538,7 @@ public:
 		}
 	}
 
-//	´ËÁ½¸öº¯Êı¶ÔÒ¶½ÚµãÎŞÒâÒå
+//	æ­¤ä¸¤ä¸ªå‡½æ•°å¯¹å¶èŠ‚ç‚¹æ— æ„ä¹‰
 	mNode * getPointer(int _i)
 	{
 		return NULL;
@@ -1587,7 +1584,7 @@ public:
 		}
 		return -1;
 	}
-//	¿¼ÂÇcout = 0µÄÇé¿ö
+//	è€ƒè™‘cout = 0çš„æƒ…å†µ
 	int iInsert(const KeyType & _keytype)
 	{
 		int _ibegin = 1, _iend = getCount();
@@ -1662,18 +1659,18 @@ public:
 
 
 
-	// ²åÈëÊı¾İ
-//	×î×ó¶Ëµİ¹éÏòÉÏ
+	// æ’å…¥æ•°æ®
+//	æœ€å·¦ç«¯é€’å½’å‘ä¸Š
 	bool Insert(const mleafdata & _leafdata);
-	// É¾³ıÊı¾İ
+	// åˆ é™¤æ•°æ®
 	int Delete(KeyType & _keytype);
-	//ÖØÔØdelete partval
+	//é‡è½½delete partval
 	int Delete(KeyType & _keytype, char partval[], int & pvFlag);
-	// ·ÖÁÑ½áµã
+	// åˆ†è£‚ç»“ç‚¹
 	KeyType & Split(mLeafNode* _mpnode);
-	// ½áºÏ½áµã
+	// ç»“åˆç»“ç‚¹
 	bool Combine(mLeafNode* _mpnode);
-	// ÖØ¸´²åÈë
+	// é‡å¤æ’å…¥
 	bool dupInsert(const mleafdata & _leafdata, int _index_insert);
 };
 
@@ -1691,19 +1688,19 @@ extern bool Delete_obj2sID(char _obj_str[], int _del_sID, BPlusTree * _p_obj2sID
 extern bool Delete_objpID2sID(char _obj_str[], int _pID, int _del_sID, BPlusTree * _p_objpID2sID);
 
 
-/* B+Ê÷Êı¾İ½á¹¹ */
+/* B+æ ‘æ•°æ®ç»“æ„ */
 class BPlusTree
 {
 public:
 
-	// ÒÔÏÂÁ½¸ö±äÁ¿ÓÃÓÚÊµÏÖË«ÏòÁ´±í
-	mLeafNode* pmLeafHead;                   // Í·½áµã
-	mLeafNode* pmLeafTail;                   // Î²½áµã
-	mNode * mRoot;   						 // ¸ù½áµã
+	// ä»¥ä¸‹ä¸¤ä¸ªå˜é‡ç”¨äºå®ç°åŒå‘é“¾è¡¨
+	mLeafNode* pmLeafHead;                   // å¤´ç»“ç‚¹
+	mLeafNode* pmLeafTail;                   // å°¾ç»“ç‚¹
+	mNode * mRoot;   						 // æ ¹ç»“ç‚¹
 	mQueue mblockQueue;
 	FILE * mfp;
 	char mTreeName[55];
-	int mDepth;       						 // Ê÷µÄÉî¶È
+	int mDepth;       						 // æ ‘çš„æ·±åº¦
 	int insert_count;
 
 	void Initial(){
@@ -1842,32 +1839,32 @@ public:
 			}
 	}
 
-	// »ñÈ¡ºÍÉèÖÃ¸ù½áµã
+	// è·å–å’Œè®¾ç½®æ ¹ç»“ç‚¹
 	mNode * getRoot()				{		return mRoot;	}
 
 	void setRoot(mNode * root)		{		mRoot = root;	}
 	void Flush();
-	// Îª²åÈë¶ø²éÕÒÒ¶×Ó½áµã
+	// ä¸ºæ’å…¥è€ŒæŸ¥æ‰¾å¶å­ç»“ç‚¹
 	mLeafNode * SearchLeafNode(const KeyType & data)const;
-	//²åÈë¼üµ½ÖĞ¼ä½áµã
+	//æ’å…¥é”®åˆ°ä¸­é—´ç»“ç‚¹
 	bool InsertItnlNode(mItnlNode * pNode, mNode * pSon);
-	// ÔÚÖĞ¼ä½áµãÖĞÉ¾³ı¼ü
+	// åœ¨ä¸­é—´ç»“ç‚¹ä¸­åˆ é™¤é”®
 	bool DeleteItnlNode(mItnlNode * pNode, KeyType & key);
-	// ²éÕÒÖ¸¶¨µÄÊı¾İ
+	// æŸ¥æ‰¾æŒ‡å®šçš„æ•°æ®
 	bool Search(KeyType & data, mleafdata & _ret);
-	// ²åÈëÖ¸¶¨µÄÊı¾İ
+	// æ’å…¥æŒ‡å®šçš„æ•°æ®
 	bool Insert(const mleafdata & _mleafdata);
-	// É¾³ıÖ¸¶¨µÄÊı¾İ
+	// åˆ é™¤æŒ‡å®šçš„æ•°æ®
 	bool Delete(KeyType & data);
-	// ÖØÔØÉ¾³ıº¯Êı
+	// é‡è½½åˆ é™¤å‡½æ•°
 	bool Delete(KeyType & data, char PartVal[]);
-	// Çå³ıÊ÷
+	// æ¸…é™¤æ ‘
 	void ClearTree();
-	// ´òÓ¡Ê÷
+	// æ‰“å°æ ‘
 	void PrintTree();
-	//¶Á³ö¸ù½Úµã
+	//è¯»å‡ºæ ¹èŠ‚ç‚¹
 	void ReadRoot();
-	//±£´æÊ÷½á¹¹
+	//ä¿å­˜æ ‘ç»“æ„
 	void StoreTree();
 
 };

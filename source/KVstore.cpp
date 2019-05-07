@@ -1,5 +1,5 @@
-#include"KVstore.h"
-#include"InvertedIndex.h"
+#include "KVstore.h"
+#include "InvertedIndex.h"
 
 KVstore::KVstore(bool isCreateMode){
 	if(isCreateMode)

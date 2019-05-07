@@ -11,9 +11,9 @@
 #include<unistd.h>
 #include<boost/algorithm/string.hpp>
 #include<boost/unordered_map.hpp>
-#include <boost/property_tree/ptree.hpp>
-#include <boost/property_tree/xml_parser.hpp>
-#include <boost/foreach.hpp>
+#include<boost/property_tree/ptree.hpp>
+#include<boost/property_tree/xml_parser.hpp>
+#include<boost/foreach.hpp>
 #include<vector>
 #include<string.h>
 #include<sstream>
@@ -31,21 +31,25 @@ using namespace std;
 extern ofstream _debug;
 
 typedef vector<string>::iterator itV;
+
 class ID_Score{
 public:
+	int id;
+	double score;
+
 	ID_Score(int _id, double _score){
 		id = _id;
 		score = _score;
 	}
-	int id;
-	double score;
 };
+
 class ScoreCMP{
 public:
 	bool operator()(ID_Score& _is1, ID_Score& _is2)const{
 		return _is1.score > _is2.score;
 	}
 };
+
 class TopK{
 public:
 	priority_queue<ID_Score, vector<ID_Score>, ScoreCMP > Qscore;
@@ -65,6 +69,7 @@ public:
 		return false;
 	}
 };
+
 class IDlist{
 private:
 	typedef unsigned char uchar;
@@ -406,7 +411,7 @@ public:
 		return posting;
 	}
 
-	int get(int i) // ∑µªÿµ⁄i∏ˆµπ≈≈º«¬º
+	int get(int i) // ¬∑¬µ¬ª√ò¬µ√öi¬∏√∂¬µ¬π√Ö√Ö¬º√á√Ç¬º
 	{
 		return (*posting)[i];
 	}
@@ -422,7 +427,7 @@ public:
 	{
 		return isAndResult;
 	}
-	binary_vectorPosting* not_operator(binary_vectorPosting* right) // not≤Ÿ◊˜
+	binary_vectorPosting* not_operator(binary_vectorPosting* right) // not¬≤√ô√ó√∑
 	{
 		binary_vectorPosting* ans = new binary_vectorPosting();
 		ans->isNot = true;
@@ -431,7 +436,7 @@ public:
 		return ans;
 	}
 
-	binary_vectorPosting* and_operator(binary_vectorPosting* right, int distance = 0) // and≤Ÿ◊˜
+	binary_vectorPosting* and_operator(binary_vectorPosting* right, int distance = 0) // and¬≤√ô√ó√∑
 	{
 		binary_vectorPosting* ans = (new binary_vectorPosting());
 		IDlist* _andlist = IDlist::AND(this->posting, right->getlist());
@@ -439,7 +444,7 @@ public:
 		return ans;
 	}
 
-	binary_vectorPosting* or_operator(binary_vectorPosting* right) // or≤Ÿ◊˜
+	binary_vectorPosting* or_operator(binary_vectorPosting* right) // or¬≤√ô√ó√∑
 	{
 		binary_vectorPosting* ans = (new binary_vectorPosting());
 		IDlist* _orlist = IDlist::OR(this->posting, right->getlist());
@@ -453,7 +458,7 @@ public:
 	}
 };
 
-class news{
+class news {
 public:
 	//newsitem
 	string title;
@@ -1238,7 +1243,55 @@ public:
 	int xml_ii;
 	int tmp_file_length;
 	
-        void buildPostFromXml(string& _fpath, int _fid, map<string, Posting*>& _dic);
+    void buildPostFromXml(string& _fpath, int _fid, map<string, Posting*>& _dic){
+		set<string> token;
+		news _ns(_fpath);
+		stringstream _buf;
+		_buf << _ns.title << endl;
+		_buf << _ns.headline << endl;
+		_buf << _ns.cont << endl;
+		string line;
+		int pos = 0;
+		while(getline(_buf, line) != 0)
+		{
+			if(line.length() < 2) {
+				continue;
+			}
+			vector<string> words;
+			to_lower(line);
+			split(words, line, is_any_of("-/,\" \t!'.?()\\"));
+			for(int j = 0; j < (int)words.size(); j ++)
+			{
+				trim_if(words[j], is_punct());
+				{
+					//words[j] = stemming(words[j]);
+					if(stopword::isStopWord(words[j])){
+						continue;
+					}
+					token.insert(words[j]);
+				}
+				if(words[j].length() > 1)
+				{
+					if(_dic.find(words[j]) != _dic.end())
+					{
+						if(! _dic[words[j]]->find_and_addone(_fid, pos))
+						{
+							_dic[words[j]]->add_post(_fid, pos);
+						}
+					}
+					else
+					{
+						Posting* temp = new Posting();
+						temp->add_post(_fid, pos);
+						_dic[words[j]] = temp;
+					}
+					pos ++;
+				}
+			}
+		}//end while
+		tmp_file_length = (int)token.size();
+		xml_ii ++;
+	}
 	//
 	void buildPostFromFile(string& _fpath, int _fid, map<string, Posting*>& _dic){
 		set<string> token;
@@ -1597,108 +1650,86 @@ extern bool sortWord(const WordPair& a, const WordPair& b);
 
 
 
-class VectorPosting // vector µœ÷µƒµπ≈≈º«¬º±Ì£¨≤È—Ø ± π”√
-{
+class VectorPosting {
 private:
 	vector<Post> posting;
 	bool isNot;
 	bool isAndResult;
 public:
-	VectorPosting()
-	{
+	VectorPosting(){
 		isNot = false;
 		isAndResult = false;
 		posting.clear();
 	}
-	Post& get(int i) // ∑µªÿµ⁄i∏ˆµπ≈≈º«¬º
-	{
+	Post& get(int i){
 		return posting[i];
 	}
-	int length()
-	{
+	int length(){
 		return posting.size();
 	}
-	bool isnot()
-	{
+	bool isnot(){
 		return isNot;
 	}
-	bool isandresult()
-	{
+	bool isandresult(){
 		return isAndResult;
 	}
-	void push_back(Post post) // ≤Â»Î“ª∏ˆµπ≈≈º«¬º
-	{
+	void push_back(Post post){
 		posting.push_back(post);
 	}
-	vector<Post>& get_posting()
-	{
+	vector<Post>& get_posting(){
 		return posting;
 	}
-	VectorPosting& not_operator(VectorPosting& right) // not≤Ÿ◊˜
-	{
+	VectorPosting& not_operator(VectorPosting& right){
 		VectorPosting& ans = *(new VectorPosting());
 		ans.isNot = true;
 
 		int i = 0, j = 0;
 		int ll = length(), rr = right.length();
-		while(i < ll && j < rr)
-		{
-			if(posting[i].id == right.get(j).id)
-			{
+		while(i < ll && j < rr){
+			if(posting[i].id == right.get(j).id){
 				i ++;
 				j ++;
 			}
-			else if(posting[i].id < right.get(j).id)
-			{
+			else if(posting[i].id < right.get(j).id){
 				i ++;
 			}
-			else
-			{
+			else{
 				ans.push_back(right.get(j));
 				j ++;
 			}
 		}
-		while(j < rr)
-		{
+		while(j < rr){
 			ans.push_back(right.get(j));
 			j ++;
 		}
 		return ans;
 	}
 
-	VectorPosting& and_operator(VectorPosting& right, int distance = 0) // and≤Ÿ◊˜
-	{
+	VectorPosting& and_operator(VectorPosting& right, int distance = 0){
 		VectorPosting& ans = *(new VectorPosting());
 		int i = 0, j = 0;
 		int ll = length(), rr = right.length();
-		while(i < ll && j < rr)
-		{
-			if(posting[i].id == right.get(j).id)
-			{
+		while(i < ll && j < rr){
+			if(posting[i].id == right.get(j).id){
 				if(distance == 0)
 					ans.push_back(*(new Post(posting[i], right.get(j))));
-				else
-				{
+				else{
 					queue<int> q;
 					Post temp = *(new Post(posting[i].id));
 					int ll = 0, rr = 0;
 					int p1;
 					int p2;
-					while(ll < posting[i].pos.size())
-					{
+					while(ll < posting[i].pos.size()){
 						p1 = posting[i].pos[ll];
-						while(rr < right.get(j).pos.size())
-						{
+						while(rr < right.get(j).pos.size()){
 							p2 = right.get(j).pos[rr];
-							if(distance > 0)
-							{
+							if(distance > 0){
 								if(p2 - p1 <= distance && p2 - p1 >= -distance)
 									q.push(p2);
 								else if(p2 > p1)
 									break;
 							}
-							else
-							{
+							else{
 								if(p2 - p1 == -distance)
 									q.push(p2);
 								else if(p2 > p1)
@@ -1706,34 +1737,28 @@ public:
 							}
 							rr ++;
 						}
-						while( !q.empty() )
-						{
-							if(distance > 0)
-							{
+						while( !q.empty() ){
+							if(distance > 0){
 								if(q.front() - p1 > distance && q.front() - p1 < -distance)
 									q.pop();
 								else
 									break;
 							}
-							else
-							{
+							else{
 								if(q.front() - p1 != -distance)
 									q.pop();
 								else
 									break;
 							}
 						}
-						if(!q.empty())
-						{
+						if(!q.empty()){
 							queue<int> qq;
-							while(!q.empty())
-							{
+							while(!q.empty()){
 								temp.pos.push_back(q.front());
 								qq.push(q.front());
 								q.pop();
 							}
-							while(!qq.empty())
-							{
+							while(!qq.empty()){
 								q.push(qq.front());
 								qq.pop();
 							}
@@ -1757,44 +1782,36 @@ public:
 		return ans;
 	}
 
-	VectorPosting& or_operator(VectorPosting& right) // or≤Ÿ◊˜
-	{
+	VectorPosting& or_operator(VectorPosting& right) {
 		VectorPosting& ans = *(new VectorPosting());
 		int i = 0, j = 0;
 		int ll = length(), rr = right.length();
-		while(i < ll && j < rr)
-		{
-			if(posting[i].id == right.get(j).id)
-			{
+		while(i < ll && j < rr){
+			if(posting[i].id == right.get(j).id){
 				ans.push_back(*(new Post(posting[i], right.get(j))));
 				i ++;
 				j ++;
 			}
-			else if(posting[i].id < right.get(j).id)
-			{
+			else if(posting[i].id < right.get(j).id){
 				ans.push_back(posting[i]);
 				i ++;
 			}
-			else
-			{
+			else{
 				ans.push_back(right.get(j));
 				j ++;
 			}
 		}
-		while(i < ll)
-		{
+		while(i < ll){
 			ans.push_back(posting[i]);
 			i ++;
 		}
-		while(j < rr)
-		{
+		while(j < rr){
 			ans.push_back(right.get(j));
 			j ++;
 		}
 		return ans;
 	}
-	void display() //  ‰≥ˆµπ≈≈¡¥µƒƒ⁄»›
-	{
+	void display(){
 		for(int i = 0; i < length(); i ++)
 			cout << posting[i].id << " " << posting[i].frequent << endl;
 		if(length() == 0)
@@ -1803,14 +1820,12 @@ public:
 			cout << endl;
 	}
 
-	void sortById()
-	{
+	void sortById(){
 		sort(posting.begin(), posting.end(), sortByIdFunc);
 	}
 };
 
-class Node // Ω‚Œˆ≤È—Ø ±”√µƒΩ·µ„
-{
+class Node{
 public:
 	binary_vectorPosting* posting;
 	bool isOr;
@@ -1834,8 +1849,7 @@ struct nodeCmp{
 		return a.posting->length() > b.posting->length();}
 };
 
-class InvertedIndex // »´ÃÂµπ≈≈À˜“˝
-{
+class InvertedIndex{
 private:
 	boost::unordered_map<string, Posting*> dic;
 	boost::unordered_map<string, VectorPosting> order_dic;
@@ -1851,26 +1865,21 @@ private:
 	static const int sk = 44;
 	static const int rcv = 806791;
 
-	Node errorNode()
-	{
+	Node errorNode(){
 		cout << "Query input error!\n";
 		Node temp = *(new Node);
 		temp.isBlank = true;
 		return temp;
 	}
-	void bigramProcess(string& word)
-	{
+	void bigramProcess(string& word){
 		string str = "$" + word + "$";
 		string sub;
-		for(int i = 0; i < str.length()-1; i ++)
-		{
+		for(int i = 0; i < str.length()-1; i ++){
 			sub = str.substr(i, 2);
-			if(bigram_dic.find(sub) != bigram_dic.end())
-			{
+			if(bigram_dic.find(sub) != bigram_dic.end()){
 				bigram_dic[sub].push_back(word);
 			}
-			else
-			{
+			else{
 				vector<string> v;
 				v.push_back(word);
 				bigram_dic[sub] = v;
@@ -1878,8 +1887,7 @@ private:
 		}
 	}
 
-	int editDistance(string& a, string& b)
-	{
+	int editDistance(string& a, string& b){
 		int dis[30][30];
 		if(a.length() > 29 || b.length() > 29)
 			return 3;
@@ -1891,8 +1899,7 @@ private:
 		for(int i = 0; i <= b.length(); i ++)
 			dis[0][i] = i;
 		for(int i = 1; i <= a.length(); i ++)
-			for(int j = 1; j <= b.length(); j ++)
-			{
+			for(int j = 1; j <= b.length(); j ++){
 				dis[i][j] = dis[i-1][j-1];
 				if(a[i-1] != b[j-1])
 					dis[i][j] ++;
@@ -1903,8 +1910,7 @@ private:
 			}
 		return dis[a.length()][b.length()];
 	}
-	double similarity(string a, string b)
-	{
+	double similarity(string a, string b){
 		vector<char> va, vb;
 		for(int i = 0; i < a.length(); i ++)
 			va.push_back(a[i]);
@@ -1914,10 +1920,8 @@ private:
 		sort(vb.begin(), vb.end());
 		int ll = 0, rr = 0;
 		double same = 0;
-		while(ll < va.size() && rr < vb.size())
-		{
-			if(va[ll] == vb[rr])
-			{
+		while(ll < va.size() && rr < vb.size()){
+			if(va[ll] == vb[rr]){
 				same = same + 1;
 				ll ++; rr ++;
 			}
@@ -1930,20 +1934,16 @@ private:
 			return same/(a.length()+b.length());
 		return 0;
 	}
-	vector<string> candidate(string& word)
-	{
+	vector<string> candidate(string& word){
 		vector<WordPair> v;
 		string str = "$" + word + "$";
 		string sub;
 		boost::unordered_map<string, int> temp;
-		for(int i = 0; i < str.length()-1; i ++)
-		{
+		for(int i = 0; i < str.length()-1; i ++){
 			sub = str.substr(i, 2);
-			if(bigram_dic.find(sub) != bigram_dic.end())
-			{
+			if(bigram_dic.find(sub) != bigram_dic.end()){
 				vector<string> u = bigram_dic[sub];
-				for(int i = 0; i < u.size(); i ++)
-				{
+				for(int i = 0; i < u.size(); i ++){
 					if(temp.find(u[i]) != temp.end())
 						temp[u[i]] = temp[u[i]] + 1;
 					else
@@ -1958,17 +1958,14 @@ private:
 			f = 2;
 		if(word.length() > 4)
 			f = 3;
-		for(uumap::iterator iter = temp.begin(); iter != temp.end(); iter++)
-		{
+		for(uumap::iterator iter = temp.begin(); iter != temp.end(); iter++){
 			//cout << i << endl;
 			WordPair t;
 			t.s = iter->first;
 			t.f = iter->second;
-			if(t.f >= f)
-			{
+			if(t.f >= f){
 				t.dis = editDistance(t.s, word);
-				if(t.dis < 3)
-				{
+				if(t.dis < 3){
 					t.sim = similarity(t.s, word);
 					v.push_back(t);
 					if(v.size() > 300)
@@ -1978,8 +1975,7 @@ private:
 		}
 		sort(v.begin(), v.end(), sortWord);
 		vector<string> ans;
-		for(int i = 0; i < v.size(); i ++)
-		{
+		for(int i = 0; i < v.size(); i ++){
 			if(i == 3 || v[i].dis > 2)
 				break;
 			ans.push_back(v[i].s);
@@ -1987,8 +1983,7 @@ private:
 
 		return ans;
 	}
-	void correct(string w)
-	{
+	void correct(string w){
 		vector<string> v = candidate(w);
 		cout << "For " + w + " do you mean:";
 		for(int i = 0; i < v.size(); i ++)
@@ -1997,11 +1992,9 @@ private:
 	}
 
 public:
-	InvertedIndex(string dirname)
-	{
+	InvertedIndex(string dirname){
 		dic.clear();
 		indexpath = dirname;
-
 	}
 	InvertedIndex(string dirname, bool _is_search){
 		indexpath = dirname;
@@ -2011,16 +2004,14 @@ public:
 
 	}
 
-	VectorPosting& getFullPosting()
-	{
+	VectorPosting& getFullPosting(){
 		return full_posting;
 	}
 
 	vector<int> fullvec;
 	binary_vectorPosting* getFullbPosting(){
 
-		if(fullvec.empty())
-		{
+		if(fullvec.empty()){
 			for(int i = 0; i < rcv; i++){
 				fullvec.push_back(i);
 			}
@@ -2030,21 +2021,18 @@ public:
 
 	static const bool debug_mode = false;
 	static const bool debug_iv2 = true;
-	void readIndex(string path) // ∂¡»ÎÀ˜“˝
-	{
+	void readIndex(string path) {
 		string line;
 		ifstream fin;
 
 		doc_id.clear();
 		full_posting = *(new VectorPosting());
 		fin.open((path+"/doc_id.dat").c_str());
-		if(fin == NULL)
-		{
+		if(fin == NULL){
 			cout << (path+"/doc_id.dat" + " open failed!\n");
 			return;
 		}
-		while(getline(fin, line) != 0)
-		{
+		while(getline(fin, line) != 0){
 			if(line.length() < 2)
 				break;
 			vector<string> words;
@@ -2058,32 +2046,27 @@ public:
 
 		order_dic.clear();
 		fin.open((path+"/index.dat").c_str());
-		if(fin == NULL)
-		{
+		if(fin == NULL){
 			cout << (path+"/index.dat" + " open failed!\n");
 			return;
 		}
 		int _ii = 0;
-		while(getline(fin, line) != 0)
-		{
+		while(getline(fin, line) != 0){
 			vector<string> words;
 			split(words, line, is_any_of(" \t"));
 			VectorPosting* temp = new VectorPosting();
 			order_dic[words[0]] = *temp;
-			for(int j = 1; j < words.size(); j ++)
-			{
+			for(int j = 1; j < words.size(); j ++){
 				int id = atoi(words[j].c_str());
 				j ++;
 				int fre = atoi(words[j].c_str());
 				Post* t = new Post(id, fre);
-				for(int i = 0; i < fre; i ++)
-				{
+				for(int i = 0; i < fre; i ++){
 					j ++;
 					t->pos.push_back(atoi(words[j].c_str()));
 				}
 				order_dic[words[0]].push_back(*t);
-				if(debug_mode && _ii == 17)
-				{
+				if(debug_mode && _ii == 17){
 					stringstream _buf;
 					t->getLine(_buf);
 					cout << "[" <<words[0] << "]\t[" << _buf.str() << "]" << endl;
@@ -2097,10 +2080,8 @@ public:
 		cout << "Read index over.\n";
 	}
 
-	VectorPosting& find(string key) // ≤È’“µ•¥ ∂‘”¶µƒµπ≈≈¡¥
-	{
-		if(order_dic.find(key) != order_dic.end())
-		{
+	VectorPosting& find(string key) {
+		if(order_dic.find(key) != order_dic.end()){
 			return order_dic[key];
 		}
 		else
@@ -2148,35 +2129,29 @@ public:
 			cout << _path << " exits!\n";
 	}
 
-	void build(vector<string>& inFileName) // Ω®¡¢À˜“˝
-	{
+	void build(vector<string>& inFileName) {
 
 		checkDir(indexpath);
 		string doc_id = indexpath + "/doc_id.dat";
 		ofstream fout(doc_id.c_str());
-		if(fout == NULL)
-		{
+		if(fout == NULL){
 			cout << (indexpath + "/doc_id.dat open failed!\n");
 			return;
 		}
-		for(int i = 0; i < (int)inFileName.size(); i ++)
-		{
+		for(int i = 0; i < (int)inFileName.size(); i ++){
 			fout << i << "\t" << inFileName[i] << endl;
 			cout << inFileName[i] << endl;
 			ifstream fin((inputpath+"/"+inFileName[i]).c_str());
 			string line;
 			int pos = 0;
-			while(getline(fin, line) != 0)
-			{
+			while(getline(fin, line) != 0){
 				vector<string> words;
 				to_lower(line);
 				split(words, line, is_any_of(" \t-!'."));
-				for(int j = 0; j < words.size(); j ++)
-				{
+				for(int j = 0; j < words.size(); j ++){
 					trim_if(words[j], is_punct());
 					//words[j] = stemming(words[j]);
-					if(words[j].length() >= 1)
-					{
+					if(words[j].length() >= 1){
 						if(dic.find(words[j]) != dic.end())
 						{
 							if(! dic[words[j]]->find_and_addone(i, pos))
@@ -2199,43 +2174,38 @@ public:
 		fout.close();
 	}
 
-	vector<string>& getAllFiles(string path, vector<string>& container=*(new vector<string>())) // ±È¿˙ƒø¬ºÀ˘”–Œƒº˛
-	{
+	vector<string>& getAllFiles(string path, vector<string>& container=*(new vector<string>())) { // ÈÅçÂéÜÁõÆÂΩïÊâÄÊúâÊñá‰ª∂
 		vector<string> &ret = container;
 		inputpath = path;
 		struct dirent* ent = NULL;
 		DIR *pDir;
 		pDir = opendir(path.c_str());
-		if (pDir == NULL)
-		{
+		if (pDir == NULL){
 			return ret;
 		}
-		while((ent = readdir(pDir)) != NULL)
-		{
-			if(ent->d_type == 8)
-			{
+		while((ent = readdir(pDir)) != NULL){
+			if(ent->d_type == 8){
 				string filename(ent->d_name);
 				ret.push_back(filename);
 			}
 		}
 		return ret;
 	}
-	void getDoc(VectorPosting& posting) // Œƒµµid∂‘”¶µΩŒƒµµ√˚
-	{
+
+	void getDoc(VectorPosting& posting) {
 		cout << "There are " << posting.length() << " document(s) fit the query.\n";
 		//posting.sortByFreq();
-		for(int i = 0; i < posting.length(); i ++)
-		{
+		for(int i = 0; i < posting.length(); i ++){
 			int id = posting.get(i).id;
 			cout << i+1 <<"\t[" << id << ", " << doc_id[id] << "]" << endl;
 		}
 		cout << endl;
 	}
+
 	void bgetDoc(binary_vectorPosting* posting){
 		cout << "There are " << posting->length() << " document(s) fit the query.\n";
 		//posting.sortByFreq();
-		for(int i = 0; i < posting->length(); i ++)
-		{
+		for(int i = 0; i < posting->length(); i ++){
 			int id = posting->get(i);
 			string _doc = spimi->getdoc(id);
 			cout << i+1 <<"\t[" << id << ", " << _doc << "]" << endl;
@@ -2243,8 +2213,7 @@ public:
 		cout << endl;
 	}
 
-	Node parse(string instr) // parse query
-	{
+	Node parse(string instr){ // parse query
 		stack<Node> s, t;
 		vector<string> words;
 		to_lower(instr);
@@ -2252,22 +2221,17 @@ public:
 		//split(words, instr, is_any_of(" \t"));
 		string str;
 		int begin = 0, now = 0;
-		for(;now < instr.length(); now ++)
-		{
+		for(;now < instr.length(); now ++){
 			char c = instr[now];
-			if(c == ' ')
-			{
-				if(now > begin)
-				{
+			if(c == ' '){
+				if(now > begin){
 					str = instr.substr(begin, now-begin);
 					words.push_back(str);
 				}
 				begin = now + 1;
 			}
-			if(c == '(' || c == ')' || c == '|' || c == '"')
-			{
-				if(now > begin)
-				{
+			if(c == '(' || c == ')' || c == '|' || c == '"'){
+				if(now > begin){
 					str = instr.substr(begin, now-begin);
 					words.push_back(str);
 				}
@@ -2276,8 +2240,7 @@ public:
 				words.push_back(str);
 			}
 		}// for get all token
-		if(now > begin)
-		{
+		if(now > begin) {
 			str = instr.substr(begin, now);
 			words.push_back(str);
 		}
@@ -2285,8 +2248,7 @@ public:
 		 * check the bracket
 		 */
 		int num = 0;
-		for(int i = 0; i < words.size(); i ++)
-		{
+		for(int i = 0; i < words.size(); i ++) {
 			string w = words[i];
 //cout << w << endl;
 			trim_if(w, is_any_of(" \t"));
@@ -2294,8 +2256,7 @@ public:
 				num ++;
 			if(w == ")")
 				num --;
-			if(num < 0)
-			{
+			if(num < 0) {
 				return errorNode();
 			}
 		}
@@ -2305,8 +2266,7 @@ public:
 		 * check the "
 		 */
 		num = 0;
-		for(int i = 0; i < words.size(); i ++)
-		{
+		for(int i = 0; i < words.size(); i ++) {
 			string w = words[i];
 			trim_if(w, is_any_of(" \t"));
 			if(w == "\"")
@@ -2318,50 +2278,41 @@ public:
 		 *
 		 */
 		num = 0;
-		for(int i = 0; i < words.size(); i ++)
-		{
+		for(int i = 0; i < words.size(); i ++) {
 			string w = words[i];
 			trim_if(w, is_any_of(" \t"));
 			if(w.length() < 1)
 				continue;
 
-			if(w == ")")
-			{
-				while(!s.empty())
-				{
-					if(!s.top().isBracket)
-					{
+			if(w == ")") {
+				while(!s.empty()) {
+					if(!s.top().isBracket) {
 						t.push(s.top());
 						s.pop();
 					}
-					else
-					{
+					else {
 						s.pop();
 						break;
 					}
 				}
 				vector<Node> v;
-				while(!t.empty())
-				{
+				while(!t.empty()) {
 					v.push_back(t.top());
 					t.pop();
 				}
 				s.push(mergeNode(v));
 			}
-			else if(w == "|")
-			{
+			else if(w == "|") {
 				Node n = *(new Node());
 				n.isOr = true;
 				s.push(n);
 			}
-			else if(w == "(")
-			{
+			else if(w == "(") {
 				Node n = *(new Node());
 				n.isBracket = true;
 				s.push(n);
 			}
-			else if(w == "\"")
-			{
+			else if(w == "\""){
 				/*
 				num ++;
 				if(num%2 == 1)
@@ -2406,10 +2357,8 @@ public:
 				}
 				*/
 			}
-			else
-			{
-				if(w[0] == '!')
-				{
+			else {
+				if(w[0] == '!') {
 					if(w.length() < 2)
 						return errorNode();
 					Node n = *(new Node());
@@ -2418,8 +2367,7 @@ public:
 					n.posting = getFullbPosting()->not_operator((bfind(w)));
 					s.push(n);
 				}
-				else if(w[0] == '/')
-				{
+				else if(w[0] == '/') {
 					/*
 					int dis = atoi(w.substr(1).c_str());
 					Node n = *(new Node());
@@ -2428,8 +2376,7 @@ public:
 					s.push(n);
 					*/
 				}
-				else
-				{
+				else {
 					Node n = *(new Node());
 					//w = stemming(w);
 					n.posting = bfind(w);
@@ -2443,13 +2390,11 @@ public:
 			}
 		}// for each in word vec
 		vector<Node> v;
-		while(!s.empty())
-		{
+		while(!s.empty()) {
 			t.push(s.top());
 			s.pop();
 		}
-		while(!t.empty())
-		{
+		while(!t.empty()) {
 			v.push_back(t.top());
 			t.pop();
 		}
@@ -2470,8 +2415,7 @@ public:
 		TopK topK;
 		for(; mit != doc2score.end(); mit ++){
 			int _len = this->spimi->getdLen(mit->first);
-			if(_len <= 0)
-			{
+			if(_len <= 0) {
 				continue;
 			}
 			mit->second /= (_len+0.0);
@@ -2490,34 +2434,27 @@ public:
 			}
 		}
 	}
-	void search(string query)
-	{
+	void search(string query) {
 		Node ans = parse(query);
-		if(!ans.isBlank)
-		{
+		if(!ans.isBlank) {
 			//ans.posting.display();
 			bgetDoc(ans.posting);
 		}
 	}
-	Node mergeNode(vector<Node> v) // Œﬁ¿®∫≈µƒΩ‚Œˆ
-	{
+	Node mergeNode(vector<Node> v) { // √é√û√Ä¬®¬∫√Ö¬µ√Ñ¬Ω√¢√é√∂
 		Node* temp = new Node();
-		if(v.size() == 0)
-		{
+		if(v.size() == 0) {
 			temp->isBlank = true;
 			return *temp;
 		}
-		if(v.size() == 1)
-		{
+		if(v.size() == 1) {
 			return v[0];
 		}
 		vector<Node> toOr, toAnd;
 		int begin = 0;
 		int now = 0;
-		for(; now < v.size(); now ++)
-		{
-			if(v[now].isOr)
-			{
+		for(; now < v.size(); now ++) {
+			if(v[now].isOr) {
 				toAnd.clear();
 				for(int i = begin; i < now; i ++)
 					if(!v[i].isBlank)
@@ -2534,16 +2471,12 @@ public:
 		return orNode(toOr);
 	}
 
-	Node andNode(vector<Node> v)
-	{
+	Node andNode(vector<Node> v) {
 		Node a;
-		if(v.size() > 0)
-		{
+		if(v.size() > 0) {
 			a = v[0];
-			for(int i = 1; i < v.size(); i ++)
-			{
-				if(v[i].isAnd)
-				{
+			for(int i = 1; i < v.size(); i ++) {
+				if(v[i].isAnd) {
 					int dis = v[i].dis;
 					i ++;
 					if(i == v.size())
@@ -2554,8 +2487,7 @@ public:
 						return errorNode();
 					a.posting = a.posting->and_operator(v[i].posting, dis);
 				}
-				else
-				{
+				else {
 					a.posting = a.posting->and_operator(v[i].posting);
 				}
 			}
@@ -2563,15 +2495,12 @@ public:
 		return a;
 	}
 
-	Node orNode(vector<Node> v) // ∂Ãµƒµπ≈≈±Ì£¨ œ»◊ˆOR≤Ÿ◊˜
-	{
+	Node orNode(vector<Node> v) { // ¬∂√å¬µ√Ñ¬µ¬π√Ö√Ö¬±√≠¬£¬¨ √è√à√ó√∂OR¬≤√ô√ó√∑
 		priority_queue<Node, vector<Node>, nodeCmp> p;
-		for(int i = 0; i < v.size(); i ++)
-		{
+		for(int i = 0; i < v.size(); i ++){
 			p.push(v[i]);
 		}
-		while(p.size() > 1)
-		{
+		while(p.size() > 1){
 			Node a = p.top();
 			p.pop();
 			Node b = p.top();
@@ -2588,30 +2517,25 @@ public:
 	/*
 	 *
 	 */
-	void output() //output index
-	{
+	void output() { //output index
 		ofstream fout((indexpath + "/index.dat").c_str());
-		if(fout == NULL)
-		{
+		if(fout == NULL){
 			cout << (indexpath + "/index.dat open failed!\n");
 			return;
 		}
 
 		cout << "\nGenerate bigram...\n";
 		typedef boost::unordered_map<string, Posting*> umap;
-		for(umap::iterator iter = dic.begin(); iter != dic.end(); iter++)
-		{
+		for(umap::iterator iter = dic.begin(); iter != dic.end(); iter++){
 			string ww = iter->first;
 			fout << ww;
 			bigramProcess(ww);
 			Posting* posting = iter->second;
 			Post* now = posting->get();
-			while(now != NULL)
-			{
+			while(now != NULL){
 
 				fout << " " << now->id << " " << now->frequent;
-				if(now->frequent != now->pos.size())
-				{
+				if(now->frequent != now->pos.size()){
 					cout << "Posting error!\n";
 				}
 				for(int i = 0; i < now->pos.size(); i ++)
@@ -2623,18 +2547,15 @@ public:
 		fout.close();
 
 		fout.open((indexpath + "/bigram_index.dat").c_str());
-		if(fout == NULL)
-		{
+		if(fout == NULL){
 			cout << (indexpath + "/bigram_index.dat open failed!\n");
 			return;
 		}
 		typedef boost::unordered_map<string, vector<string> > uumap;
-		for(uumap::iterator iter = bigram_dic.begin(); iter != bigram_dic.end(); iter++)
-		{
+		for(uumap::iterator iter = bigram_dic.begin(); iter != bigram_dic.end(); iter++){
 			fout << iter->first;
 			vector<string> v = iter->second;
-			for(int i = 0; i < v.size(); i ++)
-			{
+			for(int i = 0; i < v.size(); i ++){
 				fout << " " << v[i];
 			}
 			fout << endl;

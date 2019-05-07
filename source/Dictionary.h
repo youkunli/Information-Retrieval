@@ -1,8 +1,9 @@
 #ifndef DICTIONARY_H_
 #define DICTIONARY_H_
+
 #include<iostream>
 #include<string.h>
-#include<InvertedIndex.h>
+#include "InvertedIndex.h"
 
 using namespace std;
 
@@ -26,6 +27,5 @@ public:
 
 	}
 };
-
 
 #endif /* DICTIONARY_H_ */

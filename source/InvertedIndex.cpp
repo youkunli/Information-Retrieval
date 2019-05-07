@@ -1,9 +1,9 @@
-#include"InvertedIndex.h"
-#include"KVstore.h"
-#include "stopwords.h"
-#include<string.h>
 #include<iostream>
 #include<sstream>
+#include<string.h>
+#include "InvertedIndex.h"
+#include "KVstore.h"
+#include "stopwords.h"
 
 using namespace std;
 
@@ -24,8 +24,7 @@ SPIMIManager::SPIMIManager(){
 	kv_store = new KVstore(false);
 }
 
-SPIMIManager::SPIMIManager(vector<string>* _files,
-		string _indexpath, string _inputpath, string _blockpath, bool _is_build_mode){
+SPIMIManager::SPIMIManager(vector<string>* _files,string _indexpath, string _inputpath, string _blockpath, bool _is_build_mode){
 	files = _files;
 	nextFile = 0;
 	nFilesOneBlock = (int)sqrt((int)_files->size());
@@ -64,8 +63,7 @@ SPIMIManager::SPIMIManager(vector<string> * _files, bool _is_build_mode){
 				exit(0);
 			}
 		}
-		else
-		{
+		else{
 			fp_index = NULL;
 		}
 		kv_store = new KVstore(_is_build_mode);
@@ -254,53 +252,3 @@ bool sortWord(const WordPair& a, const WordPair& b)
 		return a.dis < b.dis;
 	return a.sim > b.sim;
 }
-
-void SPIMIManager::buildPostFromXml(string& _fpath, int _fid, map<string, Posting*>& _dic){
-		set<string> token;
-		news _ns(_fpath);
-		stringstream _buf;
-		_buf << _ns.title << endl;
-		_buf << _ns.headline << endl;
-		_buf << _ns.cont << endl;
-		string line;
-		int pos = 0;
-		while(getline(_buf, line) != 0)
-		{
-			if(line.length() < 2) {
-				continue;
-			}
-			vector<string> words;
-			to_lower(line);
-			split(words, line, is_any_of("-/,\" \t!'.?()\\"));
-			for(int j = 0; j < (int)words.size(); j ++)
-			{
-				trim_if(words[j], is_punct());
-				{
-					//words[j] = stemming(words[j]);
-					if(stopword::isStopWord(words[j])){
-						continue;
-					}
-					token.insert(words[j]);
-				}
-				if(words[j].length() > 1)
-				{
-					if(_dic.find(words[j]) != _dic.end())
-					{
-						if(! _dic[words[j]]->find_and_addone(_fid, pos))
-						{
-							_dic[words[j]]->add_post(_fid, pos);
-						}
-					}
-					else
-					{
-						Posting* temp = new Posting();
-						temp->add_post(_fid, pos);
-						_dic[words[j]] = temp;
-					}
-					pos ++;
-				}
-			}
-		}//end while
-		tmp_file_length = (int)token.size();
-		xml_ii ++;
-	}
