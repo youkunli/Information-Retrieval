@@ -1,6 +1,6 @@
 #ifndef BTREE_H_
 #define BTREE_H_
-#include "CBtreeH.h"
+#include "CBtreeFunc.h"
 #include<iostream>
 #include<fstream>
 #include<sstream>

@@ -1,4 +1,4 @@
-#include "CBtreeH.h"
+#include "CBtreeFunc.h"
 
 using namespace std;
 
