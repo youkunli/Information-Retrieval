@@ -21,13 +21,13 @@ SPIMIManager::SPIMIManager(){
 		cout << "fp_index bug" << endl;
 		exit(0);
 	}
-	kv_store = new KVstore(false);
+	kv_store = new KVstore(false); //isCreateMode false
 }
 
 SPIMIManager::SPIMIManager(vector<string>* _files,string _indexpath, string _inputpath, string _blockpath, bool _is_build_mode){
 	files = _files;
 	nextFile = 0;
-	nFilesOneBlock = (int)sqrt((int)_files->size());
+	nFilesOneBlock = (int)sqrt((int)_files->size()) + 1;
 	indexpath = _indexpath;
 	inputpath = _inputpath;
 	blockpath = _blockpath;
@@ -48,7 +48,7 @@ SPIMIManager::SPIMIManager(vector<string>* _files,string _indexpath, string _inp
 SPIMIManager::SPIMIManager(vector<string> * _files, bool _is_build_mode){
 		files = _files;
 		nextFile = 0;
-		nFilesOneBlock = (int)sqrt((int)_files->size());
+		nFilesOneBlock = (int)sqrt((int)_files->size()) + 1;
 		indexpath = "index";
 		inputpath = "input";
 		blockpath = "block";
@@ -140,7 +140,7 @@ int SPIMIManager::binary_mergeGroupBlocks(vector<block_size> & _bs_vec, string _
 		}
 		for(int i = 0; i < _bs_sz; i ++){
 			ifp_block[i] = fopen(_bs_vec[i].block_path.c_str(), "rb");
-			if(!ifp_block){
+			if(!ifp_block[i]){
 				cout << "failed open " << _bs_vec[i].block_path.c_str() << endl;
 				exit(0);
 			}
@@ -230,24 +230,23 @@ int SPIMIManager::binary_mergeGroupBlocks(vector<block_size> & _bs_vec, string _
 
 ofstream _debug;
 
-bool sortByFreqFunc(const Post& a, const Post& b)
-{
+bool sortByFreqFunc(const Post& a, const Post& b){
 	return a.frequent > b.frequent;
 }
-bool sortByIdFunc(const Post& a, const Post& b)
-{
+
+bool sortByIdFunc(const Post& a, const Post& b){
 	return a.id < b.id;
 }
-bool sortWordByDis(const WordPair& a, const WordPair& b)
-{
+
+bool sortWordByDis(const WordPair& a, const WordPair& b){
 	return a.dis < b.dis;
 }
-bool sortWordBySim(const WordPair& a, const WordPair& b)
-{
+
+bool sortWordBySim(const WordPair& a, const WordPair& b){
 	return a.sim > b.sim;
 }
-bool sortWord(const WordPair& a, const WordPair& b)
-{
+
+bool sortWord(const WordPair& a, const WordPair& b){
 	if(a.dis != b.dis)
 		return a.dis < b.dis;
 	return a.sim > b.sim;

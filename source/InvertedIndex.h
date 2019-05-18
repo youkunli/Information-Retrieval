@@ -25,8 +25,9 @@
 #include "KVstore.h"
 #include "stopwords.h"
 
-using namespace boost::algorithm;
+
 using namespace std;
+using namespace boost::algorithm;
 
 extern ofstream _debug;
 
@@ -83,27 +84,30 @@ private:
 			cout << _str << endl;
 		}
 	}
+
 	int calSpaceLen(int _id){
 		if(_id == 0) return 1;
 		int _len = 0;
 		while(_id > 0){
-			_len ++;
+			_len++;
 			_id = _id >> 7;
 		}
 		return _len;
 	}
+
 	int calSize(){
 		int _count = 0;
-		for(int i = 0; i < len; i ++){
+		for(int i = 0; i < len; i++){
 			if(var[i]>=128){
 				_count++;
 			}
 		}
 		return _count;
 	}
+
 	int get_at_len(int _len){
 		int n = 0;
-		for(int i = _len; i < this->len; i ++){
+		for(int i = _len; i < this->len; i++){
 			if(this->var[i] < 128){
 				n = (n << 7) + this->var[i];
 			}
@@ -114,6 +118,7 @@ private:
 		}
 		return n;
 	}
+
 	bool encode(const vector<int>& _id_vec, uchar* _var){
 		uchar* tmp_buf = NULL;
 		{
@@ -124,19 +129,19 @@ private:
 		int v_len = 0;
 		int i_len = 0;
 		vector<int>::const_iterator vcit;
-		for(vcit = _id_vec.begin(); vcit != _id_vec.end(); vcit ++){
+		for(vcit = _id_vec.begin(); vcit != _id_vec.end(); vcit++){
 			int _id = *vcit;
 			i_len = 0;
 			while(true){
 				tmp_buf[i_len] = _id % 128;
 				if(_id < 128) break;
 				_id = _id >> 7;
-				i_len ++;
+				i_len++;
 			}
 			tmp_buf[0] += 128;//for the end byte
 			for(int i = i_len; i >= 0; i --){
 				_var[v_len] = tmp_buf[i];
-				v_len ++;
+				v_len++;
 			}
 		}
 		if(v_len == len){
@@ -146,13 +151,14 @@ private:
 		exit(0);
 		return false;
 	}
+
 	bool decode(vector<int>& _id_vec, uchar* _var, int _v_len)const{
 		/*
 		 * here should not exist _id_vec.clear()
 		 * see call of decode()
 		 */
 		int n = 0;
-		for(int i = 0; i < _v_len; i ++){
+		for(int i = 0; i < _v_len; i++){
 			if(_var[i] < 128){
 				n = (n << 7) + _var[i];
 			}
@@ -164,12 +170,14 @@ private:
 		}
 		return true;
 	}
+
 public:
 	IDlist(){
 		var = NULL;
 		i_size = 0;
 		len = 0;
 	}
+
 	IDlist(FILE* _fp){
 		int _len = 0;
 		fread(&_len, sizeof(int), 1, _fp);
@@ -187,6 +195,7 @@ public:
 			this->i_size = this ->calSize();
 		}
 	}
+
 	IDlist(const IDlist* _list){
 		this->len = _list->var_len();
 		if(this->len == 0){
@@ -200,23 +209,23 @@ public:
 			this->i_size = _list->size();
 		}
 	}
+
 	~IDlist(){
 		delete[] this->var;
 	}
+
 	IDlist(const vector<int>& _id_vec){
 		this->len = 0;
 		vector<int>::const_iterator vcit;
-		for(vcit = _id_vec.begin(); vcit != _id_vec.end(); vcit ++){
+		for(vcit = _id_vec.begin(); vcit != _id_vec.end(); vcit++){
 			this->len += this->calSpaceLen(*vcit);
 		}
 		this->i_size = (int)_id_vec.size();
-		if(_id_vec.empty())
-		{
+		if(_id_vec.empty()){
 			this->var = NULL;
 			this->i_size = 0;
 		}
-		else
-		{
+		else{
 			this->var = new uchar[this->len];
 			memset(this->var, 0, (this->len)*sizeof(uchar));
 			this ->encode(_id_vec, this->var);
@@ -225,6 +234,7 @@ public:
 			this ->print();
 		}
 	}
+
 	void merge_not_sort(const IDlist* _list){
 		int _new_len = this->len + _list->var_len();
 		uchar* _new_var = new uchar[_new_len];
@@ -234,6 +244,7 @@ public:
 		delete[] this->var;
 		this->var = _new_var;
 	}
+
 	void sortlist(){
 		vector<int> _id_vec;
 		this->getVec(_id_vec);
@@ -266,11 +277,12 @@ public:
 			if(_i1 == _i2){
 				and_v.push_back(_i1);
 				_it1++; _it2++;
-			}else
-			if(_i1 < _i2){
-				_it1 ++;
-			}else{
-				_it2 ++;
+			}
+			else if(_i1 < _i2){
+				_it1++;
+			}
+			else{
+				_it2++;
 			}
 		}
 		return new IDlist(and_v);
@@ -282,6 +294,7 @@ public:
 		_list2->getVec(or_v);
 		return new IDlist(or_v);
 	}
+
 	static IDlist* NOT(const IDlist* _list1, const IDlist* _list2){
 		vector<int> _v1, _v2;
 		_list1->getVec(_v1);
@@ -298,9 +311,10 @@ public:
 			}else
 			if(_i1 < _i2){
 				not_v.push_back(_i1);
-				_it1 ++;
-			}else{
-				_it2 ++;
+				_it1++;
+			}
+			else{
+				_it2++;
 			}
 		}
 		return new IDlist(not_v);
@@ -311,12 +325,15 @@ public:
 	int size()const{
 		return i_size;
 	}
+
 	const unsigned char* getvar()const{
 		return var;
 	}
+
 	bstr* tobstr(){
 		return new bstr((char*)this->var, this->len);
 	}
+
 	void merge_sort(const IDlist* _list){
 		vector<int> _id_vec;
 		this ->getVec(_id_vec);
@@ -328,9 +345,11 @@ public:
 		this->encode(_id_vec, this->var);
 		this->i_size += _list->size();
 	}
+
 	int var_len()const{
 		return len;
 	}
+
 	int operator[](int _i){
 		if(_i >= this->size()){
 			log("bug op_i");
@@ -338,6 +357,7 @@ public:
 		}
 		return this->get(_i);
 	}
+
 	int get(int _i){
 		int _i_tmp = 0;
 		int _len = 0;
@@ -349,9 +369,10 @@ public:
 		}
 		return this->get_at_len(_len);
 	}
+
 	bool exist(int _id){
 		int n = 0;
-		for(int i = 0; i < this->len; i ++){
+		for(int i = 0; i < this->len; i++){
 			if(this->var[i] < 128){
 				n = (n << 7) + this->var[i];
 			}
@@ -365,17 +386,19 @@ public:
 	}
 
 	void iprint(){
-		for(int i = 0; i < i_size; i ++){
+		for(int i = 0; i < i_size; i++){
 			cout << (this->get(i)) << " ";
 		}
 		cout << endl;
 	}
+
 	void print(){
-		for(int i = 0; i < len; i ++){
+		for(int i = 0; i < len; i++){
 			cout << (var[i]-0) << " ";
 		}
 		cout << endl;
 	}
+
 	void getVec(vector<int>& _id_vec)const{
 		//here should not have _id_vec.clear()
 		this ->decode(_id_vec, this->var, this->len);
@@ -389,12 +412,12 @@ private:
 	bool isNot;
 	bool isAndResult;
 public:
-	binary_vectorPosting()
-	{
+	binary_vectorPosting(){
 		isNot = false;
 		isAndResult = false;
 		posting = NULL;
 	}
+
 	binary_vectorPosting(IDlist * _list, bool _and, bool _not){
 		posting = _list;
 		isAndResult = _and;
@@ -411,24 +434,23 @@ public:
 		return posting;
 	}
 
-	int get(int i) // ·µ»ØµÚi¸öµ¹ÅÅ¼ÇÂ¼
-	{
+	int get(int i){
 		return (*posting)[i];
 	}
-	int length()
-	{
+
+	int length(){
 		return posting->size();
 	}
-	bool isnot()
-	{
+
+	bool isnot(){
 		return isNot;
 	}
-	bool isandresult()
-	{
+
+	bool isandresult(){
 		return isAndResult;
 	}
-	binary_vectorPosting* not_operator(binary_vectorPosting* right) // not²Ù×÷
-	{
+
+	binary_vectorPosting* not_operator(binary_vectorPosting* right){
 		binary_vectorPosting* ans = new binary_vectorPosting();
 		ans->isNot = true;
 		IDlist* _notlist = IDlist::NOT(this->posting, right->getlist());
@@ -436,24 +458,21 @@ public:
 		return ans;
 	}
 
-	binary_vectorPosting* and_operator(binary_vectorPosting* right, int distance = 0) // and²Ù×÷
-	{
+	binary_vectorPosting* and_operator(binary_vectorPosting* right, int distance = 0){
 		binary_vectorPosting* ans = (new binary_vectorPosting());
 		IDlist* _andlist = IDlist::AND(this->posting, right->getlist());
 		ans->set(_andlist, true, false);
 		return ans;
 	}
 
-	binary_vectorPosting* or_operator(binary_vectorPosting* right) // or²Ù×÷
-	{
+	binary_vectorPosting* or_operator(binary_vectorPosting* right){
 		binary_vectorPosting* ans = (new binary_vectorPosting());
 		IDlist* _orlist = IDlist::OR(this->posting, right->getlist());
 		ans->set(_orlist, false, false);
 		return ans;
 	}
 
-	void sortById()
-	{
+	void sortById(){
 		posting->sortlist();
 	}
 };
@@ -465,7 +484,7 @@ public:
 	string headline;
 	string cont;
 	news(string _xml_path){
-		using boost::property_tree::ptree;
+		using boost::property_tree::ptree; //boost 读xml
 		ptree _pt;
 		ptree _root;
 		try{
@@ -486,29 +505,31 @@ public:
 		}
 	}
 };
-
-class Post // docID frequent positionVec
-{
+// docID frequent positionVec
+class Post {
 private:
 	IDlist posList;
 public:
 	int id;
 	vector<int> pos;
 	int frequent;
-
 	Post* next;
+
 	void getLine(stringstream& _buf){
 		_buf << id << " " << frequent;
-		for(int i = 0; i < (int)pos.size(); i ++){
+		for(int i = 0; i < (int)pos.size(); i++){
 			_buf << " " << pos[i];
 		}
 	}
-	int getTF(){
+
+	int getTF(){  //term frequency ^
 		return (int)pos.size();
 	}
+
 	int getid(){
 		return id;
 	}
+
 	Post(const string& _str){
 		stringstream _buf;
 		_buf << _str;
@@ -516,62 +537,54 @@ public:
 		_buf >> frequent;
 		int _tmp = -1;
 		pos.clear();
-		for(int i = 0; i < frequent; i ++){
+		for(int i = 0; i < frequent; i++){
 			_buf >> _tmp;
 			pos.push_back(_tmp);
 		}
 		next = NULL;
 	}
-	Post(int _id, int _fre = 1)
-	{
+
+	Post(int _id, int _fre = 1){
 		id = _id;
 		frequent = _fre;
 		next = NULL;
 	}
-	Post(Post& a, Post& b)
-	{
+
+	Post(Post& a, Post& b){ //merge
 		id = a.id;
 		int i = 0, j = 0;
-		while(i < a.pos.size() && j < b.pos.size())
-		{
-			if(a.pos[i] < b.pos[j])
-			{
+		while(i < a.pos.size() && j < b.pos.size()){
+			if(a.pos[i] < b.pos[j]){
 				pos.push_back(a.pos[i]);
-				i ++;
+				i++;
 			}
-			else if(a.pos[i] == b.pos[j])
-			{
+			else if(a.pos[i] == b.pos[j]){
 				pos.push_back(a.pos[i]);
-				i ++;
-				j ++;
+				i++;
+				j++;
 			}
-			else
-			{
+			else{
 				pos.push_back(b.pos[j]);
-				j ++;
+				j++;
 			}
 		}
-		while(i < a.pos.size())
-		{
+		while(i < a.pos.size()){
 			pos.push_back(a.pos[i]);
-			i ++;
+			i++;
 		}
-		while(j < b.pos.size())
-		{
+		while(j < b.pos.size()){
 			pos.push_back(b.pos[j]);
-			j ++;
+			j++;
 		}
 		frequent = pos.size();
 	}
 };
-
-class Posting // linked table of Post(doc_posList) ->Post ->Post...
-{
+// linked table of Post(doc_posList) ->Post ->Post...
+class Posting {
 private:
 	Post* head;
 public:
-	Posting()
-	{
+	Posting(){
 		head = NULL;
 	}
 	Posting(vector<string>::const_iterator _b, vector<string>::const_iterator _e){
@@ -683,7 +696,7 @@ public:
 		{
 			if(now->id == des_id)
 			{
-				now->frequent ++;
+				now->frequent++;
 				now->pos.push_back(pos_p);
 				return true;
 			}
@@ -753,7 +766,7 @@ public:
 		docid_list->getVec(vid);
 		freq_list->getVec(vtf);
 		{
-			for(int i = 0; i < (int)vid.size(); i ++){
+			for(int i = 0; i < (int)vid.size(); i++){
 				int _id = vid[i];
 				int _tf = vtf[i];
 				doc2score[_id] += _idf*_tf;
@@ -812,7 +825,7 @@ public:
 	}
 	void printVec(vector<int>& _vec){
 		cout << "[" << _vec[0];
-		for(int i = 1; i < (int)_vec.size(); i ++){
+		for(int i = 1; i < (int)_vec.size(); i++){
 			cout << ", " << _vec[i];
 		}
 		cout << "]" << endl;
@@ -910,7 +923,7 @@ public:
 		_term = s_post[0];
 		vector<string>::iterator it_b, it_e;
 		it_b = s_post.begin();
-		it_b ++;//after the term is the first post
+		it_b++;//after the term is the first post
 		it_e = s_post.end();
 		_post = new Posting(it_b, it_e);
 	}
@@ -991,8 +1004,7 @@ public:
 	boost::unordered_map<string, vector<string> > bigram_dic;
 
 	SPIMIManager();
-	SPIMIManager(vector<string>* _files,
-			string _indexpath, string _inputpath, string _blockpath, bool _is_build_mode);
+	SPIMIManager(vector<string>* _files,string _indexpath, string _inputpath, string _blockpath, bool _is_build_mode);
 	SPIMIManager(vector<string> * _files, bool _is_build_mode);
 
 	~SPIMIManager();
@@ -1003,9 +1015,9 @@ public:
 			return NULL;
 		}
 		vector<string>* _s_vec = new vector<string>();
-		for(int i = 0; i < nFilesOneBlock; i ++){
+		for(int i = 0; i < nFilesOneBlock; i++){
 			_s_vec ->push_back((*files)[nextFile]);
-			nextFile ++;
+			nextFile++;
 			if(nextFile >= (int)files ->size()){
 				break;
 			}
@@ -1016,7 +1028,7 @@ public:
 	void VSM_buildIndex(){
 		{
 			if(debug_2){
-				cout << "IN binary_buildIndex()" << endl;
+				cout << "IN VSM_buildIndex()" << endl;
 			}
 		}
 		vector<string>* _s_vec = NULL;
@@ -1024,8 +1036,7 @@ public:
 		int _block_id = 0;
 		string doc_id = indexpath + "/doc_id.dat";
 		ofstream fout(doc_id.c_str());
-		if(fout == NULL)
-		{
+		if(fout == NULL){
 			cout << (indexpath + "/doc_id.dat open failed!\n");
 			return;
 		}
@@ -1033,16 +1044,14 @@ public:
 			map<string, Posting*> _dic;
 
 			{//build the block
-				for(itV it = _s_vec->begin(); it != _s_vec->end(); it ++){
+				for(itV it = _s_vec->begin(); it != _s_vec->end(); it++){
 					string _file_name = *it;
 					string _file_path = inputpath+"/"+_file_name;
 					{
-						if(_file_path.find("xml") != string::npos)
-						{
+						if(_file_path.find("xml") != string::npos){
 							this->buildPostFromXml(_file_path, _fid, _dic);
 						}
-						else
-						{
+						else{
 							this->buildPostFromFile(_file_path, _fid, _dic);
 						}
 //						cout << "file: " << _file_path << endl;
@@ -1051,7 +1060,7 @@ public:
 						this->kv_store->setDocByID(_fid, _file_name);
 						this->kv_store->setLenByDid(_fid, this->tmp_file_length);
 						fout << _fid << "\t" << _file_name << endl;
-						_fid ++;
+						_fid++;
 					}
 				}
 			}
@@ -1059,7 +1068,7 @@ public:
 			{
 				map<string, Posting*>::iterator itM = _dic.begin();
 				vector<int> _id_vec, _tf_vec;
-				for(; itM != _dic.end(); itM ++){
+				for(; itM != _dic.end(); itM++){
 					_id_vec.clear();
 					_tf_vec.clear();
 					itM->second->getAllIDs_TFs(_id_vec, _tf_vec);
@@ -1069,18 +1078,18 @@ public:
 			}
 			{//output block
 				this ->binary_writeBlock(_block_id, term2bP);
-				_block_id ++;
+				_block_id++;
 			}
 
 			{//delete
 				delete _s_vec;
 				_s_vec = NULL;
 				map<string, Posting*>::iterator itSP = _dic.begin();
-				for(; itSP != _dic.end(); itSP ++){
+				for(; itSP != _dic.end(); itSP++){
 					delete (itSP ->second);
 				}
 				map<string, binaryPosting*>::iterator itSbP = term2bP.begin();
-				for(; itSbP != term2bP.end(); itSbP ++){
+				for(; itSbP != term2bP.end(); itSbP++){
 					delete (itSbP ->second);
 				}
 			}
@@ -1090,10 +1099,8 @@ public:
 		}
 		{
 			this ->binary_mergeBlocks();
-
 			system(("rm -rf " + blockpath).c_str());
 		}
-
 	}
 
 	void binary_buildIndex(){
@@ -1116,7 +1123,7 @@ public:
 			map<string, Posting*> _dic;
 
 			{//build the block
-				for(itV it = _s_vec->begin(); it != _s_vec->end(); it ++){
+				for(itV it = _s_vec->begin(); it != _s_vec->end(); it++){
 					string _file_name = *it;
 					string _file_path = inputpath+"/"+_file_name;
 					{
@@ -1133,7 +1140,7 @@ public:
 					{
 						this->kv_store->setDocByID(_fid, _file_name);
 						fout << _fid << "\t" << _file_name << endl;
-						_fid ++;
+						_fid++;
 					}
 				}
 			}
@@ -1141,7 +1148,7 @@ public:
 			{
 				map<string, Posting*>::iterator itM = _dic.begin();
 				vector<int> _id_vec;
-				for(; itM != _dic.end(); itM ++){
+				for(; itM != _dic.end(); itM++){
 					_id_vec.clear();
 					itM->second->getAllIDs(_id_vec);
 					binaryPosting* _bp = new binaryPosting(_id_vec);
@@ -1150,22 +1157,22 @@ public:
 			}
 			{//output block
 				this ->binary_writeBlock(_block_id, term2bP);
-				_block_id ++;
+				_block_id++;
 			}
 
 			{//delete
 				delete _s_vec;
 				_s_vec = NULL;
 				map<string, Posting*>::iterator itSP = _dic.begin();
-				for(; itSP != _dic.end(); itSP ++){
+				for(; itSP != _dic.end(); itSP++){
 					delete (itSP ->second);
 				}
 				map<string, binaryPosting*>::iterator itSbP = term2bP.begin();
-				for(; itSbP != term2bP.end(); itSbP ++){
+				for(; itSbP != term2bP.end(); itSbP++){
 					delete (itSbP ->second);
 				}
 			}
-		}//end while
+		}  //end while
 		{
 			fout.close();
 		}
@@ -1192,7 +1199,7 @@ public:
 			map<string, Posting*> _dic;
 
 			{//build the block
-				for(itV it = _s_vec->begin(); it != _s_vec->end(); it ++){
+				for(itV it = _s_vec->begin(); it != _s_vec->end(); it++){
 					string _file_name = *it;
 					string _file_path = inputpath+"/"+_file_name;
 					{
@@ -1208,21 +1215,21 @@ public:
 					}
 					{
 						fout << _fid << "\t" << _file_name << endl;
-						_fid ++;
+						_fid++;
 					}
 				}
 			}
 
 			{//output block
 				this ->writeBlock(_block_id, _dic);
-				_block_id ++;
+				_block_id++;
 			}
 
 			{//delete
 				delete _s_vec;
 				_s_vec = NULL;
 				map<string, Posting*>::iterator itM = _dic.begin();
-				for(; itM != _dic.end(); itM ++){
+				for(; itM != _dic.end(); itM++){
 					delete (itM ->second);
 				}
 			}
@@ -1252,16 +1259,14 @@ public:
 		_buf << _ns.cont << endl;
 		string line;
 		int pos = 0;
-		while(getline(_buf, line) != 0)
-		{
-			if(line.length() < 2) {
+		while(getline(_buf, line) != 0){
+			if(line.length() < 2){
 				continue;
 			}
 			vector<string> words;
 			to_lower(line);
 			split(words, line, is_any_of("-/,\" \t!'.?()\\"));
-			for(int j = 0; j < (int)words.size(); j ++)
-			{
+			for(int j = 0; j < (int)words.size(); j++){
 				trim_if(words[j], is_punct());
 				{
 					//words[j] = stemming(words[j]);
@@ -1270,27 +1275,23 @@ public:
 					}
 					token.insert(words[j]);
 				}
-				if(words[j].length() > 1)
-				{
-					if(_dic.find(words[j]) != _dic.end())
-					{
-						if(! _dic[words[j]]->find_and_addone(_fid, pos))
-						{
+				if(words[j].length() > 1){
+					if(_dic.find(words[j]) != _dic.end()){
+						if(! _dic[words[j]]->find_and_addone(_fid, pos)){
 							_dic[words[j]]->add_post(_fid, pos);
 						}
 					}
-					else
-					{
+					else{
 						Posting* temp = new Posting();
 						temp->add_post(_fid, pos);
 						_dic[words[j]] = temp;
 					}
-					pos ++;
+					pos++;
 				}
 			}
 		}//end while
 		tmp_file_length = (int)token.size();
-		xml_ii ++;
+		xml_ii++;
 	}
 	//
 	void buildPostFromFile(string& _fpath, int _fid, map<string, Posting*>& _dic){
@@ -1298,32 +1299,29 @@ public:
 		ifstream fin(_fpath.c_str());
 		string line;
 		int pos = 0;
-		while(getline(fin, line) != 0)
-		{
+		while(getline(fin, line) != 0){
 			vector<string> words;
 			to_lower(line);
 			split(words, line, is_any_of("-/, \t!'.?()\\"));
-			for(int j = 0; j < words.size(); j ++)
-			{
+			for(int j = 0; j < words.size(); j++){
 				trim_if(words[j], is_punct());
 				//words[j] = stemming(words[j]);
-				if(words[j].length() > 1)
-				{
+				if(stopword::isStopWord(words[j])){
+						continue;
+					}
+				if(words[j].length() > 1){
 					token.insert(words[j]);
-					if(_dic.find(words[j]) != _dic.end())
-					{
-						if(! _dic[words[j]]->find_and_addone(_fid, pos))
-						{
+					if(_dic.find(words[j]) != _dic.end()){
+						if(! _dic[words[j]]->find_and_addone(_fid, pos)){
 							_dic[words[j]]->add_post(_fid, pos);
 						}
 					}
-					else
-					{
+					else{
 						Posting* temp = new Posting();
 						temp->add_post(_fid, pos);
 						_dic[words[j]] = temp;
 					}
-					pos ++;
+					pos++;
 				}
 			}
 		}//end while
@@ -1494,7 +1492,7 @@ public:
 	int mergeGroupBlocks(vector<block_size> & _bs_vec, string _new_block_path){
 		{
 			_debug << "merge block: ";
-			for(int i = 0; i < (int)_bs_vec.size(); i ++){
+			for(int i = 0; i < (int)_bs_vec.size(); i++){
 				_debug << "[" << _bs_vec[i].block_path << ", " << _bs_vec[i].size << "]\t";
 			}
 			_debug << "\n into block: " << _new_block_path;
@@ -1515,7 +1513,7 @@ public:
 				cout << "failed open " << _new_block_path << endl;
 				exit(0);
 			}
-			for(int i = 0; i < _bs_sz; i ++){
+			for(int i = 0; i < _bs_sz; i++){
 				ifblock[i].open(_bs_vec[i].block_path.c_str());
 				if(!ifblock[i]){
 					cout << "failed open " << _bs_vec[i].block_path.c_str() << endl;
@@ -1532,7 +1530,7 @@ public:
 				_debug << "begin merge" << endl;
 				_debug.flush();
 			}
-			for(int i = 0; i < _bs_sz; i ++){
+			for(int i = 0; i < _bs_sz; i++){
 				tPQueue.push(this->getNextPost( &(ifblock[i])) );
 			}
 			{
@@ -1584,16 +1582,16 @@ public:
 					_debug << _ii << ": write " << _top->_term << endl;
 					_debug.flush();
 				}
-				_ii ++;
+				_ii++;
 			}//end while empty
 		}
 		{//clear
 			ofblock.close();
-			for(int i = 0; i < _bs_sz; i ++){
+			for(int i = 0; i < _bs_sz; i++){
 				ifblock[i].close();
 			}
 			{
-				for(int i = 0; i < _bs_vec.size(); i ++){
+				for(int i = 0; i < _bs_vec.size(); i++){
 					system(("rm -rf " + _bs_vec[i].block_path).c_str());
 				}
 			}
@@ -1687,20 +1685,20 @@ public:
 		int ll = length(), rr = right.length();
 		while(i < ll && j < rr){
 			if(posting[i].id == right.get(j).id){
-				i ++;
-				j ++;
+				i++;
+				j++;
 			}
 			else if(posting[i].id < right.get(j).id){
-				i ++;
+				i++;
 			}
 			else{
 				ans.push_back(right.get(j));
-				j ++;
+				j++;
 			}
 		}
 		while(j < rr){
 			ans.push_back(right.get(j));
-			j ++;
+			j++;
 		}
 		return ans;
 	}
@@ -1735,7 +1733,7 @@ public:
 								else if(p2 > p1)
 									break;
 							}
-							rr ++;
+							rr++;
 						}
 						while( !q.empty() ){
 							if(distance > 0){
@@ -1763,19 +1761,19 @@ public:
 								qq.pop();
 							}
 						}
-						ll ++;
+						ll++;
 					}
 					temp.frequent = temp.pos.size();
 					if(temp.frequent != 0)
 						ans.push_back(temp);
 				}
-				i ++;
-				j ++;
+				i++;
+				j++;
 			}
 			else if(posting[i].id < right.get(j).id)
-				i ++;
+				i++;
 			else
-				j ++;
+				j++;
 		}
 		if(distance == 0)
 			ans.isAndResult = true;
@@ -1789,30 +1787,30 @@ public:
 		while(i < ll && j < rr){
 			if(posting[i].id == right.get(j).id){
 				ans.push_back(*(new Post(posting[i], right.get(j))));
-				i ++;
-				j ++;
+				i++;
+				j++;
 			}
 			else if(posting[i].id < right.get(j).id){
 				ans.push_back(posting[i]);
-				i ++;
+				i++;
 			}
 			else{
 				ans.push_back(right.get(j));
-				j ++;
+				j++;
 			}
 		}
 		while(i < ll){
 			ans.push_back(posting[i]);
-			i ++;
+			i++;
 		}
 		while(j < rr){
 			ans.push_back(right.get(j));
-			j ++;
+			j++;
 		}
 		return ans;
 	}
 	void display(){
-		for(int i = 0; i < length(); i ++)
+		for(int i = 0; i < length(); i++)
 			cout << posting[i].id << " " << posting[i].frequent << endl;
 		if(length() == 0)
 			cout << "NONE\n";
@@ -1874,7 +1872,7 @@ private:
 	void bigramProcess(string& word){
 		string str = "$" + word + "$";
 		string sub;
-		for(int i = 0; i < str.length()-1; i ++){
+		for(int i = 0; i < str.length()-1; i++){
 			sub = str.substr(i, 2);
 			if(bigram_dic.find(sub) != bigram_dic.end()){
 				bigram_dic[sub].push_back(word);
@@ -1891,18 +1889,18 @@ private:
 		int dis[30][30];
 		if(a.length() > 29 || b.length() > 29)
 			return 3;
-		for(int i = 0; i < 30; i ++)
-			for(int j = 0; j < 30; j ++)
+		for(int i = 0; i < 30; i++)
+			for(int j = 0; j < 30; j++)
 				dis[i][j] = 0;
-		for(int i = 0; i <= a.length(); i ++)
+		for(int i = 0; i <= a.length(); i++)
 			dis[i][0] = i;
-		for(int i = 0; i <= b.length(); i ++)
+		for(int i = 0; i <= b.length(); i++)
 			dis[0][i] = i;
-		for(int i = 1; i <= a.length(); i ++)
-			for(int j = 1; j <= b.length(); j ++){
+		for(int i = 1; i <= a.length(); i++)
+			for(int j = 1; j <= b.length(); j++){
 				dis[i][j] = dis[i-1][j-1];
 				if(a[i-1] != b[j-1])
-					dis[i][j] ++;
+					dis[i][j]++;
 				if(dis[i][j-1] < dis[i][j])
 					dis[i][j] = dis[i][j-1] + 1;
 				if(dis[i-1][j] < dis[i][j])
@@ -1912,9 +1910,9 @@ private:
 	}
 	double similarity(string a, string b){
 		vector<char> va, vb;
-		for(int i = 0; i < a.length(); i ++)
+		for(int i = 0; i < a.length(); i++)
 			va.push_back(a[i]);
-		for(int i = 0; i < b.length(); i ++)
+		for(int i = 0; i < b.length(); i++)
 			vb.push_back(b[i]);
 		sort(va.begin(), va.end());
 		sort(vb.begin(), vb.end());
@@ -1923,12 +1921,12 @@ private:
 		while(ll < va.size() && rr < vb.size()){
 			if(va[ll] == vb[rr]){
 				same = same + 1;
-				ll ++; rr ++;
+				ll++; rr++;
 			}
 			else if(va[ll] < vb[rr])
-				ll ++;
+				ll++;
 			else
-				rr ++;
+				rr++;
 		}
 		if(a.length() + b.length() != 0)
 			return same/(a.length()+b.length());
@@ -1939,11 +1937,11 @@ private:
 		string str = "$" + word + "$";
 		string sub;
 		boost::unordered_map<string, int> temp;
-		for(int i = 0; i < str.length()-1; i ++){
+		for(int i = 0; i < str.length()-1; i++){
 			sub = str.substr(i, 2);
 			if(bigram_dic.find(sub) != bigram_dic.end()){
 				vector<string> u = bigram_dic[sub];
-				for(int i = 0; i < u.size(); i ++){
+				for(int i = 0; i < u.size(); i++){
 					if(temp.find(u[i]) != temp.end())
 						temp[u[i]] = temp[u[i]] + 1;
 					else
@@ -1975,7 +1973,7 @@ private:
 		}
 		sort(v.begin(), v.end(), sortWord);
 		vector<string> ans;
-		for(int i = 0; i < v.size(); i ++){
+		for(int i = 0; i < v.size(); i++){
 			if(i == 3 || v[i].dis > 2)
 				break;
 			ans.push_back(v[i].s);
@@ -1986,7 +1984,7 @@ private:
 	void correct(string w){
 		vector<string> v = candidate(w);
 		cout << "For " + w + " do you mean:";
-		for(int i = 0; i < v.size(); i ++)
+		for(int i = 0; i < v.size(); i++)
 			cout << " " + v[i];
 		cout << endl;
 	}
@@ -2056,13 +2054,13 @@ public:
 			split(words, line, is_any_of(" \t"));
 			VectorPosting* temp = new VectorPosting();
 			order_dic[words[0]] = *temp;
-			for(int j = 1; j < words.size(); j ++){
+			for(int j = 1; j < words.size(); j++){
 				int id = atoi(words[j].c_str());
-				j ++;
+				j++;
 				int fre = atoi(words[j].c_str());
 				Post* t = new Post(id, fre);
-				for(int i = 0; i < fre; i ++){
-					j ++;
+				for(int i = 0; i < fre; i++){
+					j++;
 					t->pos.push_back(atoi(words[j].c_str()));
 				}
 				order_dic[words[0]].push_back(*t);
@@ -2073,7 +2071,7 @@ public:
 				}
 			}
 
-			_ii ++;
+			_ii++;
 		}
 		fin.close();
 
@@ -2106,8 +2104,9 @@ public:
 		spimi->buildIndex();
 
 	}
+
 	void SPIMI_binarybuild(vector<string>& inFileName){
-		string blockpath = "block";
+		string blockpath = "block"; //files    "index"   source
 		spimi = new SPIMIManager(&inFileName, indexpath, inputpath, blockpath, true);
 		system(("rm -rf "+indexpath).c_str());
 		system(("rm -rf "+blockpath).c_str());
@@ -2129,7 +2128,7 @@ public:
 			cout << _path << " exits!\n";
 	}
 
-	void build(vector<string>& inFileName) {
+	void build(vector<string>& inFileName){
 
 		checkDir(indexpath);
 		string doc_id = indexpath + "/doc_id.dat";
@@ -2138,7 +2137,7 @@ public:
 			cout << (indexpath + "/doc_id.dat open failed!\n");
 			return;
 		}
-		for(int i = 0; i < (int)inFileName.size(); i ++){
+		for(int i = 0; i < (int)inFileName.size(); i++){
 			fout << i << "\t" << inFileName[i] << endl;
 			cout << inFileName[i] << endl;
 			ifstream fin((inputpath+"/"+inFileName[i]).c_str());
@@ -2148,7 +2147,7 @@ public:
 				vector<string> words;
 				to_lower(line);
 				split(words, line, is_any_of(" \t-!'."));
-				for(int j = 0; j < words.size(); j ++){
+				for(int j = 0; j < words.size(); j++){
 					trim_if(words[j], is_punct());
 					//words[j] = stemming(words[j]);
 					if(words[j].length() >= 1){
@@ -2165,7 +2164,7 @@ public:
 							temp->add_post(i, pos);
 							dic[words[j]] = temp;
 						}
-						pos ++;
+						pos++;
 					}
 				}
 			}
@@ -2190,12 +2189,13 @@ public:
 			}
 		}
 		return ret;
+		
 	}
 
 	void getDoc(VectorPosting& posting) {
 		cout << "There are " << posting.length() << " document(s) fit the query.\n";
 		//posting.sortByFreq();
-		for(int i = 0; i < posting.length(); i ++){
+		for(int i = 0; i < posting.length(); i++){
 			int id = posting.get(i).id;
 			cout << i+1 <<"\t[" << id << ", " << doc_id[id] << "]" << endl;
 		}
@@ -2205,7 +2205,7 @@ public:
 	void bgetDoc(binary_vectorPosting* posting){
 		cout << "There are " << posting->length() << " document(s) fit the query.\n";
 		//posting.sortByFreq();
-		for(int i = 0; i < posting->length(); i ++){
+		for(int i = 0; i < posting->length(); i++){
 			int id = posting->get(i);
 			string _doc = spimi->getdoc(id);
 			cout << i+1 <<"\t[" << id << ", " << _doc << "]" << endl;
@@ -2221,7 +2221,7 @@ public:
 		//split(words, instr, is_any_of(" \t"));
 		string str;
 		int begin = 0, now = 0;
-		for(;now < instr.length(); now ++){
+		for(;now < instr.length(); now++){
 			char c = instr[now];
 			if(c == ' '){
 				if(now > begin){
@@ -2248,12 +2248,12 @@ public:
 		 * check the bracket
 		 */
 		int num = 0;
-		for(int i = 0; i < words.size(); i ++) {
+		for(int i = 0; i < words.size(); i++) {
 			string w = words[i];
 //cout << w << endl;
 			trim_if(w, is_any_of(" \t"));
 			if(w == "(")
-				num ++;
+				num++;
 			if(w == ")")
 				num --;
 			if(num < 0) {
@@ -2266,11 +2266,11 @@ public:
 		 * check the "
 		 */
 		num = 0;
-		for(int i = 0; i < words.size(); i ++) {
+		for(int i = 0; i < words.size(); i++) {
 			string w = words[i];
 			trim_if(w, is_any_of(" \t"));
 			if(w == "\"")
-				num ++;
+				num++;
 		}
 		if(num%2 != 0)
 			return errorNode();
@@ -2278,7 +2278,7 @@ public:
 		 *
 		 */
 		num = 0;
-		for(int i = 0; i < words.size(); i ++) {
+		for(int i = 0; i < words.size(); i++) {
 			string w = words[i];
 			trim_if(w, is_any_of(" \t"));
 			if(w.length() < 1)
@@ -2314,7 +2314,7 @@ public:
 			}
 			else if(w == "\""){
 				/*
-				num ++;
+				num++;
 				if(num%2 == 1)
 				{
 					Node n = *(new Node());
@@ -2400,11 +2400,13 @@ public:
 		}
 		return mergeNode(v);
 	}
+
 	void vectorSpaceSearch(string query){
+		to_lower(query);
 		vector<string> tokens;
 		split(tokens, query, is_any_of("\t "));
 		map<int, double> doc2score;
-		for(int i = 0; i < (int)tokens.size(); i ++){
+		for(int i = 0; i < (int)tokens.size(); i++){
 			binaryPosting* _bp = this->bfind_bp(tokens[i]);
 			if(_bp != NULL){
 				_bp->calScore(doc2score, InvertedIndex::rcv);
@@ -2413,7 +2415,7 @@ public:
 
 		map<int, double>::iterator mit = doc2score.begin();
 		TopK topK;
-		for(; mit != doc2score.end(); mit ++){
+		for(; mit != doc2score.end(); mit++){
 			int _len = this->spimi->getdLen(mit->first);
 			if(_len <= 0) {
 				continue;
@@ -2429,11 +2431,12 @@ public:
 				const ID_Score _is = qScore.top();
 				string _doc = spimi->getdoc(_is.id);
 				cout <<_count<< ": ["<<_doc<<", " << _is.id<<"] "<< _is.score << endl;
-				_count ++;
+				_count++;
 				qScore.pop();
 			}
 		}
 	}
+
 	void search(string query) {
 		Node ans = parse(query);
 		if(!ans.isBlank) {
@@ -2441,6 +2444,7 @@ public:
 			bgetDoc(ans.posting);
 		}
 	}
+
 	Node mergeNode(vector<Node> v) { // ÎÞÀ¨ºÅµÄ½âÎö
 		Node* temp = new Node();
 		if(v.size() == 0) {
@@ -2453,10 +2457,10 @@ public:
 		vector<Node> toOr, toAnd;
 		int begin = 0;
 		int now = 0;
-		for(; now < v.size(); now ++) {
+		for(; now < v.size(); now++) {
 			if(v[now].isOr) {
 				toAnd.clear();
-				for(int i = begin; i < now; i ++)
+				for(int i = begin; i < now; i++)
 					if(!v[i].isBlank)
 						toAnd.push_back(v[i]);
 				toOr.push_back(andNode(toAnd));
@@ -2464,21 +2468,21 @@ public:
 			}
 		}
 		toAnd.clear();
-		for(int i = begin; i < v.size(); i ++)
+		for(int i = begin; i < v.size(); i++)
 			if(!v[i].isBlank)
 				toAnd.push_back(v[i]);
 		toOr.push_back(andNode(toAnd));
 		return orNode(toOr);
 	}
 
-	Node andNode(vector<Node> v) {
+	Node andNode(vector<Node> v){
 		Node a;
 		if(v.size() > 0) {
 			a = v[0];
-			for(int i = 1; i < v.size(); i ++) {
+			for(int i = 1; i < v.size(); i++){
 				if(v[i].isAnd) {
 					int dis = v[i].dis;
-					i ++;
+					i++;
 					if(i == v.size())
 						return errorNode();
 
@@ -2487,7 +2491,7 @@ public:
 						return errorNode();
 					a.posting = a.posting->and_operator(v[i].posting, dis);
 				}
-				else {
+				else{
 					a.posting = a.posting->and_operator(v[i].posting);
 				}
 			}
@@ -2497,7 +2501,7 @@ public:
 
 	Node orNode(vector<Node> v) { // ¶ÌµÄµ¹ÅÅ±í£¬ ÏÈ×öOR²Ù×÷
 		priority_queue<Node, vector<Node>, nodeCmp> p;
-		for(int i = 0; i < v.size(); i ++){
+		for(int i = 0; i < v.size(); i++){
 			p.push(v[i]);
 		}
 		while(p.size() > 1){
@@ -2538,7 +2542,7 @@ public:
 				if(now->frequent != now->pos.size()){
 					cout << "Posting error!\n";
 				}
-				for(int i = 0; i < now->pos.size(); i ++)
+				for(int i = 0; i < now->pos.size(); i++)
 					fout << " " << now->pos[i];
 				now = now->next;
 			}
@@ -2555,7 +2559,7 @@ public:
 		for(uumap::iterator iter = bigram_dic.begin(); iter != bigram_dic.end(); iter++){
 			fout << iter->first;
 			vector<string> v = iter->second;
-			for(int i = 0; i < v.size(); i ++){
+			for(int i = 0; i < v.size(); i++){
 				fout << " " << v[i];
 			}
 			fout << endl;

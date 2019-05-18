@@ -1,9 +1,10 @@
 #ifndef BTREE_H_
 #define BTREE_H_
-#include "CBtreeFunc.h"
+
 #include<iostream>
 #include<fstream>
 #include<sstream>
+#include "CBtreeFunc.h"
 
 using namespace std;
 
@@ -40,6 +41,11 @@ public:
 };
 
 class Btree{
+private:
+	BPlusTree* btree;
+	string storePath;
+	string fileName;
+	string mode;
 public:
 	//mode = r w rw
 	Btree(const string& _store_path, const string& _file_name, const char* _mode);
@@ -59,11 +65,6 @@ private:
 	bool openRead(const string& _btree_path);
 	bool openWrite(const string& _btree_path);
 	bool openReadWrite(const string& _btree_path);
-private:
-	BPlusTree* btree;
-	string storePath;
-	string fileName;
-	string mode;
 };
 
 #endif /* BTREE_H_ */

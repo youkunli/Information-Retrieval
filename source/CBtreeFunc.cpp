@@ -1564,9 +1564,9 @@ bool Delete_objpID2sID(char _obj_str[], int _pID, int _del_sID, BPlusTree * _p_o
 	return bret;
 }
 
-bool DATAINPUT(FILE * ifp, char _row_str[], char _str[][600] )
+bool DATAINPUT(FILE * ifp, char *_row_str, char _str[][600] )
 {
-		memset(_row_str, 0, sizeof(_row_str));
+		memset(_row_str, 0, 6000*sizeof(char));
 		for(int i = 0; i < 6; i ++)
 		{
 			memset(_str[i], 0, sizeof(_str[i]));
@@ -1696,7 +1696,7 @@ void BuildTree()
 				cout << "_ii: " << _ii << "  nkey1: " << nkey1 << endl;
 			}
 
-			if((nkey1 % nFlush1 == 0 || nkey1 > level1 && nkey1 % nFlush4 == 0)&& nkey1 > 0 && b1)
+			if((nkey1 % nFlush1 == 0 && nkey1 > 0 && b1)|| (nkey1 > 0 && b1 && nkey1 > level1 && nkey1 % nFlush4 == 0))			
 			{
 				ptree1 ->StoreTree();
 				ptree1 ->ClearTree();
@@ -1767,7 +1767,7 @@ void BuildTree()
 				cout << "_ii: " << _ii << "  nkey2: " << nkey2 << endl;
 			}
 
-			if((nkey2 % nFlush1 == 0 || nkey2 > level1 && nkey2 % nFlush4 == 0)&& nkey2 > 0 && b2)
+			if((nkey2 % nFlush1 == 0 && nkey2 > 0 && b2) || (nkey2 > 0 && b2 && nkey2 > level1 && nkey2 % nFlush4 == 0))
 			{
 				ptree2 ->StoreTree();
 				ptree2 ->ClearTree();
@@ -1836,7 +1836,7 @@ void BuildTree()
 				cout << "_ii: " << _ii << "  nkey3: " << nkey3 << endl;
 			}
 
-			if(((nkey3 % nFlush2 == 0 || nkey3 > level2 && nkey3 % nFlush4 == 0)&& nkey3 > 0)&& b3)
+			if((nkey3 % nFlush2 == 0 && nkey3 > 0 && b3) || (nkey3 > level2 && nkey3 % nFlush4 == 0 && nkey3 > 0 && b3))
 			{
 				ptree3 ->StoreTree();
 				ptree3 ->ClearTree();
@@ -1915,7 +1915,7 @@ void BuildTree()
 				cout << "_ii: " << _ii << "  nkey4: " << nkey4 << endl;
 			}
 
-			if(((nkey4 % nFlush2 == 0 || nkey4 > level2 && nkey4 % nFlush4 == 0)&& nkey4 > 0)&&b4)
+			if((nkey4 % nFlush2 == 0 && nkey4 > 0 && b4)||( nkey4 > level2 && nkey4 % nFlush4 == 0 && nkey4 > 0 && b4))
 			{
 				ptree4 ->StoreTree();
 				ptree4 ->ClearTree();

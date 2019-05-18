@@ -8,6 +8,7 @@
 using namespace std;
 
 class binaryPosting;
+
 class KVstore{
 private:
 	static const bool debug_mode = false;
@@ -33,7 +34,7 @@ public:
 	string getDocByID(int _doc_id);
 	bool setDocByID(int _id, string _doc);
 	binaryPosting* getPosting(string _term, FILE* _fp);
-
+	
 	void flush();
 
 };

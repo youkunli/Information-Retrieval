@@ -9,16 +9,13 @@ Btree::Btree(const string& _store_path, const string& _file_name, const char* _m
 	if(strcmp(_mode, "r") == 0){//read-only, btree must exist
 		openRead(_btree_path);
 	}
-	else
-	if(strcmp(_mode, "rw") == 0){//read and write, btree must exist
+	else if(strcmp(_mode, "rw") == 0){//read and write, btree must exist
 		openReadWrite(_btree_path);
 	}
-	else
-	if(strcmp(_mode, "w") == 0){//build a new btree, delete if exist
+	else if(strcmp(_mode, "w") == 0){//build a new btree, delete if exist
 		openWrite(_btree_path);
 	}
-	else
-	{
+	else{
 		cout << "[" << _mode << "] is error mode when open: " << _btree_path << endl;
 	}
 	{
@@ -97,9 +94,8 @@ bool Btree::close(){
 	btree = NULL;
 	return true;
 }
-/*
- * private
- */
+
+//private
 bool Btree::deleteifExistPath(const string& _path){
 	return true;
 }

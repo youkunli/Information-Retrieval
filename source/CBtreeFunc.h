@@ -1,5 +1,5 @@
-#ifndef CBTREEH_H_
-#define CBTREEH_H_
+#ifndef CBTREEFUNC_H_
+#define CBTREEFUNC_H_
 
 
 #include<iostream>
@@ -32,8 +32,6 @@
 #define level1	6000000
 #define level2	4000000
 
-
-
 using namespace std;
 
 enum NODE_TYPE {
@@ -55,7 +53,7 @@ extern string filePath_sID2s;
 extern int myStrcmp(char _str1[], int len1, char _str2[], int len2);
 extern FILE * _log_btree;
 
-class KeyType {
+class KeyType{
 public:
 	int _num_insert;
 	bool 	is_AtMem;
@@ -65,46 +63,37 @@ public:
 	KeyType() {
 		KeyType_Initial();
 	}
-	KeyType(KeyType & a) {
+	KeyType(KeyType & a){
 		_num_insert = a._num_insert;
 		iKey = a.iKey;
 		mLenKey = a.mLenKey;
 		is_AtMem = a.is_AtMem;
 		this ->set_sKey(a.sKey, a.mLenKey);
 	}
-	void KeyType_Initial()
-	{
+	void KeyType_Initial(){
 		sKey = NULL;
 		iKey = -1;
 		mLenKey = -1;
 		is_AtMem = false;
 		_num_insert = -1;
 	}
-	~KeyType()
-	{
+	~KeyType(){
 		clear_skey();
 	}
-	void clear_skey()
-	{
-		if(sKey != NULL)
-		{
+	void clear_skey(){
+		if(sKey != NULL){
 			delete [] sKey;
 			sKey = NULL;
 		}
 	}
 
-
-
-	void set_sKey(const char * _str, int kLen)
-	{
-		if(_str == NULL)
-		{
+	void set_sKey(const char * _str, int kLen){
+		if(_str == NULL){
 			sKey = NULL;
 			mLenKey = 0;
 			return;
 		}
-		if(sKey != NULL)
-		{
+		if(sKey != NULL){
 			delete [] sKey;
 			sKey = NULL;
 		}
@@ -113,16 +102,13 @@ public:
 		memcpy(sKey, _str, mLenKey);
 		sKey[mLenKey] = '\0';
 	}
-	void set_iKey(int _i)
-	{
+	void set_iKey(int _i){
 		mLenKey = 4;
 		iKey = _i;
 	}
 
-	void RandInputKey(int _i)
-	{
-		if(_eletype == CHARARRAY)
-		{
+	void RandInputKey(int _i){
+		if(_eletype == CHARARRAY){
 			char _c_key[100] = "a";
 			int _input_key = rand() % 100000;
 			_input_key += _i * 3;
@@ -134,16 +120,14 @@ public:
 			strcpy(sKey, _c_key);
 			sKey[mLenKey] = '\0';
 		}
-		else
-		{
+		else{
 			iKey = _i;
 			mLenKey = 4;
 		}
 	}
-	void HandInputKey()
-	{
-		if(_eletype == CHARARRAY)
-		{
+
+	void HandInputKey(){
+		if(_eletype == CHARARRAY){
 			cout << "input the key_string" << endl;
 			char _c_key[1000];
 			cin.getline(_c_key,1000);
@@ -153,8 +137,7 @@ public:
 			strcpy(sKey, _c_key);
 			sKey[mLenKey] = '\0';
 		}
-		else
-		{
+		else{
 			cout << "input the key_integer" << endl;
 			int _input_key = 0;
 			scanf("%d", &_input_key);
@@ -163,176 +146,142 @@ public:
 		}
 	}
 
-	void ReadKey(FILE * fp)
-	{
+	void ReadKey(FILE * fp){
 		fread(&mLenKey, sizeof(int), 1, fp);
-		if(_eletype == CHARARRAY)
-		{
+		if(_eletype == CHARARRAY){
 			sKey = new char[mLenKey + 1];
 			fread(sKey, sizeof(char), mLenKey + 1, fp);
-			if(sKey == NULL)
-			{
+			if(sKey == NULL){
 				cout << "NULL err" << endl;
 				system("pause"); exit(0);
 			}
 
 		}
-		else
-		{
+		else{
 			fread(&iKey, sizeof(int), 1, fp);
 			sKey = NULL;
 		}
 	}
 
-	void WriteKey(FILE * fp)
-	{
+	void WriteKey(FILE * fp){
 		fwrite(&mLenKey, sizeof(int), 1, fp);
-		if(_eletype == CHARARRAY)
-		{
+		if(_eletype == CHARARRAY){
 			fwrite(sKey, sizeof(char), mLenKey + 1, fp);
 		}
-		else
-		{
+		else{
 			fwrite(&iKey, sizeof(int), 1, fp);
 		}
 	}
 	/*
 	 * 合适的功能函数
 	 */
-	int WriteSize()
-	{
+	int WriteSize(){
 		int size_mLenKey = sizeof(mLenKey);
 		int size_Key = 4;
-		if(_eletype == CHARARRAY)
-		{
+		if(_eletype == CHARARRAY){
 			size_Key = (mLenKey + 1) * sizeof(char);
 		}
 		else
-		if(_eletype == INTEGER)
-		{
+		if(_eletype == INTEGER){
 			size_Key = sizeof(int);
 		}
-		else
-		{
+		else{
 			printf("err in writesize of keytype\n");
 			system("pause"); exit(0);
 		}
 		return size_mLenKey + size_Key;
 	}
 
-	void PrintKey()
-	{
-		if(_eletype == CHARARRAY)
-		{
+	void PrintKey(){
+		if(_eletype == CHARARRAY){
 			printf("[%s,%d]", sKey, this ->mLenKey);
 		}
 		else
-		if(_eletype == INTEGER)
-		{
+		if(_eletype == INTEGER){
 			printf("%d", iKey);
 		}
-		else
-		{
+		else{
 			printf("bug in pk\n");
 			system("pause"); exit(0);
 		}
 	}
-	bool Gt(const KeyType & a)const
-	{
-		if(_eletype == CHARARRAY)
-		{
+	bool Gt(const KeyType & a)const{
+		if(_eletype == CHARARRAY){
 			if(myStrcmp(sKey, mLenKey, a.sKey, a.mLenKey) > 0)
 				return true;
 			return false;
 		}
 		else
-		if(_eletype == INTEGER)
-		{
+		if(_eletype == INTEGER){
 			if(iKey > a.iKey)
 				return true;
 			return false;
 		}
-		else
-		{
+		else{
 			printf("err in gt\n");
 			system("pause"); exit(0);
 		}
 		return true;
 	}
 
-	bool Lt(const KeyType & a)const
-	{
-		if(_eletype == CHARARRAY)
-		{
+	bool Lt(const KeyType & a)const {
+		if(_eletype == CHARARRAY){
 			if(myStrcmp(sKey, mLenKey, a.sKey, a.mLenKey) < 0)
 				return true;
 			return false;
 		}
 		else
-		if(_eletype == INTEGER)
-		{
+		if(_eletype == INTEGER){
 			if(iKey < a.iKey)
 				return true;
 			return false;
 		}
-		else
-		{
+		else{
 			printf("err in gt\n");
 			system("pause"); exit(0);
 		}
 		return true;
 	}
 
-	bool Eq(const KeyType & a)const
-	{
-		if(_eletype == CHARARRAY)
-		{
+	bool Eq(const KeyType & a)const{
+		if(_eletype == CHARARRAY){
 			if(myStrcmp(sKey, mLenKey, a.sKey, a.mLenKey) == 0)
 				return true;
 			return false;
 		}
-		else
-		if(_eletype == INTEGER)
-		{
+		else if(_eletype == INTEGER){
 			if(iKey == a.iKey)
 				return true;
 			return false;
 		}
-		else
-		{
+		else{
 			printf("err in gt\n");
 			system("pause"); exit(0);
 		}
 		return true;
 	}
 
-	bool operator >(const KeyType & a)const
-	{
+	bool operator >(const KeyType & a)const {
 		return Gt(a);
 	}
 
-	bool operator >=(const KeyType & a)const
-	{
+	bool operator >=(const KeyType & a)const {
 		return Gt(a) || Eq(a);
 	}
 
-	bool operator <(const KeyType & a)const
-	{
+	bool operator <(const KeyType & a)const {
 		return Lt(a);
 	}
 
-	bool operator <=(const KeyType & a)const
-	{
+	bool operator <=(const KeyType & a)const {
 		return Lt(a) || Eq(a);
 	}
 
-	bool operator ==(const KeyType & a)const
-	{
+	bool operator ==(const KeyType & a)const {
 		return Eq(a);
 	}
 
-	KeyType & operator = (const KeyType & a)
-	{
+	KeyType & operator = (const KeyType & a){
 		_num_insert = a._num_insert;
 		iKey = a.iKey;
 		mLenKey = a.mLenKey;
@@ -345,59 +294,44 @@ public:
 };
 extern KeyType KeyNULL;
 
-
-
-class mBlockLink
-{
+class mBlockLink {
 public:
 	long long int preBlockAddr;
 	long long int nextBlockAddr;
-	void mBlockLink_Initial()
-	{
+	void mBlockLink_Initial(){
 		preBlockAddr = -1;
 		nextBlockAddr = -1;
 	}
-	mBlockLink & operator=(mBlockLink & a)
-	{
+	mBlockLink & operator=(mBlockLink & a){
 		preBlockAddr = a.preBlockAddr;
 		nextBlockAddr = a.nextBlockAddr;
 		return *this;
 	}
-	mBlockLink()
-	{
-
+	mBlockLink(){
 	}
-	mBlockLink(mBlockLink & a)
-	{
+	mBlockLink(mBlockLink & a){
 		preBlockAddr = a.preBlockAddr;
 		nextBlockAddr = a.nextBlockAddr;
 	}
 };
 
 
-class mValue
-{
+class mValue {
 public:
 	char * Term[TERM_NUMBER];
 	int lenTerm[TERM_NUMBER];
 	set<int> termSet;
-	~mValue()
-	{
-		for(int i = 0; i < TERM_NUMBER; i ++)
-		{
-			if(Term[i] != NULL)
-			{
+	~mValue(){
+		for(int i = 0; i < TERM_NUMBER; i++){
+			if(Term[i] != NULL){
 				delete [] Term[i];
 				Term[i] = NULL;
 			}
 		}
 	}
-	void mValue_Initial()
-	{
-		for(int i = 0; i < TERM_NUMBER; i ++)
-		{
-			if(Term[i] != NULL)
-			{
+	void mValue_Initial(){
+		for(int i = 0; i < TERM_NUMBER; i++){
+			if(Term[i] != NULL){
 				cout << "term mem lost" << endl;
 				system("pause");
 				system("pause"); exit(0);
@@ -408,8 +342,7 @@ public:
 		termSet.clear();
 	}
 
-	void getValInteger(vector<int> & nodeSet)
-	{
+	void getValInteger(vector<int> & nodeSet){
 		{//for one order 
 			/*
 			int _tag = 0;
@@ -425,8 +358,7 @@ public:
 		{//for the other order
 			int _tag = lenTerm[0];
 			int i_size = sizeof(int);
-			while(_tag - i_size >= 0)
-			{
+			while(_tag - i_size >= 0){
 				int _val = *( (int*)(Term[0]+_tag - i_size) );
 				nodeSet.push_back(_val);
 				_tag -= 5;
@@ -435,28 +367,22 @@ public:
 		return;
 	}
 
-	void iPrintval(int _i)
-	{
-		if(_i < 0 || _i > TERM_NUMBER - 1)
-		{
+	void iPrintval(int _i){
+		if(_i < 0 || _i > TERM_NUMBER - 1){
 			cout << "bug ipval" << endl;
 			system("pause"); exit(0);
 		}
-		if(Term[_i] == NULL)
-		{
+		if(Term[_i] == NULL){
 			cout << "bug ipvalt" << endl;
 			system("pause"); exit(0);
 		}
 		cout << Term[_i] << endl;
 	}
 //think
-	mValue & operator=(const mValue & a)
-	{
-		for(int i = 0; i < TERM_NUMBER; i ++)
-		{
+	mValue & operator=(const mValue & a){
+		for(int i = 0; i < TERM_NUMBER; i++){
 			lenTerm[i] = a.lenTerm[i];
-			if(Term[i] != NULL)
-			{
+			if(Term[i] != NULL){
 				delete [] Term[i];
 				Term[i] = NULL;
 			}
@@ -465,23 +391,18 @@ public:
 		}
 		return *this;
 	}
-	mValue()
-	{
-		for(int i = 0; i < TERM_NUMBER; i ++)
-		{
+	mValue(){
+		for(int i = 0; i < TERM_NUMBER; i++){
 			Term[i] = NULL;
 			lenTerm[i] = 0;
 		}
 		termSet.clear();
 	}
 //	think
-	mValue(mValue & a)
-	{
-		for(int i = 0; i < TERM_NUMBER; i ++)
-		{
+	mValue(mValue & a){
+		for(int i = 0; i < TERM_NUMBER; i++){
 			lenTerm[i] = a.lenTerm[i];
-			if(Term[i] != NULL)
-			{
+			if(Term[i] != NULL){
 				delete [] Term[i];
 				Term[i] = NULL;
 			}
@@ -491,15 +412,12 @@ public:
 	}
 
 
-	void set_iVal(int _i, const char * _str, int _str_len)
-	{
-		if(_i < 0 || _i > TERM_NUMBER - 1)
-		{
+	void set_iVal(int _i, const char * _str, int _str_len){
+		if(_i < 0 || _i > TERM_NUMBER - 1){
 			cout << "bug setival" << endl;
 			system("pause"); exit(0);
 		}
-		if(Term[_i] != NULL)
-		{
+		if(Term[_i] != NULL){
 			delete [] Term[_i];
 			Term[_i] = NULL;
 		}
@@ -512,36 +430,30 @@ public:
 
 	}
 
-	bool delete_iVal(int _i, char * del_str, int & flag)
-	{
-		if(_i < 0 || _i > TERM_NUMBER - 1)
-		{
+	bool delete_iVal(int _i, char * del_str, int & flag){
+		if(_i < 0 || _i > TERM_NUMBER - 1){
 			cout << "bug setival" << endl;
 			system("pause"); exit(0);
 		}
-		if(Term[_i] == NULL)
-		{
+		if(Term[_i] == NULL){
 			cout << "bug addival" << endl;
 			system("pause"); exit(0);
 		}
 
 		int _tag = 0;
 		int i_size = sizeof(int);
-		while(_tag + i_size <= lenTerm[0])
-		{
+		while(_tag + i_size <= lenTerm[0]){
 			if(del_str[0] == Term[0][_tag] && del_str[1] == Term[0][_tag + 1] && del_str[2] == Term[0][_tag + 2]
 					&& del_str[3] == Term[0][_tag + 3])
 						break;
 			_tag += 5;
 		}
-		if(_tag + i_size > lenTerm[0])
-		{
+		if(_tag + i_size > lenTerm[0]){
 			flag = FLAG_NO_ZERO;
 			return false;
 		}
 
-		if(_tag + i_size == lenTerm[0])
-		{
+		if(_tag + i_size == lenTerm[0]){
 			Term[0][_tag] = '\0';
 			lenTerm[0] -= sizeof(int) + sizeof(char);
 			//只有一个元素时很特殊， 长度是减少4， 其余减少5
@@ -551,8 +463,7 @@ public:
 		}
 
 
-		for(int i = _tag; i + i_size < lenTerm[0]; i ++)
-		{
+		for(int i = _tag; i + i_size < lenTerm[0]; i++){
 			Term[0][i] = Term[0][i + i_size + 1];
 		}
 		lenTerm[0] -= sizeof(int) + sizeof(char);
@@ -560,15 +471,12 @@ public:
 		return true;
 	}
 
-	void add_iVal(int _i, const char *add_str)
-	{
-		if(_i < 0 || _i > TERM_NUMBER - 1)
-		{
+	void add_iVal(int _i, const char *add_str){
+		if(_i < 0 || _i > TERM_NUMBER - 1){
 			cout << "bug setival" << endl;
 			system("pause"); exit(0);
 		}
-		if(Term[_i] == NULL)
-		{
+		if(Term[_i] == NULL){
 			cout << "bug addival" << endl;
 			system("pause"); exit(0);
 		}
@@ -577,8 +485,7 @@ public:
 
 		int _tag = 0;
 		int i_size = sizeof(int);
-		while(_tag + i_size <= lenTerm[0])
-		{
+		while(_tag + i_size <= lenTerm[0]){
 			if(add_str[0] == Term[0][_tag] && add_str[1] == Term[0][_tag + 1] && add_str[2] == Term[0][_tag + 2]
 					&& add_str[3] == Term[0][_tag + 3])
 						return;
@@ -595,21 +502,18 @@ public:
 		lenTerm[0] = newLen;
 		_tmp_term_i[ lenTerm[_i] ] = '\0';
 
-		if(Term[_i] != NULL)
-		{
+		if(Term[_i] != NULL){
 			delete [] Term[_i];
 			Term[_i] = NULL;
 		}
-		else
-		{
+		else{
 			cout << "bug term" << endl;
 			system("pause");
 			exit(0);
 		}
 		Term[_i] = _tmp_term_i;
 	}
-	void InputVal()
-	{
+	void InputVal(){
 		char _input_str[1000] = "helloworld";
 		for(int i = 0;  i < TERM_NUMBER; i ++)
 		{
@@ -620,17 +524,12 @@ public:
 		}
 	}
 
-	void FputVal(FILE * fp)
-	{
-
+	void FputVal(FILE * fp){
 	}
-	void ReadVal(FILE * fp)
-	{
+	void ReadVal(FILE * fp){
 		fread(lenTerm, sizeof(int), TERM_NUMBER, fp);
-		for(int i = 0; i < TERM_NUMBER; i ++)
-		{
-			if(Term[i] != NULL)
-			{
+		for(int i = 0; i < TERM_NUMBER; i++){
+			if(Term[i] != NULL){
 				printf("bug term null\n");
 				system("pause"); exit(0);
 			}
@@ -638,28 +537,23 @@ public:
 			fread(Term[i], sizeof(char), lenTerm[i] + 1, fp);
 		}
 	}
-	void WriteVal(FILE * fp)
-	{
+	void WriteVal(FILE * fp){
 		fwrite(lenTerm, sizeof(int), TERM_NUMBER, fp);
 		for(int i = 0; i < TERM_NUMBER; i ++)
 		{
 			fwrite(Term[i], sizeof(char), lenTerm[i] + 1, fp);
 		}
 	}
-	int WriteSize()
-	{
+	int WriteSize(){
 		int _sum_size = 0;
-		for(int i = 0; i < TERM_NUMBER; i ++)
-		{
+		for(int i = 0; i < TERM_NUMBER; i++){
 			_sum_size += lenTerm[i] + 1;
 		}
 		_sum_size += TERM_NUMBER * (sizeof(int));
 		return _sum_size;
 	}
-	void PrintVal()
-	{
-		for(int i = 0; i < TERM_NUMBER; i ++)
-		{
+	void PrintVal(){
+		for(int i = 0; i < TERM_NUMBER; i++){
 			if(Term[i] != NULL)
 				printf("%s == ", Term[i]);
 			cout << "len = " << lenTerm[i] << endl;
@@ -1212,15 +1106,12 @@ public:
 };
 
 
-class mleafdata
-{
+class mleafdata {
 public:
 	KeyType mData;
 	mValue * pVal;
-	void mleafdata_Initial()
-	{
-		if(mData.sKey != NULL || pVal != NULL)
-		{
+	void mleafdata_Initial(){
+		if(mData.sKey != NULL || pVal != NULL){
 			cout << "mem lost" << endl;
 			system("pause");
 			system("pause"); exit(0);
@@ -1230,20 +1121,16 @@ public:
 	}
 
 
-	~mleafdata()
-	{
+	~mleafdata(){
 		cleardata();
 	}
-	mleafdata()
-	{
+	mleafdata(){
 		mData.KeyType_Initial();
 		pVal = NULL;
 	}
 
-	void cleardata()
-	{
-		if(pVal != NULL)
-		{
+	void cleardata(){
+		if(pVal != NULL){
 			delete pVal;
 			pVal = NULL;
 		}
@@ -1251,8 +1138,7 @@ public:
 	}
 
 //	think
-	mleafdata & operator = (const mleafdata & a)
-	{
+	mleafdata & operator = (const mleafdata & a){
 		mData = a.mData;
 		if(pVal != NULL)
 		{
@@ -1265,26 +1151,22 @@ public:
 		return * this;
 	}
 
-	void SubIDPrint()
-	{
+	void SubIDPrint(){
 		mData.PrintKey();
 		cout << " k 2 v " << endl;
 		vector<int> nSet;
 		pVal ->getValInteger(nSet);
-		for(unsigned int i = 0; i < nSet.size(); i ++)
-		{
+		for(unsigned int i = 0; i < nSet.size(); i++){
 			cout << nSet[i] << " ";
 			if(i % 50 == 0) cout << endl;
 		}
 	}
-	void PrintLeafdata()
-	{
+	void PrintLeafdata(){
 		mData.PrintKey();
 		cout << " k2v ";
 		pVal ->PrintVal();
 	}
-	void fPrintLeafdata(FILE *fp)
-	{
+	void fPrintLeafdata(FILE *fp){
 		char * skey = mData.sKey;
 		char * sterm = pVal ->Term[0];
 		fprintf(fp, "%s\n\n\n", skey);
@@ -1292,66 +1174,54 @@ public:
 		return;
 	}
 
-	void iPrintdata(int _i)
-	{
+	void iPrintdata(int _i){
 		pVal ->iPrintval(_i);
 	}
 
-	void getdataInteger(vector<int> & nodeSet)
-	{
-		if(pVal == NULL)
-		{
+	void getdataInteger(vector<int> & nodeSet){
+		if(pVal == NULL){
 			cout << "bug pval" << endl;
 			system("pause"); exit(0);
 		}
 		pVal ->getValInteger(nodeSet);
 	}
 
-	void fputLeafdata(FILE * fp)
-	{
+	void fputLeafdata(FILE * fp){
 		char _str[5][100];
 		char _latter[500];
 		int _ikey = 0;
-		if(pVal != NULL)
-		{
+		if(pVal != NULL){
 			delete pVal;
 			pVal = NULL;
 		}
 		pVal = new mValue;
 		pVal ->mValue_Initial();
-		if(_eletype == CHARARRAY)
-		{
+		if(_eletype == CHARARRAY){
 			fprintf(fp, "%s	%s	%s	%s	%s		", _str[0], _str[1], _str[2], _str[3], _str[4]);
 			fgets(_latter, 500, fp);
 			mData.set_sKey(_str[0], (int)strlen(_str[0]));
 			for(int i = 0; i <= 3; i ++)	pVal ->set_iVal(i, _str[i + 1], (int)strlen(_str[i + 1]));
 			pVal ->set_iVal(4, _latter, (int)strlen(_latter));
 		}
-		else
-		if(_eletype == INTEGER)
-		{
+		else if(_eletype == INTEGER){
 			fprintf(fp, "%d	%s	%s	%s	%s		", _ikey, _str[1], _str[2], _str[3], _str[4]);
 			fgets(_latter, 500, fp);
 			mData.set_iKey(_ikey);
 			for(int i = 0; i <= 3; i ++)	pVal ->set_iVal(i, _str[i + 1], (int)strlen(_str[i + 1]));
 			pVal ->set_iVal(4, _latter, (int)strlen(_latter));
 		}
-		else
-		{
+		else{
 			cout << "bug fput" << endl;
 			system("pause"); exit(0);
 		}
 	}
 
-	void set_iKey_sValue(int _ikey, char _sval[])
-	{
+	void set_iKey_sValue(int _ikey, char _sval[]){
 		mData.set_iKey(_ikey);
 	}
 
-	void set_sKey_sValue(const char _skey[], int _klen, const char _sval[], int val_len)
-	{
-		if(pVal != NULL)
-		{
+	void set_sKey_sValue(const char _skey[], int _klen, const char _sval[], int val_len){
+		if(pVal != NULL){
 			delete pVal;
 			pVal = NULL;
 		}
@@ -1361,10 +1231,8 @@ public:
 		pVal ->set_iVal(0, _sval, val_len);
 	}
 
-	bool deletePartVal(char PartVal[], int & flag)
-	{
-		if(pVal == NULL)
-		{
+	bool deletePartVal(char PartVal[], int & flag){
+		if(pVal == NULL){
 			cout << "null error" << endl;
 			system("pause");
 			exit(0);
@@ -1372,8 +1240,7 @@ public:
 		return pVal ->delete_iVal(0, PartVal, flag);
 	}
 
-	void inputLeafdata()
-	{
+	void inputLeafdata(){
 		if(pVal == NULL)
 		{
 			pVal = new mValue;
@@ -1382,31 +1249,26 @@ public:
 	}
 
 //	think
-	mleafdata(mleafdata & a)
-	{
+	mleafdata(mleafdata & a){
 		mData = a.mData;
 		pVal = new mValue;
 		pVal ->mValue_Initial();
 		*pVal = *(a.pVal);
 	}
 
-	bool operator > (const mleafdata & a)
-	{
+	bool operator > (const mleafdata & a){
 		return mData > a.mData;
 	}
-	bool operator < (const mleafdata & a)
-	{
+	bool operator < (const mleafdata & a){
 		return mData < a.mData;
 	}
 
 	void Hand_inputkey()					{		mData.HandInputKey();	}
 	void Rand_inputkey(int i)				{		mData.RandInputKey(i);	}
 
-	bool Read_mleafdata(FILE * fp)
-	{
+	bool Read_mleafdata(FILE * fp){
 		mData.ReadKey(fp);
-		if(pVal != NULL)
-		{
+		if(pVal != NULL){
 			printf("bug - null\n");
 			system("pause"); exit(0);
 		}
@@ -1417,10 +1279,8 @@ public:
 			return false;
 
 		pVal = new mValue;
-		for(int i = 0; i < TERM_NUMBER; i ++)
-		{
-			if(pVal ->Term[i] != NULL)
-			{
+		for(int i = 0; i < TERM_NUMBER; i++){
+			if(pVal ->Term[i] != NULL){
 				printf("bug term null\n");
 				system("pause"); exit(0);
 			}
@@ -1430,13 +1290,11 @@ public:
 		}
 		return true;
 	}
-	bool Write_mleafdata(FILE * fp, int & _size_left, int & _key_size, int & _val_size)
-	{
+	bool Write_mleafdata(FILE * fp, int & _size_left, int & _key_size, int & _val_size){
 		int size_Key = mData.WriteSize();
 		int size_Val = pVal ->WriteSize();
 		//cout << "kv" << size_Key + size_Val << endl;
-		if(_size_left < size_Key + size_Val)
-		{
+		if(_size_left < size_Key + size_Val){
 			_key_size = size_Key;
 			_val_size = size_Val;
 			return false;
@@ -1449,16 +1307,14 @@ public:
 	}
 };
 
-class mLeafNode : public mNode
-{
+class mLeafNode : public mNode {
 public:
 	mLeafNode* preNode;
 	mLeafNode* nextNode;
 	mBlockLink leafLink;
 	mleafdata LeafData[MAXNUM_DATA];
 
-	mLeafNode()
-	{
+	mLeafNode(){
 		mNode_Initial();
 		lfordebug = this;
 		ifordebug = NULL;
@@ -1466,91 +1322,72 @@ public:
 		nextNode = NULL;
 		leafLink.mBlockLink_Initial();
 		setType(NODE_TYPE_LEAF);
-		for(int i = 0; i <= MAXNUM_KEY; i ++)
-		{
+		for(int i = 0; i <= MAXNUM_KEY; i++){
 			LeafData[i].mleafdata_Initial();
 		}
 	}
-	~mLeafNode()
-	{
+	~mLeafNode(){
 	}
 //
-//	~mLeafNode()
-//	{
+//	~mLeafNode(){
 //		cout << "call leaf" << this ->getCount() << endl;
-//		for(int i = 1; i <= this ->getCount(); i ++)
-//		{
+//		for(int i = 1; i <= this ->getCount(); i++){
 //			LeafData[i].cleardata();
 //		}
 //		cout << "here1328" << endl;
 //	}
 
-	KeyType & getKey(int _i)
-	{
-		if(_i > 0 && _i <= getCount())
-		{
+	KeyType & getKey(int _i){
+		if(_i > 0 && _i <= getCount()){
 			return LeafData[_i].mData;
 		}
-		else
-		{
+		else{
 			printf("err in leaf getkey\n");
 			system("pause"); exit(0);
 		}
 		return KeyNULL;
 	}
 
-	void setKey(int _i, KeyType & _keytype)
-	{
-		if(_i > 0 && _i <= MAXNUM_KEY)
-		{
+	void setKey(int _i, KeyType & _keytype){
+		if(_i > 0 && _i <= MAXNUM_KEY){
 			LeafData[_i].mData = _keytype;
 		}
-		else
-		{
+		else{
 			printf("err in leaf setkey\n");
 			system("pause"); exit(0);
 		}
 	}
 
-	mleafdata & getElement(int _i)
-	{
-		if(_i > 0 && _i <= getCount())
-		{
+	mleafdata & getElement(int _i){
+		if(_i > 0 && _i <= getCount()){
 			return LeafData[_i];
 		}
-		else
-		{
+		else{
 			printf("err in getele\n");
 			system("pause"); exit(0);
 		}
 	}
 
-	void setElement(int _i, const mleafdata & _leafdata)
-	{
-		if(_i > 0 && _i <= MAXNUM_KEY)
-		{
+	void setElement(int _i, const mleafdata & _leafdata){
+		if(_i > 0 && _i <= MAXNUM_KEY){
 			LeafData[_i] = _leafdata;
 		}
-		else
-		{
+		else{
 			printf("err in setele\n");
 			system("pause"); exit(0);
 		}
 	}
 
 //	此两个函数对叶节点无意义
-	mNode * getPointer(int _i)
-	{
+	mNode * getPointer(int _i){
 		return NULL;
 	}
 
-	void setPointer(int _i, mNode * _pmnode)
-	{
+	void setPointer(int _i, mNode * _pmnode){
 		return;
 	}
 
-	int iExist(const KeyType & _keytype)
-	{
+	int iExist(const KeyType & _keytype){
 		int _ibegin = 1, _iend = getCount();
 		int _imiddle;
 		if(_iend <= 0){
@@ -1559,98 +1396,78 @@ public:
 		}
 		if(LeafData[1].mData == _keytype)
 			return 1;
-		while(_ibegin < _iend)
-		{
+		while(_ibegin < _iend){
 			_imiddle = (_ibegin + _iend) / 2;
-			if(LeafData[_ibegin].mData == _keytype)
-			{
+			if(LeafData[_ibegin].mData == _keytype){
 				return _ibegin;
 			}
-			if(LeafData[_iend].mData == _keytype)
-			{
+			if(LeafData[_iend].mData == _keytype){
 				return _iend;
 			}
 			if(_ibegin + 1 == _iend){
 				return -1;
 			}
-			if(LeafData[_imiddle].mData > _keytype)
-			{
+			if(LeafData[_imiddle].mData > _keytype){
 				_iend = _imiddle;
 			}
-			else
-			{
+			else{
 				_ibegin = _imiddle;
 			}
 		}
 		return -1;
 	}
 //	考虑cout = 0的情况
-	int iInsert(const KeyType & _keytype)
-	{
+	int iInsert(const KeyType & _keytype){
 		int _ibegin = 1, _iend = getCount();
 		int _imiddle;
-		if(_iend <= 0 || LeafData[_ibegin].mData > _keytype)
-		{
+		if(_iend <= 0 || LeafData[_ibegin].mData > _keytype){
 //			cout << "iInsert ret 1!!" << endl;
 			return 1;
 		}
 //		count = 0 && count = 1
-		if(LeafData[_iend].mData < _keytype)
-		{
+		if(LeafData[_iend].mData < _keytype){
 			return _iend + 1;
 		}
-		while(_ibegin < _iend)
-		{
+		while(_ibegin < _iend){
 			_imiddle = (_ibegin + _iend) / 2;
-			if(LeafData[_ibegin].mData < _keytype && LeafData[_ibegin + 1].mData > _keytype)
-			{
+			if(LeafData[_ibegin].mData < _keytype && LeafData[_ibegin + 1].mData > _keytype){
 				return _ibegin + 1;
 			}
-			if(LeafData[_imiddle].mData > _keytype)
-			{
+			if(LeafData[_imiddle].mData > _keytype){
 				_iend = _imiddle;
 			}
-			else
-			{
+			else{
 				_ibegin = _imiddle;
 			}
 		}
 		return -1;
 	}
 
-	bool isInMemory(int _i)
-	{
-		if(_i > 0 && _i <= getCount())
-		{
+	bool isInMemory(int _i){
+		if(_i > 0 && _i <= getCount()){
 			if(LeafData[_i].mData.is_AtMem)
 				return true;
 			else
 				return false;
 		}
-		else
-		{
+		else{
 			printf("err in setmemeory\n");
 			system("pause"); exit(0);
 		}
 	}
-	void setMemory(int _i)
-	{
-		if(_i > 0 && _i <= getCount())
-		{
+	void setMemory(int _i){
+		if(_i > 0 && _i <= getCount()){
 			LeafData[_i].mData.is_AtMem = true;
 		}
-		else
-		{
+		else{
 			printf("err in setmemeory\n");
 			system("pause"); exit(0);
 		}
 	}
 
-	void printNode()
-	{
+	void printNode(){
 		printf("  ==  ");
-		for(int i = 1; i <= getCount(); i ++)
-		{
+		for(int i = 1; i <= getCount(); i++){
 			LeafData[i].mData.PrintKey();
 			printf("  ");
 		}
@@ -1689,10 +1506,8 @@ extern bool Delete_objpID2sID(char _obj_str[], int _pID, int _del_sID, BPlusTree
 
 
 /* B+树数据结构 */
-class BPlusTree
-{
+class BPlusTree {
 public:
-
 	// 以下两个变量用于实现双向链表
 	mLeafNode* pmLeafHead;                   // 头结点
 	mLeafNode* pmLeafTail;                   // 尾结点
@@ -1704,14 +1519,12 @@ public:
 	int insert_count;
 
 	void Initial(){
-		//return;
 		this ->pmLeafHead = NULL;
 		this ->pmLeafTail = NULL;
 		mRoot = NULL;
 		mfp = NULL;
 	}
-	BPlusTree(const char * const_tree_name, const char * _build_or_open)
-	{
+	BPlusTree(const char * const_tree_name, const char * _build_or_open){
 		{
 			_log_btree = fopen("log_btree", "w+");
 		}
@@ -1724,23 +1537,19 @@ public:
 		char treetype[20] = "initial";
 		strcpy(mTreeName, _tree_name);
 		_key_chose = 1;
-		if(_key_chose == 1)
-		{
+		if(_key_chose == 1){
 			_eletype = CHARARRAY;
 			strcpy(treetype, "char");
 			//strcat(mTreeName, treetype);
 		}
-		else
-		if(_key_chose == 2)
-		{
+		else if(_key_chose == 2){
 			_eletype = INTEGER;
 			strcpy(treetype, "int");
 			strcat(mTreeName, treetype);
 		}
 
 		pmLeafHead = pmLeafTail = NULL;
-		if(!strcmp(_build_or_open, "build"))
-		{
+		if(!strcmp(_build_or_open, "build")){
 			mblockQueue.Initial();
 			mRoot = new mLeafNode;
 			mRoot ->setAddrFB( 0 );
@@ -1748,26 +1557,21 @@ public:
 			char _treefile[50];
 			strcpy(_treefile, mTreeName);
 			strcat(_treefile, ".btree");
-			if((mfp = fopen(_treefile, "wb+")) == NULL)
-			{
+			if((mfp = fopen(_treefile, "wb+")) == NULL){
 				printf("bug in create file\n");
 				system("pause");
 				exit(0);
 			}
 		}
-		else
-		{
+		else{
 			string _treefile = this ->getTreeFileName();
 			_treefile += ".btree";
-			while(true)
-			{
-				if((mfp = fopen(_treefile.c_str(), "rb+")) == NULL)
-				{
+			while(true){
+				if((mfp = fopen(_treefile.c_str(), "rb+")) == NULL){
 					printf("err in open %s", mTreeName); cout << endl;
 					system("pause"); exit(0);
 				}
-				else
-				{
+				else{
 					mRoot = ReadNode(mfp, 0);
 					if(mRoot == NULL){
 						cout << "root of btree [" << _treefile <<  "] is NULL" << endl;
@@ -1783,8 +1587,7 @@ public:
 		}
 
 	}
-	~BPlusTree()
-	{
+	~BPlusTree(){
 		this ->ClearTree();
 	}
 	string getTreeFileName(){
@@ -1799,8 +1602,7 @@ public:
 		fputs(_log, _log_btree);
 		fflush(_log_btree);
 	}
-	void forcheck()
-	{
+	void forcheck(){
 		queue<mNode *> pQueue[100];
 			int nFloor = 0;
 			mNode * pRoot = this ->getRoot();
@@ -1808,20 +1610,15 @@ public:
 			pQueue[nFloor].push(pRoot);
 			int fThreshold;
 			int _i_ord = 0;
-			while(!pQueue[nFloor].empty() && nFloor < fThreshold)
-			{
+			while(!pQueue[nFloor].empty() && nFloor < fThreshold){
 				pNode = pQueue[nFloor].front();
 				pQueue[nFloor].pop();
 				cout << _i_ord ++ << endl;
 
-				if(pNode ->getType()  == NODE_TYPE_INTERNAL)
-				{
-					for(int i = 1; i <= pNode ->getCount(); i ++)
-					{
-						if(pNode ->isInMemory(i))
-						{
-							if(pNode != ((pNode ->getPointer(i)) ->getFather()))
-							{
+				if(pNode ->getType()  == NODE_TYPE_INTERNAL){
+					for(int i = 1; i <= pNode ->getCount(); i++){
+						if(pNode ->isInMemory(i)){
+							if(pNode != ((pNode ->getPointer(i)) ->getFather())){
 								cout << " bug " << _ii;
 								cout << " bug key :   ";
 								pNode ->getKey(i).PrintKey();
@@ -1831,8 +1628,7 @@ public:
 						}
 					}
 				}
-				if(pQueue[nFloor].empty())
-				{
+				if(pQueue[nFloor].empty()){
 					nFloor ++;
 					printf("\n\nthe %d floor:\n\n", nFloor + 1);
 				}
@@ -1868,5 +1664,5 @@ public:
 	void StoreTree();
 
 };
-#endif /* CBTREE_H_ */
+#endif /* CBTREEFUNC_H_ */
 
