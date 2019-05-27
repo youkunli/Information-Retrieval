@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<newsitem itemid="804062" id="root" date="1997-08-16" xml:lang="en">
+<title>BELGIUM: SOCCER-BELGIAN FIRST DIVISION RESULTS.</title>
+<headline>SOCCER-BELGIAN FIRST DIVISION RESULTS.</headline>
+<dateline>BRUSSELS 1997-08-16</dateline>
+<text>
+<p>Results of Belgian first division</p>
+<p>matches played on Saturday:</p>
+<p> Excelsior Mouscron 1  Ghent		  1</p>
+<p> Lokeren		1  Genk		   5</p>
+<p> Anderlecht	   0  RWD Molenbeek	2</p>
+<p> Sint-Truiden	 1  Harelbeke	    2</p>
+<p> Lommel		 3  Beveren		1</p>
+<p>Playing on Sunday</p>
+<p> Club Brugge	     Westerlo</p>
+<p> Aalst		     Antwerp</p>
+<p> Charleroi		 Standard</p>
+<p> Germinal Ekeren	 Lierse</p>
+<p>Standings:</p>
+<p>			  P    W    D    L    F    A    Pts</p>
+<p> 1  Genk		2    2    0    0    9    1    6</p>
+<p> 2  Lommel	    2    1    1    0    4    2    4</p>
+<p> 3  Harelbeke	 2    1    1    0    3    2    4</p>
+<p> 4  Club Bruges     1    1    0    0    4    0    3</p>
+<p> 5  Westerlo	  1    1    0    0    4    1    3</p>
+<p> 6  Lierse	    1    1    0    0    3    0    3</p>
+<p> 7  Germinal Ekeren 1    1    0    0    3    1    3</p>
+<p> 8  RWD Molenbeek   2    1    0    1    3    3    3</p>
+<p> 9  Excelsior Mouscron 2 0    2    0    2    2    2</p>
+<p> 10 Standard Liege  1    0    1    0    1    1    1</p>
+<p> 11 Aalst	     1    0    1    0    0    0    1</p>
+<p> 12 Beveren	   2    0    1    1    1    3    1</p>
+<p> 13 Ghent	     2    0    1    1    1    5    1</p>
+<p> 14 Antwerp	   0    0    0    0    0    0    0</p>
+<p> 15 Anderlecht	1    0    0    1    0    2    0</p>
+<p> 16 Charleroi	 1    0    0    1    0    4    0</p>
+<p> 17 Sint-Truiden    2    0    0    2    2    6    0</p>
+<p> 18 Lokeren	   2    0    0    2    1    8    0</p>
+</text>
+<copyright>(c) Reuters Limited 1997</copyright>
+<metadata>
+<codes class="bip:countries:1.0">
+  <code code="BELG">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+</codes>
+<codes class="bip:topics:1.0">
+  <code code="GCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+  <code code="GSPO">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+</codes>
+<dc element="dc.date.created" value="1997-08-16"/>
+<dc element="dc.publisher" value="Reuters Holdings Plc"/>
+<dc element="dc.date.published" value="1997-08-16"/>
+<dc element="dc.source" value="Reuters"/>
+<dc element="dc.creator.location" value="BRUSSELS"/>
+<dc element="dc.creator.location.country.name" value="BELGIUM"/>
+<dc element="dc.source" value="Reuters"/>
+</metadata>
+</newsitem>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<newsitem itemid="804250" id="root" date="1997-08-16" xml:lang="en">
+<title>GERMANY: German police detain over 100 neo-Nazis.</title>
+<headline>German police detain over 100 neo-Nazis.</headline>
+<dateline>BERLIN 1997-08-16</dateline>
+<text>
+<p>German police detained more than 100 right-wing extremists on Saturday in a bid to prevent neo-Nazi gatherings to commemorate the 10th anniversary of the death of Hitler's deputy Rudolf Hess.</p>
+<p>Police in the central state of Hesse said they had taken 78 people into temporary custody at traffic checkpoints set up to stop extremists breaching bans on Hess rallies over the weekend.</p>
+<p>A Hesse police spokesman said officers had also seized knives, music cassettes and placards with extremist slogans.</p>
+<p>In the eastern state of Thuringia, police detained 31 right-wing extremists suspected to be on their way to rallies.</p>
+<p>Some reports have suggested neo-Nazi groups may be planning a central gathering somewhere in Germany but the extremists have kept their plans secret, playing a game of cat and mouse with police and the media.</p>
+<p>A police spokesman said 22 of the extremists had been detained at a checkpoint in the north of Thuringia, which has imposed a blanket ban on gatherings connected with Hess's death.</p>
+<p>The extremists were detained for inciting racial hatred and displaying symbols of anti-constitutional organisations, he said.</p>
+<p>Hess hanged himself with an electric cord in Berlin's Spandau prison on August 17, 1987, and the date has become a rallying point for the radical right in Germany and other European countries in recent years.</p>
+<p>Last year German police detained 160 right-wing activists on the ninth anniversary, while hundreds of neo-Nazis battled with police in Sweden, Norway and Germany's neighbour Denmark, which permits such rallies.</p>
+<p>Several German states have imposed blanket bans on Hess rallies this weekend and officials have said they believe many neo-Nazis may head for events in Denmark.</p>
+</text>
+<copyright>(c) Reuters Limited 1997</copyright>
+<metadata>
+<codes class="bip:countries:1.0">
+  <code code="GFR">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+</codes>
+<codes class="bip:topics:1.0">
+  <code code="GCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+  <code code="GCRIM">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+  <code code="GVIO">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+</codes>
+<dc element="dc.date.created" value="1997-08-16"/>
+<dc element="dc.publisher" value="Reuters Holdings Plc"/>
+<dc element="dc.date.published" value="1997-08-16"/>
+<dc element="dc.source" value="Reuters"/>
+<dc element="dc.creator.location" value="BERLIN"/>
+<dc element="dc.creator.location.country.name" value="GERMANY"/>
+<dc element="dc.source" value="Reuters"/>
+</metadata>
+</newsitem>

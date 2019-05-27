@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<newsitem itemid="804282" id="root" date="1997-08-16" xml:lang="en">
+<title>INDIA: INDIAN MONEY MARKET RATES - Aug 16 (1145 IST).</title>
+<headline>INDIAN MONEY MARKET RATES - Aug 16 (1145 IST).</headline>
+<text>
+<p>Indicative market rates</p>
+<p>* Call money:(O/N/)			 8.25-9.25 pct</p>
+<p>* Call money:(3-day)			4.25-4.50 pct</p>
+<p>* Commercial paper: P1+ (90 days)     8.75-10.00 pct</p>
+<p>* Commercial paper: P1  (90 days)     9.50-11.50 pct</p>
+<p>* Commercial paper: P1+ (30 days)     7.25-8.25  pct</p>
+<p>* Commercial paper: P1  (30 days)     8.00-10.0 pct</p>
+<p>* Certificate of deposit: 90 days     7.75-9.75  pct</p>
+<p>* Certificate of deposit: 365 days   10.00-10.50 pct</p>
+<p>* Treasury bills:</p>
+<p>  91  day t-bill			    7.00-6.70  pct</p>
+<p>  364 day t-bill			    8.25-7.95  pct</p>
+<p>  T-bill maturing on 29/08/97	   5.75-5.25  pct</p>
+<p>  T-bill maturing on 06/09/97	   6.25-5.50  pct</p>
+<p>  T-bill maturing on 26/09/97	   6.50-6.00  pct</p>
+<p>  T-bill maturing on 29/09/97	   6.60-6.20  pct</p>
+<p>  T-bill maturing on 10/10/97	   6.70-6.40  pct</p>
+<p>  T-bill maturing on 18/10/97	   6.85-6.40  pct</p>
+<p>  T-bill maturing on 25/10/97	   6.90-6.45  pct</p>
+<p>  T-bill maturing on 01/11/97	   7.00-6.70  pct</p>
+<p>  T-bill maturing on 10/11/97	   7.00-6.70  pct</p>
+<p>  T-bill maturing on 10/04/98	   7.90-7.60  pct</p>
+<p>  T-bill maturing on 24/04/98	   8.15-7.85  pct</p>
+<p>  T-bill maturing on 05/06/98	   8.15-7.85  pct</p>
+<p>  T-bill maturing on 19/06/98	   8.15-7.85  pct</p>
+<p>  T-bill maturing on 03/07/98	   8.25-7.90  pct</p>
+<p>  T-bill maturing on 18/07/98	   8.25-8.00  pct</p>
+<p>  T-bill maturing on 31/07/98	   8.30-8.10  pct</p>
+<p>  T-bill maturing on 14/08/98	   8.30-8.10  pct</p>
+<p>.</p>
+<p>Inter-bank term money quotes:</p>
+<p>  1 year				     10.50-11.00 pct</p>
+<p>.</p>
+<p>Inter-corporate deposits:</p>
+<p>			(Grade)</p>
+<p> 60-90 days	    A		    14.00-16.00 pct</p>
+<p> 60-90 days	    B		    15.50-18.00 pct</p>
+<p> 60-90 days	    C		    17.00-22.00 pct</p>
+<p>.</p>
+<p>UTI sale and repurchase prices (Rupees)</p>
+<p>---------------------------------------</p>
+<p>				 Sale    Repurchase  Secondary Market</p>
+<p>				 price   price	 price</p>
+<p>  US 64			14.00   13.70</p>
+<p>  Mastergain 92	    13.99   13.29</p>
+<p>.</p>
+<p>* Note: Grade A refers to blue chip corporates</p>
+<p>	    Grade B refers to other corporates</p>
+<p>* These rates are based on a consensus of rates offered by leading banks.</p>
+<p>* To contribute to this daily composite rate, please telephone Money Desk on 022 265-9000.</p>
+</text>
+<copyright>(c) Reuters Limited 1997</copyright>
+<metadata>
+<codes class="bip:countries:1.0">
+  <code code="INDIA">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+</codes>
+<codes class="bip:topics:1.0">
+  <code code="M12">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+  <code code="M13">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+  <code code="M131">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+  <code code="MCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+</codes>
+<dc element="dc.publisher" value="Reuters Holdings Plc"/>
+<dc element="dc.date.published" value="1997-08-16"/>
+<dc element="dc.source" value="Reuters"/>
+<dc element="dc.creator.location.country.name" value="INDIA"/>
+<dc element="dc.source" value="Reuters"/>
+</metadata>
+</newsitem>

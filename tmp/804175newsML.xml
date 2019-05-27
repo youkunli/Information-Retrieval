@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<newsitem itemid="804175" id="root" date="1997-08-16" xml:lang="en">
+<title>ISRAEL: Israel planes stage two raids south of Beirut.</title>
+<headline>Israel planes stage two raids south of Beirut.</headline>
+<dateline>BEIRUT 1997-08-16</dateline>
+<text>
+<p>Israeli fighter planes and helicopters attacked Palestinian guerrilla targets on hilltops south of Beirut twice on Saturday, security sources said.</p>
+<p>In the first raid, two helicopters fired two rockets at the Na'ameh hills 15 km (nine miles) south of Beirut, where the radical Popular Front for the Liberation of Palestine-General Command (PFLP-GC) has bases.</p>
+<p>Hours later, two Israeli planes fired two rockets at the Na'ameh hills.</p>
+<p>There were no immediate reports of casualties in either raid.</p>
+<p>In Jerusalem, an Israeli army statement said:</p>
+<p>&quot;Israeli air force fighters attacked this evening a terrorist base of the Popular Front in the Na'ameh area north of the security zone in south Lebanon. The pilots reported direct hits to the targets. All planes returned safely to their base.&quot;</p>
+<p>The operations raised to 51 the number of Israeli air raids on Lebanon this year.</p>
+</text>
+<copyright>(c) Reuters Limited 1997</copyright>
+<metadata>
+<codes class="bip:countries:1.0">
+  <code code="ISRAEL">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+  <code code="LEBAN">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+</codes>
+<codes class="bip:topics:1.0">
+  <code code="GCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+  <code code="GVIO">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+</codes>
+<dc element="dc.date.created" value="1997-08-16"/>
+<dc element="dc.publisher" value="Reuters Holdings Plc"/>
+<dc element="dc.date.published" value="1997-08-16"/>
+<dc element="dc.source" value="Reuters"/>
+<dc element="dc.creator.location" value="BEIRUT"/>
+<dc element="dc.creator.location.country.name" value="ISRAEL"/>
+<dc element="dc.source" value="Reuters"/>
+</metadata>
+</newsitem>

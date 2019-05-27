@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<newsitem itemid="804174" id="root" date="1997-08-16" xml:lang="en">
+<title>LIBYA: Five Saharan countries agree to economic tie-up.</title>
+<headline>Five Saharan countries agree to economic tie-up.</headline>
+<byline>Abdelaziz Barrouhi</byline>
+<dateline>TRIPOLI 1997-08-16</dateline>
+<text>
+<p>Five Saharan countries -- Libya, Niger, Chad, Mali and Burkina Faso -- agreed at a summit in Tripoli to set up an economic regional grouping, a spokesman said on Saturday.</p>
+<p>&quot;The five heads of states have reached a decision favouring closer ties between their countries and have instructed their foreign affairs ministers to discuss practical ways for its implementation,&quot; said Niger's Foreign Affairs Minister Ibrahim Assane Mayaki.</p>
+<p>He told reporters that the idea was to set up a regional economic grouping within the framework of the Organisation of African Unity.</p>
+<p>The foreign ministers of the five countries will meet next month to discuss mechanisms for such a grouping ahead of a second summit likely to be held later in September, Mayaki said.</p>
+<p>He said Nigeria, whose military ruler Sani Abacha missed the Tripoli summit due to ill health, would be invited to join the group.</p>
+<p>Libyan leader Muammar Gaddafi proposed the grouping during a three-hour closed meeting on Friday night with the visiting heads of states.</p>
+<p>Gaddafi suggested that Tunisia, Algeria, Morocco, Mauritania and Egypt should also be invited to join and he proposed that Libya should open its ports to the land-locked African countries to give them access to the Mediterranean.</p>
+<p>Diplomats said such a project would necessitate major  investments in roads through the Sahara and it was not clear how they would be financed.</p>
+<p>&quot;The Saharan desert must be covered with roads,&quot; Gaddafi said in a speech in Tripoli on Saturday night, but did not say whether his oil-rich country would finance them.</p>
+<p>Of the Tripoli summit, he said: &quot;We hope through this historical meeting to change the map (of Africa) designed by the former colonialists.&quot;</p>
+</text>
+<copyright>(c) Reuters Limited 1997</copyright>
+<metadata>
+<codes class="bip:countries:1.0">
+  <code code="CHAD">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+  <code code="LIBYA">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+  <code code="MALI">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+  <code code="NIGER">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+  <code code="UPVOLA">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+</codes>
+<codes class="bip:topics:1.0">
+  <code code="E51">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+  <code code="E512">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+  <code code="ECAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+  <code code="GCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+  <code code="GDIP">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+</codes>
+<dc element="dc.date.created" value="1997-08-16"/>
+<dc element="dc.publisher" value="Reuters Holdings Plc"/>
+<dc element="dc.date.published" value="1997-08-16"/>
+<dc element="dc.source" value="Reuters"/>
+<dc element="dc.creator.location" value="TRIPOLI"/>
+<dc element="dc.creator.location.country.name" value="LIBYA"/>
+<dc element="dc.source" value="Reuters"/>
+</metadata>
+</newsitem>

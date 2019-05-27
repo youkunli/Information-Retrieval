@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<newsitem itemid="804262" id="root" date="1997-08-16" xml:lang="en">
+<title>GREECE: Greece blames Turk Cypriots for failed unity talks.</title>
+<headline>Greece blames Turk Cypriots for failed unity talks.</headline>
+<dateline>ATHENS 1997-08-16</dateline>
+<text>
+<p>Greece on Saturday blamed the failure of U.N. talks aimed at reuniting the divided island of Cyprus on Turkish Cypriot leader Rauf Denktash.</p>
+<p>&quot;The Greek government condemns the Turkish intransigence and expects the same reaction from the international community,&quot; government spokesman Yannis Nikolaou said in a statement.</p>
+<p>Talks at a Swiss hotel near Montreux ended in disarray on Friday, with Denktash threatened to pull out of unity talks if the European Union went ahead with plans to start entry talks for Cyprus early next year.</p>
+<p>President Glafcos Clerides, who heads the internationally recognised government in the south, vowed to pull out if the EU plans were delayed. Each side blames the other for the deadlock.</p>
+<p>&quot;The Turkish Cypriot leader, led by Turkey, not only refused to discuss documents submitted by the U.N., not only repeated his unacceptable and divisionary stance but crudely tried to meddle in internal EU affairs,&quot; Nikolaou said.</p>
+<p>Cyprus has been divided since Turkey invaded the northern third in 1974 after a coup in the capital Nicosia engineered by the military junta then ruling Greece.</p>
+<p>Repeated U.N. efforts to reunite the Medierranean island in a federation have so far failed.</p>
+</text>
+<copyright>(c) Reuters Limited 1997</copyright>
+<metadata>
+<codes class="bip:countries:1.0">
+  <code code="CYPR">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+  <code code="GREECE">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+  <code code="TURK">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+  <code code="UN">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+</codes>
+<codes class="bip:topics:1.0">
+  <code code="GCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+  <code code="GDIP">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+</codes>
+<dc element="dc.date.created" value="1997-08-16"/>
+<dc element="dc.publisher" value="Reuters Holdings Plc"/>
+<dc element="dc.date.published" value="1997-08-16"/>
+<dc element="dc.source" value="Reuters"/>
+<dc element="dc.creator.location" value="ATHENS"/>
+<dc element="dc.creator.location.country.name" value="GREECE"/>
+<dc element="dc.source" value="Reuters"/>
+</metadata>
+</newsitem>

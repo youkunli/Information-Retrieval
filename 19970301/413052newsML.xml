@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<newsitem itemid="413052" id="root" date="1997-03-01" xml:lang="en">
+<title>FRANCE: Striking French miners release managers.</title>
+<headline>Striking French miners release managers.</headline>
+<dateline>STRASBOURG, France 1997-03-01</dateline>
+<text>
+<p>Striking French miners on Saturday released four managers they had been holding since Thursday in protest against government plans to close state-owned potassium mines in Wittelsheim, eastern France.</p>
+<p>Mine managers said they had agreed in return to resume negotiations with the strikers.</p>
+<p>However, the miners refused to end their occupation of the mining company's offices where they have been holed up since Thursday.</p>
+<p>Five miners' unions are demanding job guarantees for the estimated 800 to 900 people who will still be working at the mines when they shut down, as currently planned, in 2004.</p>
+<p>The workforce now numbers 2,400.</p>
+<p>Management said initially it would resume talks only after the miners agreed to leave the company offices.</p>
+</text>
+<copyright>(c) Reuters Limited 1997</copyright>
+<metadata>
+<codes class="bip:countries:1.0">
+  <code code="FRA">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<codes class="bip:industries:1.0">
+  <code code="I11000">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<codes class="bip:topics:1.0">
+  <code code="C42">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="CCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="E41">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="ECAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="GCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="GJOB">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<dc element="dc.date.created" value="1997-03-01"/>
+<dc element="dc.publisher" value="Reuters Holdings Plc"/>
+<dc element="dc.date.published" value="1997-03-01"/>
+<dc element="dc.source" value="Reuters"/>
+<dc element="dc.creator.location" value="STRASBOURG, France"/>
+<dc element="dc.creator.location.country.name" value="FRANCE"/>
+<dc element="dc.source" value="Reuters"/>
+</metadata>
+</newsitem>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<newsitem itemid="804300" id="root" date="1997-08-16" xml:lang="en">
+<title>AFGHANISTAN: Taleban protest closing of Washington embassy.</title>
+<headline>Taleban protest closing of Washington embassy.</headline>
+<dateline>KABUL 1997-08-16</dateline>
+<text>
+<p>The Taleban protested on Saturday that the United States was acting unfairly by closing the Afghan embassy in Washington to prevent it representing the purist Islamic movement which controls the capital Kabul and about two-thirds of the country.</p>
+<p>&quot;The suspension of the embassy in Washington while the consulate in New York, which is under the control of the opposition, continues to function, brings into question the claim of the United States of America to be neutral on the Afghan issue,&quot; Taleban said in a note released to reporters in Kabul.</p>
+<p>The Washington embassy has recently had one official from Taleban and one from the previous government, which was driven from Kabul last September.</p>
+<p>The State Department said on Thursday that the mission seemed about to come under Taleban control and gave it a week to close. It allowed the consular functions of the New York office to continue.</p>
+<p>&quot;Since the embassy of the Islamic State of Afghanistan has been in contact with the central government (the Taleban) and was representing to some extent the aims of the Islamic State, the Foreign Ministry of the Islamic State does not consider this action fair or just and expresses its protest at this measure.&quot; the Taleban statement said.</p>
+<p>Only three countries -- Saudi Arabia, Pakistan, and the United Arab Emirates -- have formally recognised the Taleban as the government of Afghanistan. Afghanistan's seat in the United Nations is occupied by a representative of the opposition.</p>
+</text>
+<copyright>(c) Reuters Limited 1997</copyright>
+<metadata>
+<codes class="bip:countries:1.0">
+  <code code="AFGH">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+  <code code="USA">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+</codes>
+<codes class="bip:topics:1.0">
+  <code code="GCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+  <code code="GDIP">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+</codes>
+<dc element="dc.date.created" value="1997-08-16"/>
+<dc element="dc.publisher" value="Reuters Holdings Plc"/>
+<dc element="dc.date.published" value="1997-08-16"/>
+<dc element="dc.source" value="Reuters"/>
+<dc element="dc.creator.location" value="KABUL"/>
+<dc element="dc.creator.location.country.name" value="AFGHANISTAN"/>
+<dc element="dc.source" value="Reuters"/>
+</metadata>
+</newsitem>

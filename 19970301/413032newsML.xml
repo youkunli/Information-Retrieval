@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<newsitem itemid="413032" id="root" date="1997-03-01" xml:lang="en">
+<title>USA: Excerpts from U.S. report on Colombia drug effort.</title>
+<headline>Excerpts from U.S. report on Colombia drug effort.</headline>
+<dateline>WASHINGTON 1997-02-28</dateline>
+<text>
+<p>The following are excerpts from the U.S. State Department report explaining the decision on Friday to deny again Colombia's certification as a U.S. partner in the war on drugs:</p>
+<p>In 1996, as in previous years, Colombia remained the world's leading producer and distributor of cocaine and an important supplier of heroin and marijuana. In the same year, coca cultivation in the country increased by approximately 30 percent.</p>
+<p>As in 1995, the Colombian Government made only limited progress in 1996 against the pervasive, narcotics-related corruption from which it suffers. In a process which can only be described as flawed, President (Ernesto) Samper was exonerated of charges of corruption by the Colombian Congress. Moreover, Samper remained unwilling to confront fully the drug interests that contributed heavily to his presidential campaign.</p>
+<p>President Samper pledged to push for stricter sentencing laws in 1994, but there was only limited progress in 1996 to advance Congressional passage of legislation which would increase sentences for traffickers and money launderers. As an apparent consequence, the Rodriguez Orejuela brothers -- the notorious Cali drug leaders -- received very light prison sentences which were not commensurate with their crimes. The Colombian government did not respond to the USG's (U.S. government's) request for extradition of four major drug traffickers and for most of the year it took no action in response to reliable USG information that narcotics traffickers continue to run their operations from prison. Troubling also was Samper's promotion and public praise for a drug-tainted military general -- behaviour which reinforces USG concern about the credibility of his stated commitment to serious narcotics control for Colombia.</p>
+<p>On the positive side, the serious work on the part of the Colombian National Police (CNP) as well as select elements of the military to confront drug trafficking must be highlighted. Government agreement to expand coca and opium eradication was taken on with determination by the CNP despite significant challenges including physical threats and lack of proper resources. In this regard, the USG was encouraged by evidence of increased cooperation from the Colombian military for the CNP in support of illegal crop eradication. The CNP and military also worked closely to counter narco- and guerrilla-sponsored public demonstrations against eradication.</p>
+<p>There were signs that newly appointed members of the cabinet are determined and committed to advance important counternarcotics objectives.</p>
+<p>Progress observed in some areas holds promise for serious drug control efforts in Colombia in the future. Nevertheless, because of high-level corruption, the privileged treatment accorded to major traffickers currently in jail, light sentencing of traffickers and the government's continued stand against extradition, the USG cannot certify Colombia as fully cooperating with the United States on drug control, or as having taken adequate steps on its own to meet the goals and objectives of the 1988 UN Drug Convention.&quot;</p>
+</text>
+<copyright>(c) Reuters Limited 1997</copyright>
+<metadata>
+<codes class="bip:countries:1.0">
+  <code code="COL">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="USA">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<codes class="bip:topics:1.0">
+  <code code="GCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="GCRIM">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="GDIP">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<dc element="dc.date.created" value="1997-02-28"/>
+<dc element="dc.publisher" value="Reuters Holdings Plc"/>
+<dc element="dc.date.published" value="1997-03-01"/>
+<dc element="dc.source" value="Reuters"/>
+<dc element="dc.creator.location" value="WASHINGTON"/>
+<dc element="dc.creator.location.country.name" value="USA"/>
+<dc element="dc.source" value="Reuters"/>
+</metadata>
+</newsitem>

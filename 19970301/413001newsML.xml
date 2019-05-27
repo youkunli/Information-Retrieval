@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<newsitem itemid="413001" id="root" date="1997-03-01" xml:lang="en">
+<title>LIBYA: African ministers tell Israel to halt settlements.</title>
+<headline>African ministers tell Israel to halt settlements.</headline>
+<dateline>TRIPOLI 1997-03-01</dateline>
+<text>
+<p>African foreign ministers urged Israel to halt the building of new settlements on occupied Palestinian land and said this could destroy the Middle East peace process.</p>
+<p>&quot;The Council (of African ministers)...urges Israel to immediately halt its confiscation of Palestinian territory and the construction of new settlements, especially in Jerusalem and in its environs,&quot; they said in a decision adopted late on Friday at the end of an Organisation of African Unity annual conference in Tripoli.</p>
+<p>&quot;The council expresses grave concern and condemnation of the Israeli government's violations of the principles of peace and peaceful co-existence,&quot; it added.</p>
+</text>
+<copyright>(c) Reuters Limited 1997</copyright>
+<metadata>
+<codes class="bip:countries:1.0">
+  <code code="ISRAEL">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="LIBYA">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="OAU">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<codes class="bip:topics:1.0">
+  <code code="GCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="GDIP">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<dc element="dc.date.created" value="1997-03-01"/>
+<dc element="dc.publisher" value="Reuters Holdings Plc"/>
+<dc element="dc.date.published" value="1997-03-01"/>
+<dc element="dc.source" value="Reuters"/>
+<dc element="dc.creator.location" value="TRIPOLI"/>
+<dc element="dc.creator.location.country.name" value="LIBYA"/>
+<dc element="dc.source" value="Reuters"/>
+</metadata>
+</newsitem>

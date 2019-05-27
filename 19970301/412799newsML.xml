@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<newsitem itemid="412799" id="root" date="1997-03-01" xml:lang="en">
+<title>CENTRAL AFRICAN REPUBLIC: Army rebels reject Bangui disarmament plan.</title>
+<headline>Army rebels reject Bangui disarmament plan.</headline>
+<dateline>BANGUI 1997-03-01</dateline>
+<text>
+<p>Army mutineers in the Central African Republic have rejected a call from African mediators for them to disarm this month, saying they are not prepared to go &quot;like cattle to the slaughterhouse&quot;.</p>
+<p>Lieutenant Parfait Mbay, spokesman for the mutineers, told Reuters the disarmament plan was unacceptable because President Ange-Felix Patasse had not respected a January peace deal.</p>
+<p>&quot;The timetable laid out by Gabon's minister of state for defence, Idriss Ngary, is nothing to do with us. We're not going to offer ourselves like cattle to the slaughterhouse,&quot; he said.</p>
+<p>Army mutinies in April and May began over pay and conditions but turned into a campaign to oust Patasse, a northern civilian who won presidential elections in 1993. The latest mutiny, which began in November 15, degenerated into ethnic bloodshed.</p>
+<p>Mediators propose disarmament of mutineers from March 20-29.</p>
+<p>The mutineers say Patasse did not respect the January agreement in his allocation of government posts and in the way he reshuffled the army high command.</p>
+<p>Patasse named General Francois Bozize, a northerner like himself, armed forces chief of staff on February 19. The mutineers, members of the same minority Yakoma ethnic group as former military ruler Andre Kolingba, are from the south.</p>
+<p>Patasse formed a government of national unity but his supporters hold the main portfolios.</p>
+<p>French troops, in the country under a defence pact, restored order. African peacekeepers have begun taking their place.</p>
+<p>Mali's widely respected former military leader Amadou Toumani Toure brokered the January 25 peace deal.</p>
+</text>
+<copyright>(c) Reuters Limited 1997</copyright>
+<metadata>
+<codes class="bip:countries:1.0">
+  <code code="CAFR">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<codes class="bip:topics:1.0">
+  <code code="GCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="GVIO">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<dc element="dc.date.created" value="1997-03-01"/>
+<dc element="dc.publisher" value="Reuters Holdings Plc"/>
+<dc element="dc.date.published" value="1997-03-01"/>
+<dc element="dc.source" value="Reuters"/>
+<dc element="dc.creator.location" value="BANGUI"/>
+<dc element="dc.creator.location.country.name" value="CENTRAL AFRICAN REPUBLIC"/>
+<dc element="dc.source" value="Reuters"/>
+</metadata>
+</newsitem>

@@ -16,13 +16,8 @@ int main(int argc,char ** argv){
 	string spath(path);
 	InvertedIndex* index = new InvertedIndex("index");
 	index->getAllFiles(spath, files);
-	{
-		cout << "There are " << files.size() << " files..." << endl;
-		cout << "There are " << (int)sqrt(files.size()) << " blocks" << endl;
-	}
-	//index->build(files);
-	//index->output();
-	//index->SPIMIbuild(files);
+	cout << "There are " << files.size() << " files..." << endl;
+	cout << "There are " << (int)sqrt(files.size()) << " blocks" << endl;
 	index->SPIMI_binarybuild(files);
 	
 	delete index;

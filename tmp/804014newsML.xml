@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<newsitem itemid="804014" id="root" date="1997-08-16" xml:lang="en">
+<title>USA: GOLF-HEAT WARNING IN EFFECT FOR PGA CHAMPIONSHIP.</title>
+<headline>GOLF-HEAT WARNING IN EFFECT FOR PGA CHAMPIONSHIP.</headline>
+<dateline>MAMARONECK, New York 1997-08-16</dateline>
+<text>
+<p>A &quot;heat advisory&quot; was in effect as play began on Saturday morning in the third round of the PGA Championship, which Lee Janzen was leading by one stroke over Davis Love.</p>
+<p>The temperatures were expected to be at least in the mid-90s (Fahrenheit) -- accompanied by oppressive humidity -- when the leaders teed off in early afternoon at Winged Foot Golf Club, just north of New York City.</p>
+<p>It was already very warm and humid when the first of the 77 players still in the championship began teeing off in early morning, with the sun partially hidden by thick haze.</p>
+<p>The weather -- combined with the difficulty of the golf course and the pressure of the year's last major championship -- was sure to make things difficult for all the players, but especially the leaders, who were expected to play in the worst of the heat and humidity.</p>
+<p>To make things worse, there was the possibility of thunderstorms late in the day, which could interrupt play.</p>
+<p>Janzen, who shot 69-67--136 in the first two rounds, and Love, who went 66-71--137, were due to tee off at 2:10 p.m. EDT (1810 GMT) in the final pairing of the day.</p>
+</text>
+<copyright>(c) Reuters Limited 1997</copyright>
+<metadata>
+<codes class="bip:countries:1.0">
+  <code code="USA">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+</codes>
+<codes class="bip:topics:1.0">
+  <code code="GCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+  <code code="GSPO">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+</codes>
+<dc element="dc.date.created" value="1997-08-16"/>
+<dc element="dc.publisher" value="Reuters Holdings Plc"/>
+<dc element="dc.date.published" value="1997-08-16"/>
+<dc element="dc.source" value="Reuters"/>
+<dc element="dc.creator.location" value="MAMARONECK, New York"/>
+<dc element="dc.creator.location.country.name" value="USA"/>
+<dc element="dc.source" value="Reuters"/>
+</metadata>
+</newsitem>

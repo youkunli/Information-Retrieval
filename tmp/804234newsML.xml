@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<newsitem itemid="804234" id="root" date="1997-08-16" xml:lang="en">
+<title>USA: Two Jordanians convicted in U.S. elude authorities.</title>
+<headline>Two Jordanians convicted in U.S. elude authorities.</headline>
+<dateline>PHILADELPHIA 1997-08-15</dateline>
+<text>
+<p>- A Jordanian brother and sister convicted of bank fraud in the United States have become fugitives, the FBI said on Friday.</p>
+<p>A second brother convicted in the case was arrested on Thursday as he tried to leave the country, the FBI said. A third did not take part in the plot, it added.</p>
+<p>Tony Houran of Old Tappan, New Jersey, also known as Aktham Abuhouran, was arrested before he could board a flight at New York's Kennedy International Airport on Thursday night, the FBI said.</p>
+<p>But his sister and one of his brothers -- Adma Houran of Old Tappan and Adam or Adham Houran of Saddle River, New Jersey -- eluded Port Authority police at the airport and were still at large, the FBI said.</p>
+<p>Tony and Adam Houran were facing sentencing in a federal court in Philadelphia on Wednesday. Adma Houran was serving a sentence of four months of house arrest. The FBI identified all three as Jordanian nationals.</p>
+<p>Hitham or Steve Houran, serving a sentence for the same crime, did not join his brothers' and sister's dash to the airport, the FBI said.</p>
+<p>Port Authority police had been on the lookout for the three Hourans after the FBI received a signal when Tony and Adam cut their electronic monitoring bracelets, the FBI said. Adma also cut her monitoring device and joined them, it said.</p>
+<p>The four siblings were convicted of breaking federal banking laws in the 1992 collapse of the Bank of Brandywine Valley in West Chester, Pennsylvania, a Philadelphia suburb. They borrowed nearly $7 million to help prop up the family's failing construction business.</p>
+</text>
+<copyright>(c) Reuters Limited 1997</copyright>
+<metadata>
+<codes class="bip:countries:1.0">
+  <code code="JORDAN">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+  <code code="USA">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+</codes>
+<codes class="bip:topics:1.0">
+  <code code="GCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+  <code code="GCRIM">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+</codes>
+<dc element="dc.date.created" value="1997-08-15"/>
+<dc element="dc.publisher" value="Reuters Holdings Plc"/>
+<dc element="dc.date.published" value="1997-08-16"/>
+<dc element="dc.source" value="Reuters"/>
+<dc element="dc.creator.location" value="PHILADELPHIA"/>
+<dc element="dc.creator.location.country.name" value="USA"/>
+<dc element="dc.source" value="Reuters"/>
+</metadata>
+</newsitem>

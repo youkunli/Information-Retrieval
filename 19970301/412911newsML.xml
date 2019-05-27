@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<newsitem itemid="412911" id="root" date="1997-03-01" xml:lang="en">
+<title>PHILIPPINES: Fire burns down 120 houses in southern Philippines.</title>
+<headline>Fire burns down 120 houses in southern Philippines.</headline>
+<dateline>ZAMBOANGA, Philippines 1997-03-01</dateline>
+<text>
+<p>About 120 houses were razed to the ground when fire spread through a densely populated area of a southern Philippine town, according to reports reaching the military headquarters on Saturday.</p>
+<p>Armed forces' Southern Command spokesman Fredesvindo Covarrubias said the military was still investigating the cause of the fire which killed a six-year old boy and injured two others.</p>
+<p>The fire hit Siasi town in Sulu, about 940 km (580 miles) south of Manila, early on Friday morning.</p>
+<p>The displaced families have been relocated in public school buildings.</p>
+<p>In April 1994, suspected Moslem rebels set a town centre in the southern Philippines ablaze killing more than 50 people.</p>
+</text>
+<copyright>(c) Reuters Limited 1997</copyright>
+<metadata>
+<codes class="bip:countries:1.0">
+  <code code="PHLNS">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<codes class="bip:topics:1.0">
+  <code code="GCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="GDIS">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<dc element="dc.date.created" value="1997-03-01"/>
+<dc element="dc.publisher" value="Reuters Holdings Plc"/>
+<dc element="dc.date.published" value="1997-03-01"/>
+<dc element="dc.source" value="Reuters"/>
+<dc element="dc.creator.location" value="ZAMBOANGA, Philippines"/>
+<dc element="dc.creator.location.country.name" value="PHILIPPINES"/>
+<dc element="dc.source" value="Reuters"/>
+</metadata>
+</newsitem>

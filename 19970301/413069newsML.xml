@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<newsitem itemid="413069" id="root" date="1997-03-01" xml:lang="en">
+<title>GERMANY: German unemployment to hit 4.8 mln in Feb - paper.</title>
+<headline>German unemployment to hit 4.8 mln in Feb - paper.</headline>
+<dateline>BONN 1997-03-01</dateline>
+<text>
+<p>German unemployment hit a new-post war record of 4.8 million in February, climbing 120,000 on the previous month, a German newspaper reported on Saturday.</p>
+<p>In a release ahead of publication on Sunday, Bild am Sonntag said the figure meant the country's unemployment rate had reached over 12.5 percent, up from 12.2 percent in January.</p>
+<p>The Federal Labour Office is due to report the official unemployment figure next Thursday.</p>
+<p>German unemployment surged by over a half a million to a new post-war record of 4.66 million in January, reaching levels last seen in the depths of the Great Depression of the 1930s.</p>
+<p>The massive rise, due in part to harsh weather that saw large numbers of construction workers laid off, raised concern about the country's sputtering economic recovery and Bonn's ability to meet European monetary union requirements.</p>
+</text>
+<copyright>(c) Reuters Limited 1997</copyright>
+<metadata>
+<codes class="bip:countries:1.0">
+  <code code="GFR">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<codes class="bip:topics:1.0">
+  <code code="E41">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="ECAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="GCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="GJOB">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<dc element="dc.date.created" value="1997-03-01"/>
+<dc element="dc.publisher" value="Reuters Holdings Plc"/>
+<dc element="dc.date.published" value="1997-03-01"/>
+<dc element="dc.source" value="Reuters"/>
+<dc element="dc.creator.location" value="BONN"/>
+<dc element="dc.creator.location.country.name" value="GERMANY"/>
+<dc element="dc.source" value="Reuters"/>
+</metadata>
+</newsitem>

@@ -12,8 +12,10 @@ string filePath_o2sID;
 string filePath_opID2sID;
 FILE * _log_btree;
 // 在中间结点中插入键
-bool mItnlNode::Insert( mNode * pNode){
-	if(getCount() >= MAXNUM_KEY){
+bool mItnlNode::Insert( mNode * pNode)
+{
+	if(getCount() >= MAXNUM_KEY)
+	{
 		printf("err large\n");
 		return false;
 	}
@@ -21,12 +23,14 @@ bool mItnlNode::Insert( mNode * pNode){
 //	for check
 
 	int _ikey = this ->iInsert(data);
-	if(_ikey <= 1){
+	if(_ikey <= 1)
+	{
 		printf("err in insert itnl\n");
 		system("pause"); exit(0);
 	}
 //	在要插入的点是在最右端时要特殊处理, solved
-	for(int i = getCount() + 1; i > _ikey; i --){
+	for(int i = getCount() + 1; i > _ikey; i --)
+	{
 		this ->setElement(i,  this ->getElement(i - 1) );
 	}
 	mitnldata _mitnl;
@@ -43,7 +47,8 @@ bool mItnlNode::Insert( mNode * pNode){
 }
 
 // 在中间结点中删除键，以及该键后的指针
-int mItnlNode::Delete(const KeyType & _keytype){
+int mItnlNode::Delete(const KeyType & _keytype)
+{
 	int _index = -1;
 	int _ibegin = 1, _iend = getCount();
 	int _imiddle;
@@ -70,14 +75,17 @@ int mItnlNode::Delete(const KeyType & _keytype){
 	//任何一个不是根节点或不是叶子节点的节点必须保证包含至少两个元素
 	// 对于insert， index = 1 的时候一定是整棵树的最右边！！！
 	// delete则不同
-	if(_index == 1 && this ->getFather() != NULL){
+	if(_index == 1 && this ->getFather() != NULL)
+	{
 		mItnlNode * itnl_father = (mItnlNode *)(this ->getFather() );
 		KeyType & f_data = this ->getKey(1);
 		KeyType & i_data = this ->getKey(2);
-		while(itnl_father != NULL){
+		while(itnl_father != NULL)
+		{
 			// 此处同insert不同，审慎其不同之处
 			int tmp_key = itnl_father ->iExist(f_data);
-			if(tmp_key < 1){
+			if(tmp_key < 1)
+			{
 				cout << "bug tmp_key" << endl;
 				system("pause");
 				exit(0);
@@ -90,8 +98,10 @@ int mItnlNode::Delete(const KeyType & _keytype){
 			itnl_father = (mItnlNode *)(itnl_father ->getFather()  );
 		}
 	}
-	if(_index > 0 && _index <= getCount()){
-		for(int i = _index; i < getCount(); i ++){
+	if(_index > 0 && _index <= getCount())
+	{
+		for(int i = _index; i < getCount(); i ++)
+		{
 			this ->setElement(i, this ->getElement(i + 1)  );
 		}
 		(this ->getElement(getCount()) ).cleardata();
@@ -99,17 +109,21 @@ int mItnlNode::Delete(const KeyType & _keytype){
 		this ->setModify();
 		return _index;
 	}
-	else{
+	else
+	{
 		cout << "bug index" << endl;
 	}
 	return -1;
 }
-KeyType & mItnlNode::Split(mItnlNode* pNode){
+KeyType & mItnlNode::Split(mItnlNode* pNode)
+{
 	pNode ->setCount(ORDER_V);
-	for(int i = ORDER_V + 1; i <= MAXNUM_KEY; i ++){
+	for(int i = ORDER_V + 1; i <= MAXNUM_KEY; i ++)
+	{
 		pNode ->setElement(i - ORDER_V,   this ->getElement(i)  );
 
-		if(pNode ->isInMemory(i - ORDER_V)){ //debug for long time!!!
+		if(pNode ->isInMemory(i - ORDER_V))
+		{ //debug for long time!!!
 			(   pNode ->getPointer(i - ORDER_V)   ) ->setFather(pNode);
 		}
 	}
@@ -120,11 +134,13 @@ KeyType & mItnlNode::Split(mItnlNode* pNode){
 }
 
 // 结合结点，把指定中间结点的数据全部剪切到本中间结点
-bool mItnlNode::Combine(mItnlNode * pNode){
+bool mItnlNode::Combine(mItnlNode * pNode)
+{
 	if(this ->getCount() + pNode ->getCount() > MAXNUM_KEY)
 		return false;
 	int _count = this ->getCount();
-	for(int i = 1; i <= pNode ->getCount(); i ++){
+	for(int i = 1; i <= pNode ->getCount(); i ++)
+	{
 		this ->setElement(_count + i, pNode ->getElement(i) );
 		this ->IncCount();
 	}
@@ -132,7 +148,8 @@ bool mItnlNode::Combine(mItnlNode * pNode){
 }
 
 // 从另一结点移一个元素到本结点
-bool mItnlNode::MoveOneElement(mNode* pNode){
+bool mItnlNode::MoveOneElement(mNode* pNode)
+{
 
 
 	return false;
@@ -141,25 +158,31 @@ bool mItnlNode::MoveOneElement(mNode* pNode){
 // 清除叶子结点中的数据
 
 // 在叶子结点中插入数据
-bool mLeafNode::Insert(const mleafdata & _leafdata){
-	const KeyType & data = _leafdata.mData;{
+bool mLeafNode::Insert(const mleafdata & _leafdata)
+{
+	const KeyType & data = _leafdata.mData;
+	{
 //		fputs(data.sKey, _log_btree);
 //		fputs("\n", _log_btree);
 	}
-	if(getCount() >= MAXNUM_KEY){
+	if(getCount() >= MAXNUM_KEY)
+	{
 		printf("err count too large\n");
 		return false;
 	}
 //	返回i， data 介于i - 1 与 i 之间, 要放在i 上
 	int _i_insert = this ->iInsert(data);
 //	还要考虑仅根节点是叶子节点的情况， 需要再加个条件
-	if(_i_insert == 1 && this ->getFather() != NULL){
+	if(_i_insert == 1 && this ->getFather() != NULL)
+	{
 		mItnlNode * _pFather = (mItnlNode *)(this ->getFather());
 		KeyType & f_data	= this ->getKey(1);
-		while(_pFather != NULL){
+		while(_pFather != NULL)
+		{
 			int _ikey = _pFather ->iExist(f_data);
 			//check
-			if(_ikey <= 0 || _ikey > _pFather ->getCount()){
+			if(_ikey <= 0 || _ikey > _pFather ->getCount())
+			{
 				printf("err in _ikey\n");
 				system("pause");
 				exit(0);
@@ -172,7 +195,8 @@ bool mLeafNode::Insert(const mleafdata & _leafdata){
 		}
 	}
 
-	for(int i = getCount() + 1; i > _i_insert; i --){
+	for(int i = getCount() + 1; i > _i_insert; i --)
+	{
 		this ->setElement(i,  this ->getElement(i - 1)  );
 	}
 
@@ -188,39 +212,47 @@ bool mLeafNode::Insert(const mleafdata & _leafdata){
  * 若是最左端的元素则向上修改对应需要修改的父节点， 此处与insert不同
  * insert若出现最左端必然是整棵树的最左端
  */
-int mLeafNode::Delete(KeyType & _keytype){
+int mLeafNode::Delete(KeyType & _keytype)
+{
 	int _index = -1;
 	int _ibegin = 1, _iend = getCount();
 	int _imiddle;
 	while(_ibegin < _iend){
 		_imiddle = (_ibegin + _iend) / 2;
-		if(LeafData[_ibegin].mData == _keytype){
+		if(LeafData[_ibegin].mData == _keytype)
+		{
 			_index =  _ibegin;
 			break;
 		}
-		if(LeafData[_iend].mData == _keytype){
+		if(LeafData[_iend].mData == _keytype)
+		{
 			_index =  _iend;
 			break;
 		}
 		if(_ibegin == _iend - 1)	break;
-		if(LeafData[_imiddle].mData> _keytype){
+		if(LeafData[_imiddle].mData> _keytype)
+		{
 			_iend = _imiddle;
 		}
-		else{
+		else
+		{
 			_ibegin = _imiddle;
 		}
 	}
 	//任何一个不是根节点或不是叶子节点的节点必须保证包含至少两个元素
 	// 对于insert， index = 1 的时候一定是整棵树的最右边！！！
 	// delete则不同
-	if(_index == 1 && this ->getFather() != NULL){
+	if(_index == 1 && this ->getFather() != NULL)
+	{
 		mItnlNode * itnl_father = (mItnlNode *)(this ->getFather() );
 		KeyType & f_data = this ->getKey(1);
 		KeyType & i_data = this ->getKey(2);
-		while(itnl_father != NULL){
+		while(itnl_father != NULL)
+		{
 			// 此处同insert不同，审慎其不同之处
 			int tmp_key = itnl_father ->iExist(f_data);
-			if(tmp_key < 1){
+			if(tmp_key < 1)
+			{
 				cout << "bug tmp_key" << endl;
 				system("pause"); exit(0);
 			}
@@ -232,9 +264,11 @@ int mLeafNode::Delete(KeyType & _keytype){
 			itnl_father = (mItnlNode *)(itnl_father ->getFather()  );
 		}
 	}
-	if(_index > 0 && _index <= getCount()){
+	if(_index > 0 && _index <= getCount())
+	{
 		(this ->getElement(_index)).cleardata();
-		for(int i = _index; i < getCount(); i ++){
+		for(int i = _index; i < getCount(); i ++)
+		{
 			this ->setElement(i, this ->getElement(i + 1)  );
 		}
 		(this ->getElement(getCount() )).cleardata();
@@ -242,32 +276,39 @@ int mLeafNode::Delete(KeyType & _keytype){
 		this ->setModify();
 		return _index;
 	}
-	else{
+	else
+	{
 		cout << "bug index" << endl;
 	}
 	return -1;
 }
 //重载delete of leaf
-int mLeafNode::Delete(KeyType & _keytype, char partval[], int & pvFlag){
+int mLeafNode::Delete(KeyType & _keytype, char partval[], int & pvFlag)
+{
 	int _index = -1;
 	int _ibegin = 1, _iend = getCount();
 	int _imiddle;
-	while(_ibegin < _iend){
+	while(_ibegin < _iend)
+	{
 		_imiddle = (_ibegin + _iend) / 2;
-		if(LeafData[_ibegin].mData == _keytype){
+		if(LeafData[_ibegin].mData == _keytype)
+		{
 			_index =  _ibegin;
 			break;
 		}
-		if(LeafData[_iend].mData == _keytype){
+		if(LeafData[_iend].mData == _keytype)
+		{
 			_index =  _iend;
 			break;
 		}
 		if(_ibegin == _iend - 1)	break;
 
-		if(LeafData[_imiddle].mData> _keytype){
+		if(LeafData[_imiddle].mData> _keytype)
+		{
 			_iend = _imiddle;
 		}
-		else{
+		else
+		{
 			_ibegin = _imiddle;
 		}
 	}
@@ -289,14 +330,17 @@ int mLeafNode::Delete(KeyType & _keytype, char partval[], int & pvFlag){
 	//任何一个不是根节点或不是叶子节点的节点必须保证包含至少两个元素
 	// 对于insert， index = 1 的时候一定是整棵树的最右边！！！
 	// delete则不同
-	if(_index == 1 && this ->getFather() != NULL){
+	if(_index == 1 && this ->getFather() != NULL)
+	{
 		mItnlNode * itnl_father = (mItnlNode *)(this ->getFather() );
 		KeyType & f_data = this ->getKey(1);
 		KeyType & i_data = this ->getKey(2);
-		while(itnl_father != NULL){
+		while(itnl_father != NULL)
+		{
 			// 此处同insert不同，审慎其不同之处
 			int tmp_key = itnl_father ->iExist(f_data);
-			if(tmp_key < 1){
+			if(tmp_key < 1)
+			{
 				cout << "bug tmp_key" << endl;
 				system("pause"); exit(0);
 			}
@@ -308,9 +352,11 @@ int mLeafNode::Delete(KeyType & _keytype, char partval[], int & pvFlag){
 			itnl_father = (mItnlNode *)(itnl_father ->getFather()  );
 		}
 	}
-	if(_index > 0 && _index <= getCount()){
+	if(_index > 0 && _index <= getCount())
+	{
 		(this ->getElement(_index)).cleardata();
-		for(int i = _index; i < getCount(); i ++){
+		for(int i = _index; i < getCount(); i ++)
+		{
 			this ->setElement(i, this ->getElement(i + 1)  );
 		}
 		(this ->getElement(getCount() )).cleardata();
@@ -324,7 +370,8 @@ int mLeafNode::Delete(KeyType & _keytype, char partval[], int & pvFlag){
 
 
 // 分裂叶子结点，把本叶子结点的后一半数据剪切到指定的叶子结点中
-KeyType & mLeafNode::Split(mLeafNode * pNode){
+KeyType & mLeafNode::Split(mLeafNode * pNode)
+{
 	for(int i = ORDER_V + 1; i <= MAXNUM_KEY; i ++)
 	{
 		pNode ->setElement(i - ORDER_V,   this ->getElement(i)  );
@@ -337,10 +384,12 @@ KeyType & mLeafNode::Split(mLeafNode * pNode){
 }
 
 // 结合结点，把指定叶子结点的数据全部剪切到本叶子结点
-bool mLeafNode::Combine(mLeafNode * pNode){
+bool mLeafNode::Combine(mLeafNode * pNode)
+{
 	int this_count = this ->getCount();
 	int pnode_count = pNode ->getCount();
-	for(int i = 1; i <= pnode_count; i ++){
+	for(int i = 1; i <= pnode_count; i ++)
+	{
 		this ->setElement(this_count + i, pNode ->getElement(i) );
 		this ->IncCount();
 	}
@@ -369,7 +418,8 @@ mLeafNode* BPlusTree::SearchLeafNode(const KeyType & data)const{
 		 * Search 的时候都要注意边界的率先判断, 还有当前叶节点可能是根节点
 		 */
 //	    int _floor = 1;
-		while(pNode ->getType() == NODE_TYPE_INTERNAL){
+		while(pNode ->getType() == NODE_TYPE_INTERNAL)
+		{
 			{
 				this ->log("in while NODE INTERNAL\n");
 			}
@@ -379,11 +429,13 @@ mLeafNode* BPlusTree::SearchLeafNode(const KeyType & data)const{
 				this ->log("after iNextFloor\n");
 			}
 			int _enter_num = _enter_ret;
-			if(_enter_ret <= 0){
+			if(_enter_ret <= 0)
+			{
 				_enter_num = 1;
 			}
 			bool _in_memory = _pItnl ->isInMemory(_enter_num);
-			if(!_in_memory){
+			if(!_in_memory)
+			{
 				long long int _addrfb = _pItnl ->getSonAddr(_enter_num);
 				{
 					this ->log("before readNode\n");
@@ -396,15 +448,18 @@ mLeafNode* BPlusTree::SearchLeafNode(const KeyType & data)const{
 				_pItnl ->setMemory(_enter_num);
 				pNode = _pmnode;
 			}
-			else{
+			else
+			{
 				pNode = pNode ->getPointer(_enter_num);
 			}
 		}
-		if(pNode == NULL){
+		if(pNode == NULL)
+		{
 			cout << "pNode is err in searchLeafNode" << endl;
 			system("pause"); exit(0);
 		}
-		if(pNode ->getType() != NODE_TYPE_LEAF){
+		if(pNode ->getType() != NODE_TYPE_LEAF)
+		{
 			cout << "err in searchleafnode" << endl;
 			system("pause"); exit(0);
 		}
@@ -416,20 +471,17 @@ mLeafNode* BPlusTree::SearchLeafNode(const KeyType & data)const{
 	return NULL;
 }
 // 在树中查找数据
-bool BPlusTree::Search(KeyType & data, mleafdata & _ret){
-	{
-		this ->log("in searchLeafNode\n");
-	}
+bool BPlusTree::Search(KeyType & data, mleafdata & _ret)
+{
 	mLeafNode * _pLeaf = SearchLeafNode(data);
-	{
-		this ->log("after searchLeafNode\n");
-	}
 	int _ikey = _pLeaf ->iExist(data);
-	if(_ikey > _pLeaf ->getCount()){
+	if(_ikey > _pLeaf ->getCount())
+	{
 		printf("err in ikey\n");
 		system("pause"); exit(0);
 	}
-	if(_ikey > 0){
+	if(_ikey > 0)
+	{
 		_ret = _pLeaf ->getElement(_ikey);
 		return true;
 	}
@@ -438,10 +490,9 @@ bool BPlusTree::Search(KeyType & data, mleafdata & _ret){
 	return false;
 }
 
-bool BPlusTree::Insert(const mleafdata & _leafdata){
-	{
-
-	}
+bool BPlusTree::Insert(const mleafdata & _leafdata)
+{
+	
 	const KeyType & data = _leafdata.mData;
 	mLeafNode * _pOldLeaf = SearchLeafNode(data);
 	{
@@ -451,7 +502,8 @@ bool BPlusTree::Insert(const mleafdata & _leafdata){
 		this ->log(ctemp);
 	}
 	int _ikey = _pOldLeaf ->iExist(data);
-	if(_ikey > 0){
+	if(_ikey > 0)
+	{
 		_pOldLeaf ->dupInsert(_leafdata, _ikey);
 		return false;
 	}
@@ -463,15 +515,18 @@ bool BPlusTree::Insert(const mleafdata & _leafdata){
 		sprintf(ctemp, "pOldLeaf count:%d\n", _pOldLeaf ->getCount());
 		this ->log(ctemp);
 	}
-	if(_pOldLeaf ->getCount() < MAXNUM_KEY){
-		if(! _pOldLeaf ->getModify()){
+	if(_pOldLeaf ->getCount() < MAXNUM_KEY)
+	{
+		if(! _pOldLeaf ->getModify())
+		{
 			DelDisk(mfp, _pOldLeaf ->getAddrFB(), mblockQueue);
 		}
 //		setmodified in insert
 		this ->log("insert pOldLeaf\n");
 		return _pOldLeaf ->Insert(_leafdata);
 	}
-	else{
+	else
+	{
 //		set modified in mnode_initial;
 		mLeafNode * _pNewLeaf = new mLeafNode;
 //		new node need a addrfb
@@ -480,7 +535,8 @@ bool BPlusTree::Insert(const mleafdata & _leafdata){
 
 //		_key_tmp 也就将是_pnewleaf的第一个元素的key
 //		setmodified in split;
-		if(! _pOldLeaf ->getModify()){
+		if(! _pOldLeaf ->getModify())
+		{
 			DelDisk(mfp, _pOldLeaf ->getAddrFB(), mblockQueue);
 		}
 		{

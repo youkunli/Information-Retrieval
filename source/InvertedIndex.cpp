@@ -21,13 +21,13 @@ SPIMIManager::SPIMIManager(){
 		cout << "fp_index bug" << endl;
 		exit(0);
 	}
-	kv_store = new KVstore(false); //isCreateMode false
+	kv_store = new KVstore(false);
 }
 
 SPIMIManager::SPIMIManager(vector<string>* _files,string _indexpath, string _inputpath, string _blockpath, bool _is_build_mode){
 	files = _files;
 	nextFile = 0;
-	nFilesOneBlock = (int)sqrt((int)_files->size()) + 1;
+	nFilesOneBlock = (int)sqrt((int)_files->size());
 	indexpath = _indexpath;
 	inputpath = _inputpath;
 	blockpath = _blockpath;
@@ -48,7 +48,7 @@ SPIMIManager::SPIMIManager(vector<string>* _files,string _indexpath, string _inp
 SPIMIManager::SPIMIManager(vector<string> * _files, bool _is_build_mode){
 		files = _files;
 		nextFile = 0;
-		nFilesOneBlock = (int)sqrt((int)_files->size()) + 1;
+		nFilesOneBlock = (int)sqrt((int)_files->size());
 		indexpath = "index";
 		inputpath = "input";
 		blockpath = "block";
@@ -91,26 +91,19 @@ SPIMIManager::~SPIMIManager(){
 void SPIMIManager::binary_mergeBlocks(){
 	this ->mergeTmpID = 0;
 	nMergeBlock = (int)sqrt(blocks.size());
-	{
-		cout << "binary: there are " << blocks.size() << " blocks" << endl;
-		cout << "each merge " << nMergeBlock << " blocks" << endl;
-	}
+	cout << "binary: there are " << blocks.size() << " blocks" << endl;
+	cout << "each merge " << nMergeBlock << " blocks" << endl;
 	while(blocks.size() > 1){
 		vector<block_size>* _bsv = this->nextMergeBlocks(nMergeBlock);
 		string _next_mergepath = this->nextMergePath();
-		{
-			if(blocks.empty()){
-				_next_mergepath = this ->getIndexPath();
-			}
+		if(blocks.empty()){
+			_next_mergepath = this ->getIndexPath();
 		}
 		int _new_block_size = binary_mergeGroupBlocks(*_bsv, _next_mergepath);
-
-		{//add new block into priority_queue: blocks
-			blocks.push(block_size(_next_mergepath, _new_block_size));
-		}
-		{
-			delete _bsv;
-		}
+		//add new block into priority_queue: blocks
+		blocks.push(block_size(_next_mergepath, _new_block_size));
+		delete _bsv;
+		
 	}
 	kv_store->flush();
 	if(debug_2){
@@ -122,48 +115,36 @@ void SPIMIManager::binary_mergeBlocks(){
 
 int SPIMIManager::binary_mergeGroupBlocks(vector<block_size> & _bs_vec, string _new_block_path){
 	//assume that vec size is two
-	if(debug_2){
-		stringstream _tmp;
-		_tmp << "IN binary_mergeGB " << _new_block_path << endl;
-		debug(_tmp.str());
-	}
+
 	priority_queue<btP*, vector<btP*>, cmpbTermPosting > tPQueue;
 	vector<block_size>::iterator itV;
 	const int _bs_sz = (int)_bs_vec.size();
 	FILE* ifp_block[_bs_sz];
-	FILE* ofp_block;
-	{//open
-		ofp_block = fopen(_new_block_path.c_str(), "wb");
-		if(!ofp_block){
-			cout << "failed open " << _new_block_path << endl;
+	FILE* ofp_block; // target block
+	//open
+	ofp_block = fopen(_new_block_path.c_str(), "wb"); 
+	if(!ofp_block){
+		cout << "failed open " << _new_block_path << endl;
+		exit(0);
+	}
+	for(int i = 0; i < _bs_sz; i++){
+		ifp_block[i] = fopen(_bs_vec[i].block_path.c_str(), "rb");
+		if(!ifp_block[i]){
+			cout << "failed open " << _bs_vec[i].block_path.c_str() << endl;
 			exit(0);
 		}
-		for(int i = 0; i < _bs_sz; i ++){
-			ifp_block[i] = fopen(_bs_vec[i].block_path.c_str(), "rb");
-			if(!ifp_block[i]){
-				cout << "failed open " << _bs_vec[i].block_path.c_str() << endl;
-				exit(0);
-			}
-		}
 	}
+	
 	int _new_block_size = 0;
-	/*
-	 *
-	 */
-	{//merge
-		for(int i = 0; i < _bs_sz; i ++){
-			tPQueue.push(this->getNextbPost(ifp_block[i]));
+
+	{   //merge
+		for(int i = 0; i < _bs_sz; i++){
+			tPQueue.push(this->getNextbPost(ifp_block[i])); // each first one
 		}
-		if(debug_2){
-			stringstream _tmp;
-			_tmp << "finish init " << _new_block_path << endl;
-			debug(_tmp.str());
-		}
-		while(! tPQueue.empty()){
+		while(!tPQueue.empty()){
 			btP* _top = tPQueue.top();
 			this->bPOP(tPQueue);
-			if(! tPQueue.empty())// be careful!!!
-			{
+			if(!tPQueue.empty()){ // be careful!!!
 				if(debug_2){
 					stringstream _tmp;
 					_tmp << "top term: " << _top->term << endl;
@@ -184,14 +165,12 @@ int SPIMIManager::binary_mergeGroupBlocks(vector<block_size> & _bs_vec, string _
 						_tmp << "[" << _top->term << ", " << _tmp_top->term << "]" << endl;
 						debug(_tmp.str());
 					}
-					if(this->isIndexFile(_new_block_path))
-					{
+					if(this->isIndexFile(_new_block_path)){
 //						_top->merge_sort(_tmp_top);
 						// only in vector space model, here is not_sort
 						_top->merge_not_sort(_tmp_top);
 					}
-					else
-					{
+					else{
 						_top->merge_not_sort(_tmp_top);
 					}
 					if(tPQueue.empty()){
@@ -199,13 +178,12 @@ int SPIMIManager::binary_mergeGroupBlocks(vector<block_size> & _bs_vec, string _
 					}
 				}
 			}
-			if (this->isIndexFile(_new_block_path)) {
+			if(this->isIndexFile(_new_block_path)){
 				long long int _offset = ftell(ofp_block);
 				(this->kv_store)->setOffsetByTerm(_top->term, _offset);
 				_new_block_size += _top->post->write(ofp_block);
 			}
-			else
-			{
+			else{
 				_new_block_size = _top->write(ofp_block);
 			}
 		}//end while empty
@@ -213,10 +191,10 @@ int SPIMIManager::binary_mergeGroupBlocks(vector<block_size> & _bs_vec, string _
 	}
 	{//clear
 		fclose(ofp_block);
-		for(int i = 0; i < _bs_sz; i ++){
+		for(int i = 0; i < _bs_sz; i++){
 			fclose(ifp_block[i]);
 		}
-		for(int i = 0; i < _bs_vec.size(); i ++){
+		for(int i = 0; i < _bs_vec.size(); i++){
 			system(("rm -rf " + _bs_vec[i].block_path).c_str());
 		}
 		if(debug_2){
@@ -230,23 +208,24 @@ int SPIMIManager::binary_mergeGroupBlocks(vector<block_size> & _bs_vec, string _
 
 ofstream _debug;
 
-bool sortByFreqFunc(const Post& a, const Post& b){
+bool sortByFreqFunc(const Post& a, const Post& b)
+{
 	return a.frequent > b.frequent;
 }
-
-bool sortByIdFunc(const Post& a, const Post& b){
+bool sortByIdFunc(const Post& a, const Post& b)
+{
 	return a.id < b.id;
 }
-
-bool sortWordByDis(const WordPair& a, const WordPair& b){
+bool sortWordByDis(const WordPair& a, const WordPair& b)
+{
 	return a.dis < b.dis;
 }
-
-bool sortWordBySim(const WordPair& a, const WordPair& b){
+bool sortWordBySim(const WordPair& a, const WordPair& b)
+{
 	return a.sim > b.sim;
 }
-
-bool sortWord(const WordPair& a, const WordPair& b){
+bool sortWord(const WordPair& a, const WordPair& b)
+{
 	if(a.dis != b.dis)
 		return a.dis < b.dis;
 	return a.sim > b.sim;

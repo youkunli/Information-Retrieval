@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<newsitem itemid="804244" id="root" date="1997-08-16" xml:lang="en">
+<title>USA: Clinton plans to visit India, Pakistan in 1998.</title>
+<headline>Clinton plans to visit India, Pakistan in 1998.</headline>
+<dateline>WASHINGTON 1997-08-15</dateline>
+<text>
+<p>President Bill Clinton plans to visit India and Pakistan in 1998, partly to mark the 50th anniversary of their independence from Britain that they are celebrating this month, White House officials said on Friday.</p>
+<p>Hillary Rodham Clinton, the president's wife, visited both countries in 1995 with their daughter Chelsea.</p>
+<p>The officials, who asked not to be identified, said the dates for the planned trip had not yet been finalized.</p>
+<p>Clinton would be the first U.S. president to visit India since his fellow Democrat Jimmy Carter toured the country in January 1978.</p>
+<p>U.S. Secretary of State Madeleine Albright plans to travel to India and Pakistan in November to prepare for Clinton's visit next year. She would be the first secretary of state to visit India and Pakistan since George Shultz in 1983.</p>
+</text>
+<copyright>(c) Reuters Limited 1997</copyright>
+<metadata>
+<codes class="bip:countries:1.0">
+  <code code="INDIA">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+  <code code="PAKIS">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+  <code code="UK">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+  <code code="USA">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+</codes>
+<codes class="bip:topics:1.0">
+  <code code="GCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+  <code code="GDIP">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+</codes>
+<dc element="dc.date.created" value="1997-08-15"/>
+<dc element="dc.publisher" value="Reuters Holdings Plc"/>
+<dc element="dc.date.published" value="1997-08-16"/>
+<dc element="dc.source" value="Reuters"/>
+<dc element="dc.creator.location" value="WASHINGTON"/>
+<dc element="dc.creator.location.country.name" value="USA"/>
+<dc element="dc.source" value="Reuters"/>
+</metadata>
+</newsitem>

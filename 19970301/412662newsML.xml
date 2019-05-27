@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<newsitem itemid="412662" id="root" date="1997-03-01" xml:lang="en">
+<title>UK: SOCCER-SCOTTISH PREMIER DIVISION SUMMARIES.</title>
+<headline>SOCCER-SCOTTISH PREMIER DIVISION SUMMARIES.</headline>
+<dateline>GLASGOW 1997-03-01</dateline>
+<text>
+<p>Summaries of Scottish premier</p>
+<p>division matches played on Saturday:</p>
+<p> Aberdeen		   2 -  Kombouare 35, Goram 57o.g.</p>
+<p> Rangers		    2 -  Laudrup 5, Moore 63</p>
+<p>    HT: 1-1.   Att: 16,331</p>
+<p> Celtic		     2 -  Cadete 28, Di Canio 61</p>
+<p> Hearts		     0.</p>
+<p>    HT: 1-0.   Att: 49,729</p>
+<p> Dundee United	    2 - McLaren 38, Olafsson 90</p>
+<p> Dunfermline		1 -  Fleming 61</p>
+<p>HT: 1-0.  Att: 8,160</p>
+<p> Hibernian		  1 -  Wright 51</p>
+<p> Motherwell		 1 -  Coyne 64.</p>
+<p>HT: 0-0.  Att: 8,328</p>
+<p>Postponed: Raith v Kilmarnock.</p>
+</text>
+<copyright>(c) Reuters Limited 1997</copyright>
+<metadata>
+<codes class="bip:countries:1.0">
+  <code code="UK">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<codes class="bip:topics:1.0">
+  <code code="GCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="GSPO">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<dc element="dc.date.created" value="1997-03-01"/>
+<dc element="dc.publisher" value="Reuters Holdings Plc"/>
+<dc element="dc.date.published" value="1997-03-01"/>
+<dc element="dc.source" value="Reuters"/>
+<dc element="dc.creator.location" value="GLASGOW"/>
+<dc element="dc.creator.location.country.name" value="UK"/>
+<dc element="dc.source" value="Reuters"/>
+</metadata>
+</newsitem>

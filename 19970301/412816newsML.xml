@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<newsitem itemid="412816" id="root" date="1997-03-01" xml:lang="en">
+<title>USA: Airlines show interest in Alaska flight incentive.</title>
+<headline>Airlines show interest in Alaska flight incentive.</headline>
+<byline>Yereth Rosen</byline>
+<dateline>ANCHORAGE, Alaska 1997-02-28</dateline>
+<text>
+<p>A $1 million, two-year incentive package to attract direct airline passenger service between Japan and Alaska has generated interest among Japanese and U.S. carriers, an economic development official said on Friday.</p>
+<p>&quot;We're hoping that we have a decision from one of the carriers by the end of the year,&quot; said Patricia DeMarco, president of the Anchorage Economic Development Corp., the organization that has been promoting the air route to increase the state's tourism business.</p>
+<p>DeMarco said surveys showed that Alaska ranked second among world tourist destinations for Japanese travelers, who were interested in both summer and winter travel to the state, to view the aurora borealis and other natural phenomena. But they were stymied by the lack of direct passenger service.</p>
+<p>Tourists now must fly through Seoul or Seattle, and as a result many would-be Alaska travelers visit Canada or the U.S. Pacific Northwest, taking their estimated $1,300-per-visitor spending there instead, she said.</p>
+<p>The $1 million incentive would come in the form of state marketing aid to the carrier to ensure that the air route is worthwhile, DeMarco said.</p>
+<p>&quot;Once a route is proven, it will go on,&quot; she added.</p>
+<p>Gov. Tony Knowles suggested the reward, which he termed a &quot;pioneer business incentive,&quot; last fall. The Democratic governor likened it to the $500 million package that in 1993 lured Korean Air Lines to establish regular passenger service to Alaska.</p>
+<p>&quot;This is money well spent. Direct service between Alaska and Japan is projected to add another 20,000 Japanese visitors, generate $47 imllion in spending and create 500 local jobs,&quot; he said on Thursday.</p>
+<p>DeMarco said it was uncertain whether the Republican-controlled state legislature would approve the incentive.</p>
+<p>&quot;We are anticipating that this is not going to be an easy sell&quot; to legislators, she said.</p>
+</text>
+<copyright>(c) Reuters Limited 1997</copyright>
+<metadata>
+<codes class="bip:countries:1.0">
+  <code code="JAP">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="USA">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<codes class="bip:industries:1.0">
+  <code code="I75000">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<codes class="bip:topics:1.0">
+  <code code="C17">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="C21">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="CCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<dc element="dc.date.created" value="1997-02-28"/>
+<dc element="dc.publisher" value="Reuters Holdings Plc"/>
+<dc element="dc.date.published" value="1997-03-01"/>
+<dc element="dc.source" value="Reuters"/>
+<dc element="dc.creator.location" value="ANCHORAGE, Alaska"/>
+<dc element="dc.creator.location.country.name" value="USA"/>
+<dc element="dc.source" value="Reuters"/>
+</metadata>
+</newsitem>

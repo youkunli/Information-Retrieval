@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<newsitem itemid="412879" id="root" date="1997-03-01" xml:lang="en">
+<title>MEXICO: Poll says Mexico president image at two-year high.</title>
+<headline>Poll says Mexico president image at two-year high.</headline>
+<dateline>MEXICO CITY 1997-03-01</dateline>
+<text>
+<p>Mexican President Ernesto Zedillo's public image hit a two-year high as Mexicans began to feel more optimistic about their economic prospects, according to a poll published on Saturday by Reforma newspaper.</p>
+<p>The rating of 6.2 on a scale of one to 10 was the first time since March 1995 that the rating broke above 6.0. The newspaper polled 1,550 people in 72 towns.</p>
+<p>In the latest poll, respondents in a proportion unseen since Zedillo took office in December 1994 said they expected their economic conditions to improve in the coming year.</p>
+<p>In the past two years Mexico struggled through its worst financial crisis in five decades, after Zedillo devalued the peso three weeks after assuming the presidency.</p>
+<p>But last year the economy -- rebounding from a low base -- grew faster than almost any analyst had expected, and all the jobs lost during the 1994-1995 economic crisis were recovered.</p>
+<p>The last time Zedillo's image was this high he had just sucessfully clinched a historic emergency loan from the United States and other international lending organisations for more than $50 billion to help bail out the economy.</p>
+<p>Despite the latest poll rating, a majority of those polled continued to doubt Zedillo's success in combating corruption and drug-trafficking and solving the 1994 murders of ruling party presidential candidate Luis Donaldo Colosio and party secretary general Jose Francisco Ruiz Massieu.</p>
+<p>The survey's results followed the U.S. administration's decision on Friday to certify Mexico for cooperating in its fighting against drug-traffickers.</p>
+</text>
+<copyright>(c) Reuters Limited 1997</copyright>
+<metadata>
+<codes class="bip:countries:1.0">
+  <code code="MEX">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<codes class="bip:topics:1.0">
+  <code code="GCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="GPOL">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<dc element="dc.date.created" value="1997-03-01"/>
+<dc element="dc.publisher" value="Reuters Holdings Plc"/>
+<dc element="dc.date.published" value="1997-03-01"/>
+<dc element="dc.source" value="Reuters"/>
+<dc element="dc.creator.location" value="MEXICO CITY"/>
+<dc element="dc.creator.location.country.name" value="MEXICO"/>
+<dc element="dc.source" value="Reuters"/>
+</metadata>
+</newsitem>

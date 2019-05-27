@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<newsitem itemid="804135" id="root" date="1997-08-16" xml:lang="en">
+<title>PHILIPPINES: Death toll rises in Philippine tourist boat sinking.</title>
+<headline>Death toll rises in Philippine tourist boat sinking.</headline>
+<dateline>MANILA 1997-08-16</dateline>
+<text>
+<p>The death toll after a pleasure boat packed with foreign tourists capsized in Manila Bay has risen to at least six, the Philippine navy said on Saturday.</p>
+<p>At least six Hong Kong Chinese nationals were killed and a four-year old boy was still missing a day after huge waves swamped the boat, officials said. The boy was also a Hong Kong Chinese.</p>
+<p>Thirty-eight foreign tourists were rescued, Navy spokesman Salvador Cuba said.</p>
+<p>&quot;Two more bodies of a man and a woman floated early this morning, bringing the dead to six,&quot; he said.</p>
+<p>On Friday, rescuers fished out four bodies, including a 12-year old boy.</p>
+<p>Tourism Secretary Mina Gabor said the five-tonne, double-decked boat was rocked by high waves ten minutes after it left the pier.</p>
+<p>King Rogers had only moved about 30 feet from the shore before it capsized, Gabor said, quoting one survivor.</p>
+<p>The owner of the outrigger told reporters that the holiday-makers planning to watch the sunset in the bay panicked as the boat began rocking on its way back to port.</p>
+<p>&quot;The guests panicked. They all went to one side of the boat,&quot; he said.</p>
+<p>&quot;The boat suddenly tipped (after)...the passenger rushed to the right side of the boat....I was shocked,&quot; said the captain, Romeo Farolan.</p>
+<p>Many of the passengers were able to grab life jackets before the boat turned over.</p>
+<p>Gabor said 42 tourists, mostly from Hong Kong, were on board when the boat capsizd.</p>
+<p>Earlier, Cuba said at least 44 tourists, mostly from Hong Kong and some from Japan, two Filipino tour guides, and three crew were on board. The Philippine Coast Guard said it will investigate if the boat was overloaded.</p>
+<p>The Manila Bay accident was the third ferry accident in the country in 24 hours.</p>
+<p>On Friday, eleven were killed after high waves buffeted another inter-island ferry off Biliran province, 480 km (298 miles) south of Manila.</p>
+<p>At least three people drowned and a boy was missing after strong winds and high waves sank another outrigger off the coast of Masbate island late on Thursday, officials said.</p>
+<p>Ferry accidents are common in this archipelago where monsoon rains lash the Philippine islands for about five months every year.</p>
+</text>
+<copyright>(c) Reuters Limited 1997</copyright>
+<metadata>
+<codes class="bip:countries:1.0">
+  <code code="CHINA">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+  <code code="HKONG">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+  <code code="PHLNS">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+</codes>
+<codes class="bip:industries:1.0">
+  <code code="I74000">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+</codes>
+<codes class="bip:topics:1.0">
+  <code code="CCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+  <code code="GCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+  <code code="GDIS">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+</codes>
+<dc element="dc.date.created" value="1997-08-16"/>
+<dc element="dc.publisher" value="Reuters Holdings Plc"/>
+<dc element="dc.date.published" value="1997-08-16"/>
+<dc element="dc.source" value="Reuters"/>
+<dc element="dc.creator.location" value="MANILA"/>
+<dc element="dc.creator.location.country.name" value="PHILIPPINES"/>
+<dc element="dc.source" value="Reuters"/>
+</metadata>
+</newsitem>

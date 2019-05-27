@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<newsitem itemid="804025" id="root" date="1997-08-16" xml:lang="en">
+<title>UK: CRICKET-ENGLISH COUNTY CHAMPIONSHIP CLOSES.</title>
+<headline>CRICKET-ENGLISH COUNTY CHAMPIONSHIP CLOSES.</headline>
+<dateline>LONDON 1997-08-16</dateline>
+<text>
+<p>Close of play scores and a result</p>
+<p>on the second day of English county championship matches on</p>
+<p>Saturday:</p>
+<p>At Derby: Derbyshire beat Lancashire by an innings and 37</p>
+<p>runs. Derbyshire 411 (P.Martin 4-77). Lancashire 118 (D.Malcolm</p>
+<p>6-23) and 256 (J.Crawley 133; D.Cork 4-48, D.Malcolm 4-42).</p>
+<p>Derbyshire 24 points Lancashire 4.</p>
+<p>Portsmouth: Yorkshire 501-8 declared. Hampshire 264-8.</p>
+<p>Lord's: Middlesex 205 and 24-1. Surrey 531-9n declared</p>
+<p>(A.Hollioake 182, M.Buther 79, B.Hollioake 76, A.Brown 70).</p>
+<p>Trent Bridge: Somerset 337. Nottinghamshire 231-6.</p>
+<p>Hove: Gloucestershire 320 (M.Robinson 5-66). Sussex 255-7</p>
+<p>(N.Taylor 74, M.Peirce 73).</p>
+<p>Worcester: Worcestershire 476-9 declared.Glamorgan 355-8</p>
+<p>(M.Maynard 140 not out, S.James 69).</p>
+</text>
+<copyright>(c) Reuters Limited 1997</copyright>
+<metadata>
+<codes class="bip:countries:1.0">
+  <code code="UK">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+</codes>
+<codes class="bip:topics:1.0">
+  <code code="GCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+  <code code="GSPO">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+</codes>
+<dc element="dc.date.created" value="1997-08-16"/>
+<dc element="dc.publisher" value="Reuters Holdings Plc"/>
+<dc element="dc.date.published" value="1997-08-16"/>
+<dc element="dc.source" value="Reuters"/>
+<dc element="dc.creator.location" value="LONDON"/>
+<dc element="dc.creator.location.country.name" value="UK"/>
+<dc element="dc.source" value="Reuters"/>
+</metadata>
+</newsitem>

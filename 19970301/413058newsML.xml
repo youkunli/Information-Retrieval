@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<newsitem itemid="413058" id="root" date="1997-03-01" xml:lang="en">
+<title>VATICAN: Pope calls for dialogue, democracy in Albania.</title>
+<headline>Pope calls for dialogue, democracy in Albania.</headline>
+<dateline>VATICAN CITY 1997-03-01</dateline>
+<text>
+<p>Pope John Paul called on Saturday for a dialogue to be opened among responsible groups in Albania to end the crisis in the Balkan country.</p>
+<p>The Italian news agency ANSA quoted the Pope as telling Albania's new ambassador to the Vatican, Pjeter Ndoc Pepa, that the Roman Catholic Church would stand behind the former communist country &quot;so that it can quickly reach the desired goals of social and human development&quot;.</p>
+<p>The Polish Pope said a dialogue should be opened in Albania &quot;with all responsible forces who, despite numerous problems, are seeking to improve the democratic system&quot;.</p>
+<p>Thousands of protesters, hurling stones, clashed with riot police in Tirana on Saturday and overturned two police vehicles in the latest outbreak of violence in Albania, Europe's poorest country.</p>
+<p>The protest came just hours after a gun battle in the town of Vlore on Friday night in which up to nine people were reported killed.</p>
+<p>The anti-government demonstrations were sparked in January after the collapse of pyramid investment schemes into which thousands of small investors had poured their life savings.</p>
+</text>
+<copyright>(c) Reuters Limited 1997</copyright>
+<metadata>
+<codes class="bip:countries:1.0">
+  <code code="ALB">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="VCAN">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<codes class="bip:topics:1.0">
+  <code code="GCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="GDIP">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="GREL">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<dc element="dc.date.created" value="1997-03-01"/>
+<dc element="dc.publisher" value="Reuters Holdings Plc"/>
+<dc element="dc.date.published" value="1997-03-01"/>
+<dc element="dc.source" value="Reuters"/>
+<dc element="dc.creator.location" value="VATICAN CITY"/>
+<dc element="dc.creator.location.country.name" value="VATICAN"/>
+<dc element="dc.source" value="Reuters"/>
+</metadata>
+</newsitem>

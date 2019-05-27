@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<newsitem itemid="413003" id="root" date="1997-03-01" xml:lang="en">
+<title>IRAN: Iran says quake kills at least 200, injures 1,000.</title>
+<headline>Iran says quake kills at least 200, injures 1,000.</headline>
+<dateline>TEHRAN 1997-03-01</dateline>
+<text>
+<p>At least 200 people have been killed and 1,000 injured by an earthquake that hit northwestern Iran on Friday, Iranian state television reported on Saturday.</p>
+<p>The earthquake, measuring 5.5 on the Richter Scale, hit the city of Ardabil and the town of Meshkinshahr on Friday, causing damage to some 52 neighbouring villages, the Iranian state news agency IRNA quoted the television as saying.  </p>
+<p>It said rescue teams were continuing operations in the stricken areas. It gave no further details.</p>
+<p>Iranian television, monitored by the British Broadcasting Corporation, had said late on Friday 100 people were killed and 250 were injured.</p>
+<p>Force four and five tremors are powerful enough to cause heavy damage in populated areas.</p>
+<p>Earthquakes hit Iran regularly. The worst recorded one, measuring 7.3 on the Richter scale, killed 35,000 people in Gilan and neighbouring Zanjan province in 1990.</p>
+</text>
+<copyright>(c) Reuters Limited 1997</copyright>
+<metadata>
+<codes class="bip:countries:1.0">
+  <code code="IRAN">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<codes class="bip:topics:1.0">
+  <code code="GCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="GDIS">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="GENV">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<dc element="dc.date.created" value="1997-03-01"/>
+<dc element="dc.publisher" value="Reuters Holdings Plc"/>
+<dc element="dc.date.published" value="1997-03-01"/>
+<dc element="dc.source" value="Reuters"/>
+<dc element="dc.creator.location" value="TEHRAN"/>
+<dc element="dc.creator.location.country.name" value="IRAN"/>
+<dc element="dc.source" value="Reuters"/>
+</metadata>
+</newsitem>

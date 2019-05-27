@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<newsitem itemid="804072" id="root" date="1997-08-16" xml:lang="en">
+<title>GERMANY: SOCCER-KAISERSLAUTERN BEAT KAISERSLAUTERN IN CUP.</title>
+<headline>SOCCER-KAISERSLAUTERN BEAT KAISERSLAUTERN IN CUP.</headline>
+<dateline>BONN 1997-08-16</dateline>
+<text>
+<p>Kaiserslautern beat their own amateurs 5-0 on Saturday in the most curious tie in the first round of the German Cup.</p>
+<p>The amateur teams of big clubs often play in the Cup but Saturday's game was only the second time the draw had produced a match between a Bundesliga side and its own amateurs.</p>
+<p>Kaiserslautern coach Otto Rehhagel, who effectively picked both sides as he has the right to draft amateurs into the first team, said he was satisfied with the result.</p>
+<p>But he was not happy about the fact that one of the club's sides had to go out so early in the competition.</p>
+<p>&quot;Something should be done in the future to make sure there aren't matches like this,&quot; Rehhagel said.</p>
+<p>A double from Czech striker Pavel Kuka and goals from Olaf Marschall, Juergen Rische and Brazilian Ratinho gave victory to the first team.</p>
+<p>On Friday night Bayern Munich beat Waldberg 16-1 but Cologne and Borussia Moenchengladbach both lost to regional sides. Cologne went down 3-1 to Ulm while Moenchengladbach went out on penalties to Hanover.</p>
+</text>
+<copyright>(c) Reuters Limited 1997</copyright>
+<metadata>
+<codes class="bip:countries:1.0">
+  <code code="GFR">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+</codes>
+<codes class="bip:topics:1.0">
+  <code code="GCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+  <code code="GSPO">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+</codes>
+<dc element="dc.date.created" value="1997-08-16"/>
+<dc element="dc.publisher" value="Reuters Holdings Plc"/>
+<dc element="dc.date.published" value="1997-08-16"/>
+<dc element="dc.source" value="Reuters"/>
+<dc element="dc.creator.location" value="BONN"/>
+<dc element="dc.creator.location.country.name" value="GERMANY"/>
+<dc element="dc.source" value="Reuters"/>
+</metadata>
+</newsitem>

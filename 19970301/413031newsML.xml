@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<newsitem itemid="413031" id="root" date="1997-03-01" xml:lang="en">
+<title>USA: Smithsonian may loan industrial exhibits.</title>
+<headline>Smithsonian may loan industrial exhibits.</headline>
+<dateline>WASHINGTON 1997-02-28</dateline>
+<text>
+<p>Washington's Smithsonian Institution announced preliminary plans Friday to loan some of its massive pieces of 19th century machinery to a proposed museum of industrial history to be established in Bethlehem, Pa. -- a name synonymous with steel production.</p>
+<p>&quot;The long-term loan of objects will allow the Smithsonian to fulfil its goal of becoming a truly national institution,&quot; Smithsonian Secretary Michael Heyman said in remarks made in front of a gleaming 34-ton Jupiter locomotive, built in Philadephia in 1876 and on display in the Smithsonian's Arts and Industry building.</p>
+<p>The locomotive, along with an 1839 steam hammer, a 120-year old portable steam engine and other artifacts on display are among items under consideration for loan.</p>
+<p>The Bethlehem museum will be part of an education and entertainment complex to be built on the 160-acre site of a former Bethlehem Steep Corp manufacturing plant. The Smithsonian and Bethlehem Development Corp have agreed on a feasibility study to examine details of the loan.</p>
+<p>Heyman said hundreds of artifacts would be loaned without cost to the Smithsonian. He said conversations were under way on making similar longterm loans of some of the museum's millions of objects for exhibit outside of Washington.</p>
+</text>
+<copyright>(c) Reuters Limited 1997</copyright>
+<metadata>
+<codes class="bip:countries:1.0">
+  <code code="USA">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<codes class="bip:topics:1.0">
+  <code code="GCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="GENT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<dc element="dc.date.created" value="1997-02-28"/>
+<dc element="dc.publisher" value="Reuters Holdings Plc"/>
+<dc element="dc.date.published" value="1997-03-01"/>
+<dc element="dc.source" value="Reuters"/>
+<dc element="dc.creator.location" value="WASHINGTON"/>
+<dc element="dc.creator.location.country.name" value="USA"/>
+<dc element="dc.source" value="Reuters"/>
+</metadata>
+</newsitem>

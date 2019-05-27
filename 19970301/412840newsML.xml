@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<newsitem itemid="412840" id="root" date="1997-03-01" xml:lang="en">
+<title>ALBANIA: Albanian government will resign - Berisha.</title>
+<headline>Albanian government will resign - Berisha.</headline>
+<dateline>TIRANA 1997-03-01</dateline>
+<text>
+<p>Albanian President Sali Berisha said on Saturday Prime Minister Aleksander Meksi's government would resign.  </p>
+<p>Berisha spoke on state television after talks with opposition parties on the violent crisis racking the impoverished Balkan country following the collapse of get-rick-quick pyramid investment schemes.</p>
+<p>&quot;To resolve the problems that have been created the leaders of the political parties...came to the conclusion that the Meksi government will resign,&quot; Berisha said.</p>
+<p>He said his ruling Democratic Party could form a successor cabinet but would hold broad consultations with opposition forces.</p>
+<p>Berisha's crisis talks took place after up to nine people were reported killed in a gun battle between protesters and the former Stalinist state's Shik secret police in the southern port of Vlore, the focus for anti-government resentment.</p>
+</text>
+<copyright>(c) Reuters Limited 1997</copyright>
+<metadata>
+<codes class="bip:countries:1.0">
+  <code code="ALB">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<codes class="bip:topics:1.0">
+  <code code="GCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="GPOL">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<dc element="dc.date.created" value="1997-03-01"/>
+<dc element="dc.publisher" value="Reuters Holdings Plc"/>
+<dc element="dc.date.published" value="1997-03-01"/>
+<dc element="dc.source" value="Reuters"/>
+<dc element="dc.creator.location" value="TIRANA"/>
+<dc element="dc.creator.location.country.name" value="ALBANIA"/>
+<dc element="dc.source" value="Reuters"/>
+</metadata>
+</newsitem>

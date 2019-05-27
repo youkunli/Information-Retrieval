@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<newsitem itemid="412706" id="root" date="1997-03-01" xml:lang="en">
+<title>AUSTRALIA: RUGBY UNION-ACT UPSET QUEENSLAND 24-19 IN SUPER 12.</title>
+<headline>RUGBY UNION-ACT UPSET QUEENSLAND 24-19 IN SUPER 12.</headline>
+<dateline>BRISBANE, Australia 1997-03-01</dateline>
+<text>
+<p>Australian Capital Territory (ACT) beat Queensland 24-19 (halftime 10-7) in a Super 12 series match at Ballymore on Saturday.</p>
+<p>Scorers:</p>
+<p>ACT - Tries: Pat Howard, Adam Magro, Stephen Larkham.</p>
+<p>Conversions: David Knox (3). Penalty: David Knox.</p>
+<p>Queensland - Tries: Tim Horan (2), Barry Lea. Conversions: John Eales (2).</p>
+<p>Attendance: 15,000</p>
+</text>
+<copyright>(c) Reuters Limited 1997</copyright>
+<metadata>
+<codes class="bip:countries:1.0">
+  <code code="AUSTR">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<codes class="bip:topics:1.0">
+  <code code="GCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="GSPO">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<dc element="dc.date.created" value="1997-03-01"/>
+<dc element="dc.publisher" value="Reuters Holdings Plc"/>
+<dc element="dc.date.published" value="1997-03-01"/>
+<dc element="dc.source" value="Reuters"/>
+<dc element="dc.creator.location" value="BRISBANE, Australia"/>
+<dc element="dc.creator.location.country.name" value="AUSTRALIA"/>
+<dc element="dc.source" value="Reuters"/>
+</metadata>
+</newsitem>

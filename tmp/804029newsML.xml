@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<newsitem itemid="804029" id="root" date="1997-08-16" xml:lang="en">
+<title>UK: SOCCER-NORTHERN IRISH PREMIER DIVISION RESULTS.</title>
+<headline>SOCCER-NORTHERN IRISH PREMIER DIVISION RESULTS.</headline>
+<dateline>BELFAST 1997-08-16</dateline>
+<text>
+<p>Results of Northern Irish premier</p>
+<p>division soccer matches on Saturday:</p>
+<p> Ards		0  Linfield     1</p>
+<p> Cliftonville    0  Ballymena    2</p>
+<p> Glentoran	 1  Coleraine    0</p>
+<p> Omagh Town	2  Glenavon     2</p>
+<p> Portadown	 1  Crusaders    1</p>
+</text>
+<copyright>(c) Reuters Limited 1997</copyright>
+<metadata>
+<codes class="bip:countries:1.0">
+  <code code="UK">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+</codes>
+<codes class="bip:topics:1.0">
+  <code code="GCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+  <code code="GSPO">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+</codes>
+<dc element="dc.date.created" value="1997-08-16"/>
+<dc element="dc.publisher" value="Reuters Holdings Plc"/>
+<dc element="dc.date.published" value="1997-08-16"/>
+<dc element="dc.source" value="Reuters"/>
+<dc element="dc.creator.location" value="BELFAST"/>
+<dc element="dc.creator.location.country.name" value="UK"/>
+<dc element="dc.source" value="Reuters"/>
+</metadata>
+</newsitem>

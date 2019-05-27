@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<newsitem itemid="412973" id="root" date="1997-03-01" xml:lang="en">
+<title>JORDAN: King gives up palace to homeless children.</title>
+<headline>King gives up palace to homeless children.</headline>
+<dateline>AMMAN 1997-03-01</dateline>
+<text>
+<p>King Hussein of Jordan said on Saturday he was giving up his Amman palace to homeless children after a tour to an orphanage last week.</p>
+<p>&quot;I have not had peace of mind since I saw the conditions in this institution and its innocent children, which bears heavily on my conscience and soul,&quot; the state news-agency Petra quoted the king as saying in a letter to Prime Minister Abdul Karim al-Kabariti.</p>
+<p>Officials said the palace being given up was the king's main residence. The king, whose prime real estate property includes mansions in Ascot, Britain and Palm Beach, Florida, said his family would be taking up residence in a new home on the outskirts of Amman, named the &quot;gate of peace.&quot;</p>
+<p>The king said his decision was prompted by the appalling conditions he and his U.S.-born wife Queen Noor saw during a visit last Thursday to the Hussein Social Foundation orphanage.</p>
+<p>&quot;I order you (Prime Minister) to transform the Hashimiyah palace....to a house of good deeds for those innocent children, who can be moved to it as soon as it is prepared,&quot; the king told Kabariti.</p>
+<p>&quot;All these images, will not leave my conscience as long as I am alive..these innocent souls who are growing emotionally and mentally... need a lot of care from us,&quot; the king said.</p>
+</text>
+<copyright>(c) Reuters Limited 1997</copyright>
+<metadata>
+<codes class="bip:countries:1.0">
+  <code code="JORDAN">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<codes class="bip:topics:1.0">
+  <code code="GCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="GWELF">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<dc element="dc.date.created" value="1997-03-01"/>
+<dc element="dc.publisher" value="Reuters Holdings Plc"/>
+<dc element="dc.date.published" value="1997-03-01"/>
+<dc element="dc.source" value="Reuters"/>
+<dc element="dc.creator.location" value="AMMAN"/>
+<dc element="dc.creator.location.country.name" value="JORDAN"/>
+<dc element="dc.source" value="Reuters"/>
+</metadata>
+</newsitem>

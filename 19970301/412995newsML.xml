@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<newsitem itemid="412995" id="root" date="1997-03-01" xml:lang="en">
+<title>EGYPT: Egyptian and Eritrean leaders hold talks in Cairo.</title>
+<headline>Egyptian and Eritrean leaders hold talks in Cairo.</headline>
+<dateline>CAIRO 1997-03-01</dateline>
+<text>
+<p>Egyptian President Hosni Mubarak held talks in Cairo on Saturday with Eritrea's President Isayas Afewerki, official sources said.</p>
+<p>There were no immediate details about the focus of the talks between the two leaders at the Cairo Ittihadia palace.</p>
+<p>Eritrea and Egypt were among the 10 Nile basin countries which sent representatives to a meeting in Ethiopia last week to discuss the use of the waters of the world's longest river.</p>
+<p>Egypt had appealed at the meeting for the promotion of development projects which would bolster cooperation among the nations linked together by the Nile.</p>
+<p>Up to 250 million people depend on the river's four main systems and competition for the water feeds disputes involving Sudan, Egypt and Ethiopia.</p>
+<p>Sudanese opposition forces have offices in Egypt and Eritrea. Khartoum has accused Eritrea and Ethiopia of direct military involvement in rebel attacks in Sudan's south and east, a charge the two countries deny.</p>
+<p>Mubarak has said he was sure that no foreign troops had entered Sudan.</p>
+</text>
+<copyright>(c) Reuters Limited 1997</copyright>
+<metadata>
+<codes class="bip:countries:1.0">
+  <code code="EGYPT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="ERTRA">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<codes class="bip:topics:1.0">
+  <code code="GCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="GDIP">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<dc element="dc.date.created" value="1997-03-01"/>
+<dc element="dc.publisher" value="Reuters Holdings Plc"/>
+<dc element="dc.date.published" value="1997-03-01"/>
+<dc element="dc.source" value="Reuters"/>
+<dc element="dc.creator.location" value="CAIRO"/>
+<dc element="dc.creator.location.country.name" value="EGYPT"/>
+<dc element="dc.source" value="Reuters"/>
+</metadata>
+</newsitem>

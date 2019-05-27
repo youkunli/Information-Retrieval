@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<newsitem itemid="804016" id="root" date="1997-08-16" xml:lang="en">
+<title>UK: CRICKET-KENT WIN TOSS, BAT V AUSTRALIA.</title>
+<headline>CRICKET-KENT WIN TOSS, BAT V AUSTRALIA.</headline>
+<dateline>CANTERBURY, England 1997-08-16</dateline>
+<text>
+<p>Kent won the toss and</p>
+<p>elected to bat on the opening day of a three-day match against</p>
+<p>Australia on Saturday.</p>
+<p>Teams:</p>
+<p>Kent - Trevor Ward, Edward Smith, Alan Wells, Alan</p>
+<p>Igglesden, William House, Mark Ealham, Matthew Fleming, Paul</p>
+<p>Strang, Steven Marsh (captain), Ben Phillips, Julian Thompson.</p>
+<p>Australia - Michael Slater, Justin Langer, Greg Blewett,</p>
+<p>Mark Waugh, Steve Waugh (captain), Ricky Ponting, Michael Bevan,</p>
+<p>Shaun Young, Shane Lee, Darren Berry, Mike Kasprowicz.</p>
+</text>
+<copyright>(c) Reuters Limited 1997</copyright>
+<metadata>
+<codes class="bip:countries:1.0">
+  <code code="AUSTR">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+  <code code="UK">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+</codes>
+<codes class="bip:topics:1.0">
+  <code code="GCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+  <code code="GSPO">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+</codes>
+<dc element="dc.date.created" value="1997-08-16"/>
+<dc element="dc.publisher" value="Reuters Holdings Plc"/>
+<dc element="dc.date.published" value="1997-08-16"/>
+<dc element="dc.source" value="Reuters"/>
+<dc element="dc.creator.location" value="CANTERBURY, England"/>
+<dc element="dc.creator.location.country.name" value="UK"/>
+<dc element="dc.source" value="Reuters"/>
+</metadata>
+</newsitem>

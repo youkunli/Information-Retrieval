@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<newsitem itemid="804310" id="root" date="1997-08-16" xml:lang="en">
+<title>INDIA: Bombay bourse carry forward trades - Aug 16.</title>
+<headline>Bombay bourse carry forward trades - Aug 16.</headline>
+<dateline>BOMBAY 1997-08-16</dateline>
+<text>
+<p>The following is the trade data for the top stocks at the Bombay Stock Exchange (BSE) for the carry-forward or &quot;badla&quot; account on saturday at the 11:30 IST.</p>
+<p>SECURITY   HAWALA   Last   Badla   AVG    AVG	VOL	VAL</p>
+<p>	     RATE     Badla  Yield   BADLA  YIELD    QTY     (million)</p>
+<p>			  Rate     %		  %     ('000)</p>
+<p>----------------------------------------------------------------</p>
+<p>ACC	1565.00    4.90    16.28   4.89   16.24   13.10  20.05</p>
+<p>.</p>
+<p>ITC	 570.00   -4.00   -36.49  -3.50  -31.93   54.00  30.05</p>
+<p>.</p>
+<p>RELIANCE  370.00    1.13    15.88   1.14   16.02  180.40  66.90</p>
+<p>.</p>
+<p>SBI	 320.00    0.90    14.63   1.00   16.25  183.95  59.30</p>
+<p>.</p>
+<p>TISCO     205.00    0.60    15.21   0.65   16.48  327.95  67.10</p>
+<p>.</p>
+<p>---------------------------------------------------------------</p>
+<p>The &quot;badla&quot; is interest rate for carry-forward trades. These are arrived through unique transactions which takes into account oversold and overbought positions and money supply.</p>
+<p>The average badla charges worked out to 17.00 percent on an annualised basis against 17.75 percent in the previous carry forward account ended Aug 9. --Bombay Newsroom +91-22-265-9000</p>
+</text>
+<copyright>(c) Reuters Limited 1997</copyright>
+<metadata>
+<codes class="bip:countries:1.0">
+  <code code="INDIA">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+</codes>
+<codes class="bip:topics:1.0">
+  <code code="M11">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+  <code code="MCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+</codes>
+<dc element="dc.date.created" value="1997-08-16"/>
+<dc element="dc.publisher" value="Reuters Holdings Plc"/>
+<dc element="dc.date.published" value="1997-08-16"/>
+<dc element="dc.source" value="Reuters"/>
+<dc element="dc.creator.location" value="BOMBAY"/>
+<dc element="dc.creator.location.country.name" value="INDIA"/>
+<dc element="dc.source" value="Reuters"/>
+</metadata>
+</newsitem>

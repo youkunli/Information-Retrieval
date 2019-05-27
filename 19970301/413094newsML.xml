@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<newsitem itemid="413094" id="root" date="1997-03-01" xml:lang="en">
+<title>BANGLADESH: Security tightened after Bangladesh shooting.</title>
+<headline>Security tightened after Bangladesh shooting.</headline>
+<dateline>DHAKA 1997-03-01</dateline>
+<text>
+<p>Security reinforcements were sent in on Saturday to prevent further violence in an area north of Dhaka where a day earlier police had opened fire on villagers, killing seven, police said.</p>
+<p>The situation in Sadhapur village remained tense on Saturday as police were confronted by angry mourners demanding that the dead bodies of those killed in the clash over a land dispute be handed over, local officials said.</p>
+<p>Police and villagers said more than 100 people were hurt in the shooting.</p>
+<p>The officials said the auxiliary police, known as Ansars, were called in on Friday to evict people occupying an unoccupied piece of land in the village.</p>
+<p>&quot;The unlawful occupiers started a battle with Ansars and at one stage, reinforced by villagers, attacked them with lethal weapons,&quot; one police officer at the nearby town of Savar, 40 km (25 miles) from Dhaka, told reporters.</p>
+<p>&quot;The Ansars opened fire in self-defence. Seven people were killed and over 100 injured in clashes,&quot; he said.</p>
+<p>&quot;Thousands of mourners, including friends and relatives of the victims, are pouring into the site, and demanding that the bodies of the seven be returned to them,&quot; a Bangladeshi newspaper reporter told Reuters in Dhaka.</p>
+<p>&quot;But they are told the bodies are in a morgue in Dhaka and cannot be handed back immediately. This would not pacify the villagers.&quot;</p>
+<p>Police at the Savar station said reinforcements had been sent to the area from Savar and other nearby stations.</p>
+<p>&quot;We have occupied the land in Sadhapur village legally for generations but suddenly some people from outside are saying it's their land. We can't accept that,&quot; said 70-year-old Mohammad Jainal.</p>
+<p>Police said they had heard the 100-acre (40-hectare) vacant area belonged to the Partex Group of Industries but the villagers had refused to leave.</p>
+<p>&quot;Suddenly everything slipped out of control and led to a bloodbath,&quot; one Savar police officer said on Saturday.</p>
+<p>&quot;The situation is very tense.&quot;</p>
+</text>
+<copyright>(c) Reuters Limited 1997</copyright>
+<metadata>
+<codes class="bip:countries:1.0">
+  <code code="BANDH">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<codes class="bip:topics:1.0">
+  <code code="GCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="GCRIM">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="GVIO">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<dc element="dc.date.created" value="1997-03-01"/>
+<dc element="dc.publisher" value="Reuters Holdings Plc"/>
+<dc element="dc.date.published" value="1997-03-01"/>
+<dc element="dc.source" value="Reuters"/>
+<dc element="dc.creator.location" value="DHAKA"/>
+<dc element="dc.creator.location.country.name" value="BANGLADESH"/>
+<dc element="dc.source" value="Reuters"/>
+</metadata>
+</newsitem>

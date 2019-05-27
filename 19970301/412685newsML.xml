@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<newsitem itemid="412685" id="root" date="1997-03-01" xml:lang="en">
+<title>SOUTH AFRICA: RUGBY UNION-AUCKLAND AND NORTHERN TRANSVAAL DRAW 40-40.</title>
+<headline>RUGBY UNION-AUCKLAND AND NORTHERN TRANSVAAL DRAW 40-40.</headline>
+<dateline>PRETORIA 1997-03-01</dateline>
+<text>
+<p>Northern Transvaal drew with</p>
+<p>Auckland 40-40 (half time 27-27) in the Super 12 match at Loftus</p>
+<p>Versfeld on Saturday.</p>
+<p>Scorers:</p>
+<p>Northern Transvaal:  Tries - Adriaan Richter (3), Henry</p>
+<p>Tromp. Conversions - Theo Van Rensburg (4). Penalties - Theo Van</p>
+<p>Rensburg (4).</p>
+<p>Auckland: Tries - Brian Lima (2), Adrian Cashmore, Carlos</p>
+<p>Spencer (2). Conversions - Adrian Cashmore (3). Penalties -</p>
+<p>Adrian Cashmore (3).</p>
+</text>
+<copyright>(c) Reuters Limited 1997</copyright>
+<metadata>
+<codes class="bip:countries:1.0">
+  <code code="NZ">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="SAFR">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<codes class="bip:topics:1.0">
+  <code code="GCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="GSPO">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<dc element="dc.date.created" value="1997-03-01"/>
+<dc element="dc.publisher" value="Reuters Holdings Plc"/>
+<dc element="dc.date.published" value="1997-03-01"/>
+<dc element="dc.source" value="Reuters"/>
+<dc element="dc.creator.location" value="PRETORIA"/>
+<dc element="dc.creator.location.country.name" value="SOUTH AFRICA"/>
+<dc element="dc.source" value="Reuters"/>
+</metadata>
+</newsitem>

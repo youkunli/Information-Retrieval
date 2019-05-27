@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<newsitem itemid="412736" id="root" date="1997-03-01" xml:lang="en">
+<title>SPAIN: SOCCER-RESULTS IN THE SPANISH LEAGUE.</title>
+<headline>SOCCER-RESULTS IN THE SPANISH LEAGUE.</headline>
+<dateline>MADRID 1997-03-01</dateline>
+<text>
+<p>Results in the Spanish league</p>
+<p>championship on Saturday:</p>
+<p> Atletico Madrid  3    Sevilla		2</p>
+<p> Logrones	   2    Valencia	     1</p>
+<p> Tenerife	   4    Barcelona	    0</p>
+<p> Rayo Vallecano   1    Deportivo Coruna   2</p>
+<p>playing Sunday:</p>
+<p> Compostela   vs   Sporting Gijon</p>
+<p> Zaragoza   vs   Valladolid</p>
+<p> Real Sociedad   vs   Athletic Bilbao</p>
+<p> Racing Santander	 vs   Extremadura</p>
+<p> Oviedo   vs   Celta Vigo</p>
+<p> Real Betis   vs   Hercules</p>
+<p>playing Monday:</p>
+<p> Espanyol   vs   Real Madrid</p>
+<p>Standings:</p>
+<p>				P     W    D    L  F   A   Pts</p>
+<p> 1.Real Madrid	   26    17    8    1  57  22   59</p>
+<p> 2.Barcelona	     27    17    5    6  67  37   53</p>
+<p> 3.Deportivo Coruna    27    13   11    3  40  20   50</p>
+<p> 4.Atletico Madrid     26    14    7    5  51  31   49</p>
+<p> 5.Real Betis	    25    13    8    4  49  27   47</p>
+<p> 6.Real Sociedad	 26    13    5    8  35  29   44</p>
+<p> 7.Athletic Bilbao     26    10   10    6  46  36   40</p>
+<p> 8.Valladolid	    26    11    7    8  34  30   40</p>
+<p> 9.Tenerife		26    11    6    9  45  28   39</p>
+<p> 10.Racing Santander   26     9   11    6  29  25   38</p>
+<p> 11.Valencia	     27    10    6   11  36  35   36</p>
+<p> 12.Celta Vigo	   26     8    9    9  30  32   33</p>
+<p> 13.Oviedo		 26     7    8   11  30  37   29</p>
+<p> 14.Sporting Gijon     25     7    8   10  25  34   29</p>
+<p> 15.Compostela	   26     7    7   12  26  45   28</p>
+<p> 16.Logrones	     27     8    4   15  24  53   28</p>
+<p> 17.Rayo Vallecano     26     7    6   13  26  37   27</p>
+<p> 18.Espanyol	     26     7    5   14  29  40   26</p>
+<p> 19.Zaragoza	     26     5   10   11  32  44   25</p>
+<p> 20.Extremadura	  26     5    8   13  18  39   23</p>
+<p> 21.Sevilla		26     6    3   17  23  43   21</p>
+<p> 22.Hercules	     26     5    4   17  22  51   19</p>
+<p>Note:Two teams qualify for the Champions League, four</p>
+<p>qualify for the UEFA Cup, four are automatically relegated, and</p>
+<p>one more must face a relegation play-off with the third-placed</p>
+<p>team from the second division.</p>
+</text>
+<copyright>(c) Reuters Limited 1997</copyright>
+<metadata>
+<codes class="bip:countries:1.0">
+  <code code="SPAIN">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<codes class="bip:topics:1.0">
+  <code code="GCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="GSPO">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<dc element="dc.date.created" value="1997-03-01"/>
+<dc element="dc.publisher" value="Reuters Holdings Plc"/>
+<dc element="dc.date.published" value="1997-03-01"/>
+<dc element="dc.source" value="Reuters"/>
+<dc element="dc.creator.location" value="MADRID"/>
+<dc element="dc.creator.location.country.name" value="SPAIN"/>
+<dc element="dc.source" value="Reuters"/>
+</metadata>
+</newsitem>

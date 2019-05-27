@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<newsitem itemid="804330" id="root" date="1997-08-16" xml:lang="en">
+<title>USA: Judge orders Greenpeace away from Arco drill rig.</title>
+<headline>Judge orders Greenpeace away from Arco drill rig.</headline>
+<byline>Yereth Rosen</byline>
+<dateline>ANCHORAGE, Alaska 1997-08-15</dateline>
+<text>
+<p>A federal judge on Friday ordered protesting environmentalists to keep away from a mobile oil drilling rig that Atlantic Richfield Co. was trying to tow to a site off Alaska's Arctic Coast.</p>
+<p>U.S. District Court Judge Russel Holland ordered Greenpeace activists to keep their vessel, the Arctic Sunrise, outside a moving safety buffer he established around the towing operation.</p>
+<p>Holland granted requests from Arco and the state of Alaska for a temporary restraining order preventing Greenpeace from interfering with transport of the drill rig to the Warthog exploratory prospect in the Beaufort Sea about 3.5 miles offshore from the Arctic National Wildlife Refuge.</p>
+<p>Saying that &quot;Greenpeace's activities posed a severe threat to the safety&quot; of Arco contractors and protestors alike, Holland ordered a three-mile buffer in front of the three tugs pulling the unit, and buffers of 500 yards (metres) to 2,000 yards (metres) around the towed structure.</p>
+<p>&quot;We're very pleased with Judge Holland's order. It allows ample room to move the rig, and it makes the process of moving the rig much less complicated and more safe for everyone involved,&quot; Arco spokesman Ronnie Chappell said.</p>
+<p>The journey is expected to take two to three days, Chappell said.</p>
+<p>Displaying bannners reading &quot;Stop Oil&quot; and &quot;Save the Climate,&quot; Greenpeace activists aboard their vessel, the Arctic Sunrise, have at times blockaded the mobile rig.</p>
+<p>Greenpeace argues that offshore Arctic oil drilling is environmentally risky, and that further Arctic oil development should be stopped. An attorney for the group argued that its Beaufort Sea demonstration was protected by constitutional free-speech rights.</p>
+<p>In his ruling, Holland said delaying movement of the rig would interfere with the fall whale migration and the Inupiat Eskimo's hunting season.</p>
+<p>Although the state has no jurisdiction over the Warthog project, which is on federal territory, Gov. Tony Knowles said Arco should be allowed to tow its drill rig without hinderance.</p>
+<p>&quot;I appreciate the importance of a photo op as much as any politician and I respect Greenpeace's rights of free speech, but it's simply wrong for anyone to take the law into their own hands,&quot; the Democratic governor said Thursday.</p>
+<p>Greenpeace Friday condemned Knowles for supporting Arco.</p>
+<p>&quot;In Alaska, oil is king and the Governor is a pawn,&quot; Steve Sawyer, expedition leader on the Arctic Sunrise, said in a news release.</p>
+</text>
+<copyright>(c) Reuters Limited 1997</copyright>
+<metadata>
+<codes class="bip:countries:1.0">
+  <code code="USA">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+</codes>
+<codes class="bip:industries:1.0">
+  <code code="I14000">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+</codes>
+<codes class="bip:topics:1.0">
+  <code code="C24">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+  <code code="CCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+  <code code="GCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+  <code code="GCRIM">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+  <code code="GENV">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+  <code code="GVIO">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+</codes>
+<dc element="dc.date.created" value="1997-08-15"/>
+<dc element="dc.publisher" value="Reuters Holdings Plc"/>
+<dc element="dc.date.published" value="1997-08-16"/>
+<dc element="dc.source" value="Reuters"/>
+<dc element="dc.creator.location" value="ANCHORAGE, Alaska"/>
+<dc element="dc.creator.location.country.name" value="USA"/>
+<dc element="dc.source" value="Reuters"/>
+</metadata>
+</newsitem>

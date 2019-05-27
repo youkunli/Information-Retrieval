@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<newsitem itemid="412670" id="root" date="1997-03-01" xml:lang="en">
+<title>UK: SOCCER-ENGLISH LEAGUE RESULTS.</title>
+<headline>SOCCER-ENGLISH LEAGUE RESULTS.</headline>
+<dateline>LONDON 1997-03-01</dateline>
+<text>
+<p>Results of English league soccer</p>
+<p>matches on Saturday:</p>
+<p>Premier league</p>
+<p> Blackburn		1    Sunderland		0</p>
+<p> Derby		    3    Chelsea		   2</p>
+<p> Everton		  0    Arsenal		   2</p>
+<p> Leeds		    1    West Ham		  0</p>
+<p> Manchester United    3    Coventry		  1</p>
+<p> Newcastle		0    Southampton	     1</p>
+<p> Sheffield Wednesday  3    Middlesbrough	   1</p>
+<p> Tottenham		0    Nottingham Forest     1</p>
+<p> Wimbledon		1    Leicester		 3</p>
+<p>Playing Sunday: Aston Villa v Liverpool</p>
+<p>Division one</p>
+<p> Bradford		 1    Manchester City	 3</p>
+<p> Grimsby		  1    Birmingham		2</p>
+<p> Norwich		  2    Huddersfield	    0</p>
+<p> Oxford		   1    Crystal Palace	  4</p>
+<p> Port Vale		1    Reading		   0</p>
+<p> Portsmouth	     1    Sheffield United	1</p>
+<p> Queens Park Rangers  0    Oldham		    1</p>
+<p> Southend		 1    Barnsley		  2</p>
+<p> Swindon		  1    Charlton		  0</p>
+<p> Wolverhampton	  0    Ipswich		   0</p>
+<p>Played Friday:</p>
+<p> Tranmere		0     Stoke		     0</p>
+<p>Playing Sunday: Bolton v West Bromwich</p>
+<p>Division two</p>
+<p> Bournemouth	    0    Shrewsbury		0</p>
+<p> Bristol Rovers	 0    Walsall		   1</p>
+<p> Crewe		    3    Gillingham		2</p>
+<p> Millwall		 2    Wycombe		   1</p>
+<p> Notts County	   1    Brentford		 1</p>
+<p> Peterborough	   1    Chesterfield	    1</p>
+<p> Plymouth		 0    Blackpool		 1</p>
+<p> Preston		  3    Bury			1</p>
+<p> Stockport		0    Rotherham		 0</p>
+<p> Watford		  3    Bristol City	    0</p>
+<p> Wrexham		  0    Burnley		   0</p>
+<p> York		     1    Luton		     1</p>
+<p>Division three</p>
+<p> Carlisle		 1    Lincoln		   0</p>
+<p> Darlington	     2    Brighton		  0</p>
+<p> Fulham		   1    Chester		   1</p>
+<p> Hartlepool	     0    Scunthorpe		1</p>
+<p> Hereford		 1    Exeter		    2</p>
+<p> Hull		     1    Northampton	     1</p>
+<p> Leyton Orient	  0    Barnet		    1</p>
+<p> Mansfield		1    Cambridge United	0</p>
+<p> Rochdale		 2    Torquay		   1</p>
+<p>Played Friday:</p>
+<p> Colchester	     1    Scarborough	     3</p>
+<p> Doncaster		2    Wigan		     0</p>
+<p>Playing Sunday: Swansea v Cardiff</p>
+</text>
+<copyright>(c) Reuters Limited 1997</copyright>
+<metadata>
+<codes class="bip:countries:1.0">
+  <code code="UK">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<codes class="bip:topics:1.0">
+  <code code="GCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="GSPO">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<dc element="dc.date.created" value="1997-03-01"/>
+<dc element="dc.publisher" value="Reuters Holdings Plc"/>
+<dc element="dc.date.published" value="1997-03-01"/>
+<dc element="dc.source" value="Reuters"/>
+<dc element="dc.creator.location" value="LONDON"/>
+<dc element="dc.creator.location.country.name" value="UK"/>
+<dc element="dc.source" value="Reuters"/>
+</metadata>
+</newsitem>

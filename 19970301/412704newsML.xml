@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<newsitem itemid="412704" id="root" date="1997-03-01" xml:lang="en">
+<title>NEW ZEALAND: CRICKET-RAIN DELAYS NEW ZEALAND-ENGLAND ONE-DAYER.</title>
+<headline>CRICKET-RAIN DELAYS NEW ZEALAND-ENGLAND ONE-DAYER.</headline>
+<dateline>AUCKLAND 1996-03-02</dateline>
+<text>
+<p>Rain again delayed the start of play in the fourth one-day cricket international between England and New Zealand at Eden Park on Sunday.</p>
+<p>The match was scheduled to be played on Saturday but persistent rain caused it to be postponed until Sunday, the reserve day.</p>
+<p>The weather in Auckland on Sunday morning was misty, with low cloud cover and drizzle preventing a start on time at 10.30 a.m. (2130 GMT).</p>
+<p>However, match officials said they were hopeful of starting at about midday (2300 GMT), with the number of overs reduced to 44 per side.</p>
+<p>England hold a 2-0 lead in the series after winning the first and second matches. The third game, in Napier last Wednesday, ended in a tie.</p>
+<p>If no play is possible on Sunday, the match will be abandoned and England win the series.</p>
+</text>
+<copyright>(c) Reuters Limited 1997</copyright>
+<metadata>
+<codes class="bip:countries:1.0">
+  <code code="NZ">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="UK">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<codes class="bip:topics:1.0">
+  <code code="GCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="GSPO">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<dc element="dc.date.created" value="1996-03-02"/>
+<dc element="dc.publisher" value="Reuters Holdings Plc"/>
+<dc element="dc.date.published" value="1997-03-01"/>
+<dc element="dc.source" value="Reuters"/>
+<dc element="dc.creator.location" value="AUCKLAND"/>
+<dc element="dc.creator.location.country.name" value="NEW ZEALAND"/>
+<dc element="dc.source" value="Reuters"/>
+</metadata>
+</newsitem>

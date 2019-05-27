@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<newsitem itemid="413084" id="root" date="1997-03-01" xml:lang="en">
+<title>REPUBLIC OF IRELAND: Spanish-crewed trawler on fire off Ireland.</title>
+<headline>Spanish-crewed trawler on fire off Ireland.</headline>
+<dateline>SHANNON, Ireland 1997-03-01</dateline>
+<text>
+<p>A Spanish -crewed trawler with 17 people on board was on fire off the west coast of Ireland on Saturday, coastguards said.</p>
+<p>First reports said the blaze broke out in the wheelhouse of the British-registered Shark and had knocked out communications.</p>
+<p>Rescue helicopters from Shannon and from Scotland were on their way to the burning trawler, which was also battling gale force eight storms and heavy seas. Two lifeboats and another trawler were also on their way to the area about 120 miles off the west coast of the Irish Republic.</p>
+<p>Coastguards said the Shark had sent out a mayday alert signal shortly before 0900 gmt on Saturday.</p>
+<p>It was not immediately clear whether any of the crew had been injured.</p>
+</text>
+<copyright>(c) Reuters Limited 1997</copyright>
+<metadata>
+<codes class="bip:countries:1.0">
+  <code code="IRE">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="SPAIN">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<codes class="bip:topics:1.0">
+  <code code="GCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="GDIS">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<dc element="dc.date.created" value="1997-03-01"/>
+<dc element="dc.publisher" value="Reuters Holdings Plc"/>
+<dc element="dc.date.published" value="1997-03-01"/>
+<dc element="dc.source" value="Reuters"/>
+<dc element="dc.creator.location" value="SHANNON, Ireland"/>
+<dc element="dc.creator.location.country.name" value="REPUBLIC OF IRELAND"/>
+<dc element="dc.source" value="Reuters"/>
+</metadata>
+</newsitem>

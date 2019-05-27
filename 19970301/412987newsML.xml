@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<newsitem itemid="412987" id="root" date="1997-03-01" xml:lang="en">
+<title>JORDAN: Jordan dinar overnight rates rise to 7.1 pct.</title>
+<headline>Jordan dinar overnight rates rise to 7.1 pct.</headline>
+<dateline>AMMAN 1997-03-01</dateline>
+<text>
+<p>The weighted average overnight interbank rate on the Jordanian dinar rose to 7.1 percent on Saturday from 6.43 percent on Thursday, the Central Bank said.</p>
+<p>It said six banks traded on the market in fourteen reported transactions with a total value of 12.6 million dinars ($18 million).</p>
+<p>$1 = 0.7080 dinar</p>
+<p>-- Amman newsroom +962 6 623 776</p>
+</text>
+<copyright>(c) Reuters Limited 1997</copyright>
+<metadata>
+<codes class="bip:countries:1.0">
+  <code code="JORDAN">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<codes class="bip:topics:1.0">
+  <code code="M13">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="M131">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="MCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<dc element="dc.date.created" value="1997-03-01"/>
+<dc element="dc.publisher" value="Reuters Holdings Plc"/>
+<dc element="dc.date.published" value="1997-03-01"/>
+<dc element="dc.source" value="Reuters"/>
+<dc element="dc.creator.location" value="AMMAN"/>
+<dc element="dc.creator.location.country.name" value="JORDAN"/>
+<dc element="dc.source" value="Reuters"/>
+</metadata>
+</newsitem>

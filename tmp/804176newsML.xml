@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<newsitem itemid="804176" id="root" date="1997-08-16" xml:lang="en">
+<title>LEBANON: Israeli planes, helicopters raid south of Beirut.</title>
+<headline>Israeli planes, helicopters raid south of Beirut.</headline>
+<dateline>BEIRUT 1997-08-16</dateline>
+<text>
+<p>Israeli aircraft raided Palestinian guerrilla targets on hilltops south of Beirut on Saturday, security sources said.</p>
+<p>Two helicopters fired two rockets at the Na'ameh hills 15 km (nine miles) south of Beirut, where the radical Popular Front for the Liberation of Palestine General Command (PFLP-GC) has bases, they said.</p>
+<p>PFLP-GC sources and residents said Israeli fighter planes also took part in the raid.</p>
+<p>The security sources and the PFLP-GC said there were no immediate reports of casualties in the raid.</p>
+<p>The operation raised to 50 the number of Israeli air raids on Lebanon this year.</p>
+<p>Lebanese army units fired anti-aircraft guns at the Israeli helicopters but they were not hit, the security sources said.</p>
+</text>
+<copyright>(c) Reuters Limited 1997</copyright>
+<metadata>
+<codes class="bip:countries:1.0">
+  <code code="ISRAEL">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+  <code code="LEBAN">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+</codes>
+<codes class="bip:topics:1.0">
+  <code code="GCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+  <code code="GVIO">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-08-16"/>
+  </code>
+</codes>
+<dc element="dc.date.created" value="1997-08-16"/>
+<dc element="dc.publisher" value="Reuters Holdings Plc"/>
+<dc element="dc.date.published" value="1997-08-16"/>
+<dc element="dc.source" value="Reuters"/>
+<dc element="dc.creator.location" value="BEIRUT"/>
+<dc element="dc.creator.location.country.name" value="LEBANON"/>
+<dc element="dc.source" value="Reuters"/>
+</metadata>
+</newsitem>

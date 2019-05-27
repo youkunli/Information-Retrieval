@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<newsitem itemid="412843" id="root" date="1997-03-01" xml:lang="en">
+<title>UKRAINE: Ukraine leases Russia missile warning stations.</title>
+<headline>Ukraine leases Russia missile warning stations.</headline>
+<dateline>KIEV 1997-03-01</dateline>
+<text>
+<p>Ukraine has agreed to lease Russia two ballistic missile early warning stations in exchange for supplies of spare parts for its air defence force, a defence ministry spokesman said on Saturday.</p>
+<p>The spokesman told Reuters that delegations representing Russia's missiles and airspace defence troops and Ukraine's air defence signed a deal on Friday in Kiev. The two stations are located in the western town of Mukacheve and in Sevastopol on the Crimean peninsula.</p>
+<p>The former Soviet Union had eight such stations. Three of them are now in Russia, two in Ukraine and one each in Belarus, Latvia and Azerbaijan. The stations study the trajectory of ballistic missiles.</p>
+<p>Military sources in Kiev said the leasing cost would be about $4 million per year but the terms of the deal were not disclosed.</p>
+<p>&quot;This deal means an additional Russian military presence on Ukraine's soil,&quot; Serhiy Zgurets, military observer at the Den daily told Reuters, referring to Russia's use of a naval base at Sevastopol.</p>
+<p>&quot;It seems that Ukraine must be desperately lacking in spare parts for military hardware and lacks financing,&quot; he added.</p>
+</text>
+<copyright>(c) Reuters Limited 1997</copyright>
+<metadata>
+<codes class="bip:countries:1.0">
+  <code code="RUSS">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="UKRN">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<codes class="bip:topics:1.0">
+  <code code="GCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="GDEF">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="GDIP">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<dc element="dc.date.created" value="1997-03-01"/>
+<dc element="dc.publisher" value="Reuters Holdings Plc"/>
+<dc element="dc.date.published" value="1997-03-01"/>
+<dc element="dc.source" value="Reuters"/>
+<dc element="dc.creator.location" value="KIEV"/>
+<dc element="dc.creator.location.country.name" value="UKRAINE"/>
+<dc element="dc.source" value="Reuters"/>
+</metadata>
+</newsitem>

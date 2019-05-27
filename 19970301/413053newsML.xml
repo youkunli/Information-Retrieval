@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<newsitem itemid="413053" id="root" date="1997-03-01" xml:lang="en">
+<title>GERMANY: EU to probe German public banks - magazine.</title>
+<headline>EU to probe German public banks - magazine.</headline>
+<dateline>BONN 1997-03-01</dateline>
+<text>
+<p>The European Commission plans to investigate Germany's publicly-owned regional banks, or Landesbanken, for alleged breaches of European Union (EU) subsidy rules, German news magazine Der Spiegel reported.</p>
+<p>Spiegel said the EU Commission agreed with Germany's private sector banks that the Landesbanken had gained a market-distorting competitive advantage by taking over state-owned housing development agencies to beef up their capital.</p>
+<p>EU Competition Commissioner Karel van Miert planned to launch a probe because a last attempt at a settlement between Germany's public and private sector banking associations had failed, Spiegel said.</p>
+<p>The Bonn government fears that an investigation of the Landesbanken could call Germany's entire public banking sector into question, the report said. Spiegel released the report ahead of publication in Monday's edition.</p>
+<p>The dispute centres on a complaint filed in 1994 by the Federal Association of German Banks, which represents private sector banks, that 11 billion marks of state capital transferred to publicly-owned regional banks since 1990 constituted a breach of EU subsidy rules.</p>
+<p>In 1990 the federal states started integrating their regional housing development agencies into the regional banks to beef up the banks' weak equity capital before tougher EU rules on capital adequacy came into force in 1993.</p>
+<p>In one case WestLB, the biggest regional bank, received four billion marks in fresh equity capital by integrating North Rhine-Westphalia's housing development agency in 1992.</p>
+<p>The private banks see this as distorting competition because it enabled the regional banks to obtain capital at a far lower price than would be charged for funds in the private sector. The regional banks see no such distortion.</p>
+<p>The Landesbanken are owned by their respective federal states and savings bank associations. They do not offer retail banking but compete with private banks in corporate finance, securities trading and issuing.</p>
+<p>State guarantees available to the Landesbanken have enabled some of them to gain top credit ratings.</p>
+<p>--David Crossland, Frankfurt Newsroom, +49 69 756525</p>
+</text>
+<copyright>(c) Reuters Limited 1997</copyright>
+<metadata>
+<codes class="bip:countries:1.0">
+  <code code="EEC">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="GFR">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<codes class="bip:industries:1.0">
+  <code code="I81402">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<codes class="bip:topics:1.0">
+  <code code="C17">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="C34">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="CCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="G15">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="G157">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="GCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<dc element="dc.date.created" value="1997-03-01"/>
+<dc element="dc.publisher" value="Reuters Holdings Plc"/>
+<dc element="dc.date.published" value="1997-03-01"/>
+<dc element="dc.source" value="Reuters"/>
+<dc element="dc.creator.location" value="BONN"/>
+<dc element="dc.creator.location.country.name" value="GERMANY"/>
+<dc element="dc.source" value="Reuters"/>
+</metadata>
+</newsitem>

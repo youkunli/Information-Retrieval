@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<newsitem itemid="412665" id="root" date="1997-03-01" xml:lang="en">
+<title>UK: SOCCER-ENGLISH LEAGUE STANDINGS.</title>
+<headline>SOCCER-ENGLISH LEAGUE STANDINGS.</headline>
+<dateline>LONDON 1997-03-01</dateline>
+<text>
+<p>English league standings after</p>
+<p>matches on Saturday:</p>
+<p>Premier league</p>
+<p>  1. Manchester United	28 16  9  3 56 31   57</p>
+<p>  2. Liverpool		  27 15  8  4 46 20   53</p>
+<p>  3. Arsenal		    29 14  9  6 47 26   51</p>
+<p>  4. Newcastle		  27 14  6  7 51 31   48</p>
+<p>  5. Aston Villa		27 12  8  7 34 26   43</p>
+<p>  6. Wimbledon		  26 12  7  7 38 31   43</p>
+<p>  7. Chelsea		    26 11  9  6 41 37   42</p>
+<p>  8. Sheffield Wednesday    27 10 12  5 34 32   42</p>
+<p>  9. Leeds			28 10  6 12 23 31   36</p>
+<p> 10. Leicester		  26  9  6 11 32 38   33</p>
+<p> 11. Everton		    27  8  8 11 34 40   32</p>
+<p> 12. Derby			28  7 11 10 30 38   32</p>
+<p> 13. Tottenham		  27  9  5 13 30 38   32</p>
+<p> 14. Blackburn		  26  7 10  9 27 25   31</p>
+<p> 15. Sunderland		 27  7  8 12 23 34   29</p>
+<p> 16. Coventry		   28  6 10 12 25 38   28</p>
+<p> 17. Nottingham Forest	27  6  9 12 24 40   27</p>
+<p> 18. West Ham		   27  6  7 14 24 37   25</p>
+<p> 19. Southampton		26  6  6 14 35 44   24</p>
+<p> 20. Middlesbrough	    26  5  7 14 31 48   19</p>
+<p>Note: Middlesbrough deducted 3 points</p>
+<p>Division one</p>
+<p>   1. Bolton		     34 19 11  4 71 45   68</p>
+<p>   2. Wolverhampton	    34 17  8  9 47 32   59</p>
+<p>   3. Barnsley		   33 16 10  7 56 41   58</p>
+<p>   4. Sheffield United	 34 15 10  9 58 40   55</p>
+<p>   5. Norwich		    35 15  9 11 53 53   54</p>
+<p>   6. Crystal Palace	   33 14 10  9 63 35   52</p>
+<p>   7. Port Vale		  35 12 14  9 43 39   50</p>
+<p>   8. Ipswich		    34 12 13  9 47 42   49</p>
+<p>   9. Portsmouth		 34 14  7 13 41 38   49</p>
+<p>  10. Swindon		    35 14  6 15 49 46   48</p>
+<p>  11. Stoke			33 13  9 11 40 43   48</p>
+<p>  12. Tranmere		   33 13  8 12 44 42   47</p>
+<p>  13. Queens Park Rangers    34 11 11 12 44 46   44</p>
+<p>  14. Oxford		     34 12  7 15 47 47   43</p>
+<p>  15. West Bromwich	    34  9 14 11 54 60   41</p>
+<p>  16. Manchester City	  32 12  5 15 42 44   41</p>
+<p>  17. Huddersfield	     35 10 11 14 40 50   41</p>
+<p>  18. Reading		    33 10 10 13 43 51   40</p>
+<p>  19. Charlton		   33 11  7 15 39 48   40</p>
+<p>  20. Birmingham		 32 10 10 12 36 39   40</p>
+<p>  21. Bradford		   34  8 10 16 33 53   34</p>
+<p>  22. Southend		   35  7 12 16 34 62   33</p>
+<p>  23. Grimsby		    33  7 10 16 42 60   31</p>
+<p>  24. Oldham		     32  7 10 15 33 43   31</p>
+</text>
+<copyright>(c) Reuters Limited 1997</copyright>
+<metadata>
+<codes class="bip:countries:1.0">
+  <code code="UK">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<codes class="bip:topics:1.0">
+  <code code="GCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="GSPO">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<dc element="dc.date.created" value="1997-03-01"/>
+<dc element="dc.publisher" value="Reuters Holdings Plc"/>
+<dc element="dc.date.published" value="1997-03-01"/>
+<dc element="dc.source" value="Reuters"/>
+<dc element="dc.creator.location" value="LONDON"/>
+<dc element="dc.creator.location.country.name" value="UK"/>
+<dc element="dc.source" value="Reuters"/>
+</metadata>
+</newsitem>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<newsitem itemid="413055" id="root" date="1997-03-01" xml:lang="en">
+<title>FRANCE: Missing French girl's picture put on milk cartons.</title>
+<headline>Missing French girl's picture put on milk cartons.</headline>
+<dateline>PARIS 1997-03-01</dateline>
+<text>
+<p>Borrowing a tactic from the United States, French dairies have agreed for the first time to print the picture of a missing 10-year-old girl on 10 million milk cartons to be sold across France, her family said on Saturday.</p>
+<p>A message on the cartons urges anyone who has seen the little girl to call a toll-free phone number or contact police.</p>
+<p>The girl, Marion Wagon of Agen, southwestern France, disappeared on November 14 while returning home from school.</p>
+</text>
+<copyright>(c) Reuters Limited 1997</copyright>
+<metadata>
+<codes class="bip:countries:1.0">
+  <code code="FRA">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<codes class="bip:topics:1.0">
+  <code code="GCAT">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="GCRIM">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+  <code code="GODD">
+    <editdetail attribution="Reuters BIP Coding Group" action="confirmed" date="1997-03-01"/>
+  </code>
+</codes>
+<dc element="dc.date.created" value="1997-03-01"/>
+<dc element="dc.publisher" value="Reuters Holdings Plc"/>
+<dc element="dc.date.published" value="1997-03-01"/>
+<dc element="dc.source" value="Reuters"/>
+<dc element="dc.creator.location" value="PARIS"/>
+<dc element="dc.creator.location.country.name" value="FRANCE"/>
+<dc element="dc.source" value="Reuters"/>
+</metadata>
+</newsitem>
